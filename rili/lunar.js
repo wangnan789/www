@@ -896,13 +896,13 @@ function Lunar(){
 
   //月历处理
   ta0+='<tr>'
-	+'<td'+sty_head+'width="%10">日</td>'
-	+'<td'+sty_head+'width="%10">一</td>'
-	+'<td'+sty_head+'width="%10">二</td>'
-	+'<td'+sty_head+'width="%14">三</td>'
-	+'<td'+sty_head+'width="%14">四</td>'
-	+'<td'+sty_head+'width="%14">五</td>'
-	+'<td'+sty_head+'width="%14">六</td></tr>';
+	+'<td'+sty_head+'width="%9">日</td>'
+	+'<td'+sty_head+'width="%9">一</td>'
+	+'<td'+sty_head+'width="%9">二</td>'
+	+'<td'+sty_head+'width="%9">三</td>'
+	+'<td'+sty_head+'width="%9">四</td>'
+	+'<td'+sty_head+'width="%9">五</td>'
+	+'<td'+sty_head+'width="%9">六</td></tr>';
   for(i=0;i<this.dn;i++){ //遍历本月各日(公历)
     //生成i日的日历页面
     ob = this.lun[i];
@@ -930,7 +930,7 @@ function Lunar(){
     if(ob.d0 == curJD) c2='<span'+sty_cur+'>'+c2+'</span>'; //今日标识
 
 
-    cr += '<td'+sty_body+'width="14%">'+c2+'<br>'+isM+c+'</td>';
+    cr += '<td'+sty_body+'width="9%">'+c2+'<br>'+isM+c+'</td>';
     if(i==this.dn-1) { for(j=0;j<6-ob.week;j++) cr+='<td'+sty_body+'></td>'; } //末行后面的空单元格
     if(i==this.dn-1||ob.week==6) ta0+='<tr>'+cr+'</tr>', cr="";
   }
