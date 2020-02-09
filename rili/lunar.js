@@ -896,9 +896,9 @@ function Lunar(){
 
   //月历处理
   ta0+='<tr>'
-	+'<td'+sty_head+'width="%14">日</td>'
-	+'<td'+sty_head+'width="%14">一</td>'
-	+'<td'+sty_head+'width="%14">二</td>'
+	+'<td'+sty_head+'width="%10">日</td>'
+	+'<td'+sty_head+'width="%10">一</td>'
+	+'<td'+sty_head+'width="%10">二</td>'
 	+'<td'+sty_head+'width="%14">三</td>'
 	+'<td'+sty_head+'width="%14">四</td>'
 	+'<td'+sty_head+'width="%14">五</td>'
