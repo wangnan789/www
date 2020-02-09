@@ -5,26 +5,39 @@
 <title>寿星万年历</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="../css/my.css" />
+<script language=javascript src=tools.js></script>
+<script language=javascript src=eph0.js></script>
+<script language=javascript src=lunar.js></script>
 </head>
 
 <body>
 
-我们都是地球人，大家应该相亲相爱，互相尊重帮助，不要打架，不要打仗，
-不要伤害。世界永远和平美好
-    <br><a href="../联系我/联系我.html" target="_blank">联系我</a>&nbsp;Copyright &copy; 2016. 
-    <a href="https://www.kerne1.org">www.kerne1.org</a>
-     &nbsp;&nbsp;All rights reserved.<br/>
-    
-</p><p><!--js1S--><script language=javascript src=tools.js></script><!--工具函数--><script language=javascript src=eph0.js></script><!--天文常数等--><script language=javascript src=lunar.js></script><!--日历物件--><!--js1E-->
-</p><p>
-<!--js1S--><script language=javascript src=tools.js></script><!--工具函数--><script language=javascript src=eph0.js></script><!--天文常数等--><script language=javascript src=lunar.js></script><!--日历物件--><!--js1E-->
+我们都是地球人,大家相亲相爱互相尊重帮助,不要打架不要打仗不要伤害,世界永远和平美好.<br/>
+<a href="../联系我/联系我.html" target="_blank">联系我</a>&nbsp;Copyright &copy; 2016. 
+<a href="https://www.kerne1.org">www.kerne1.org</a>&nbsp;&nbsp;All rights reserved.<br/><br/>
 
-<center>
-可查询-4713至9999&nbsp;&nbsp;&nbsp;&nbsp;公元<input id="Cal_y" size="4" type="text" value="2008" />年<input id="Cal_m" maxlength="2" size="2" type="text" value="1" />月 <input onclick="getLunar()" type="button" value="确定" /> <input onclick="changeYear(0)" type="button" value="年↑" /><input onclick="changeYear(1)" type="button" value="年↓" /> <input onclick="changeMonth(0)" type="button" value="月↑" /><input onclick="changeMonth(1)" type="button" value="月↓" /> <input onclick="changeMonth(2)" type="button" value="今" />
+可查询-4713至9999&nbsp;&nbsp;&nbsp;
+<input id="Cal_y" size="4" type="text" value="2008" />年
+<input id="Cal_m" maxlength="2" size="2" type="text" value="1" />月 
+<input onclick="getLunar()" type="button" value="&nbsp;&nbsp;显示&nbsp;&nbsp;" /> 
+<input onclick="changeMonth(2)" type="button" value="返回今日" /><br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input onclick="changeYear(1)" type="button" value="年份加" /> 
+<input onclick="changeYear(0)" type="button" value="年份减" />
+<input onclick="changeMonth(1)" type="button" value="月份加" />
+<input onclick="changeMonth(0)" type="button" value="月份减" /><br/><br/>
+
 <div id="Cal2"></div>
-<input id="Cml_y" maxlength="5" size="4" type="text" value="2008" />年 <input id="Cml_m" maxlength="2" size="2" type="text" value="01" />月 <input id="Cml_d" maxlength="2" size="2" type="text" value="01" />日 <input id="Cml_his" size="8" type="text" value="12:00:00" />
-<div id="Cal6"></div>
-<!--版权区--> <script language=javascript>
+
+现在是
+<input id="Cml_y" maxlength="5" size="4" type="text" value="2008" />年 
+<input id="Cml_m" maxlength="2" size="2" type="text" value="01" />月 
+<input id="Cml_d" maxlength="2" size="2" type="text" value="01" />日 
+<input id="Cml_his" size="8" type="text" value="12:00:00" />
+
+<script language=javascript>
 var lun = new Lunar(); //月历全局对象
 var curJD; //现在日期
 /********************
@@ -99,21 +112,19 @@ function getLunar(){ //月历页面生成
   showMessD(-2);
 }
 getLunar(); //调用月历页面生成函数
-</script></center>
+</script>
 
-</p><p>
-</p><p>
 <br><br/><br><br/>
-<br>参考网址：http://www.fjptsz.com/xxjs/xjw/rj/115.htm
-<br>说明：此日历是在“寿星万年历”的基础上修改而得，已获得作者的允许使用。非常感谢！
-<br>创建时间：不祥
-<br>修改时间:
-	<script>
-	document.write(document.lastModified);
-	</script><br/>
-
-</p><p>
-</p>
+参考网址：http://www.fjptsz.com/xxjs/xjw/rj/115.htm<br/>
+说明：此日历是在“寿星万年历”的基础上修改而得，已获得作者的允许使用。非常感谢！<br/>
+创建时间：不祥<br/>
+修改时间:
+<script>
+document.write(document.lastModified);
+</script>
+<br/><br/><br/><br/>
 
 </body>
 </html>
+
+
