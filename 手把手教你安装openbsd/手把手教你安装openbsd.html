@@ -2,21 +2,151 @@
 <html lang="zh-cmn-Hans">
 
 <head>
-<title>手把手教你安装OpenBsd</title>
+<title>手把手教你安装openbsd</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="../css/my.css" />
 </head>
 
 <body>
 
-我们都是地球人，大家应该相亲相爱，互相尊重帮助，不要打架，不要打仗，
-不要伤害。世界永远和平美好
-    <br><a href="../联系我/联系我.html" target="_blank">联系我</a>&nbsp;Copyright &copy; 2016. 
-    <a href="https://www.kerne1.org">www.kerne1.org</a>
-    &nbsp;&nbsp;All rights reserved.<br/>
+我们都是地球人,大家相亲相爱互相尊重帮助,不要打架不要打仗不要伤害,世界永远和平美好.<br/>
+<a href="../联系我/联系我.html" target="_blank">联系我</a>&nbsp;Copyright &copy; 2016. 
+<a href="https://www.kerne1.org">www.kerne1.org</a>&nbsp;&nbsp;All rights reserved.<br/><br/>
     
-    
-pkg_add wget
-wget -c https://www.kerne1.org/pz/openbsd.sh
-chmod openbsd.sh
-./openbsd.sh
+   如何安装一个带图形桌面的openbsd-6.6 ？？<br/>
+（1）一台能自动上网的电脑，不用手工拨号。它应该是有一条网线插在路由器上<br/>
+（2）启动U盘，选择openbsd。请参考---------  <br/>
+（3）输入大写的I，按确认键<br/>
+<img src="1.jpg" alt="" /><br/><br/>
+
+(4）4.1&nbsp;&nbsp;直接按确认键。特殊情况才按？查看<br/>
+4.2&nbsp;&nbsp;随意输入几个字母，再按确认键<br/>
+<img src="2.jpg" alt="" /><br/><br/>
+
+（5）这几步是有关网络设置的<br/>
+5.1&nbsp;&nbsp;直接按确认键。<br/>
+5.2&nbsp;&nbsp;直接按确认键。<br/>
+5.3&nbsp;&nbsp;直接按确认键。autoconf是自动设置IP6<br/>
+5.4&nbsp;&nbsp;直接按确认键。<br/>
+5.5&nbsp;&nbsp;直接按确认键。<br/>
+<img src="3.jpg" alt="" /><br/><br/>
+
+（6）6.1&nbsp;&nbsp;设置超级用户的密码，然后按确认键<br/>
+6.2&nbsp;&nbsp;再次输入密码，确保两次一样。再按确认键<br/>
+<img src="4.jpg" alt="" /><br/><br/>
+
+（7）7.1&nbsp;&nbsp;安全登录，直接按确认键。<br/>
+7.2&nbsp;&nbsp;启用图形化桌面，直接按确认键。<br/>
+7.3&nbsp;&nbsp;直接按确认键。<br/>
+<img src="5.jpg" alt="" /><br/><br/>
+
+（8）8.1&nbsp;&nbsp;设置普通用户名，最好用笔记下来。然后按确认键<br/>
+8.2&nbsp;&nbsp;直接按确认键。<br/>
+<img src="6.jpg" alt="" /><br/><br/>
+
+（9）9.1&nbsp;&nbsp;设置普通用户的密码，然后按确认键<br/>
+9.2&nbsp;&nbsp;再次输入密码，确保两次一样。再按确认键<br/>
+<img src="7.jpg" alt="" /><br/><br/>
+
+（10）10.1&nbsp;&nbsp;直接按确认键。<br/>
+10.2&nbsp;&nbsp;因为已经联网，所以它能帮我们设置时区，这是亚洲/重庆。然后按确认键。<br/>
+如果没联网不能自动设置，则按“？”查看选择<br/>
+10.3&nbsp;&nbsp;选择硬盘，这里只有一个，直接按确认键。<br/>
+10.4&nbsp;&nbsp;直接按确认键。选G可能无法启动，选E不懂，这两个才是大神选的。<br/>
+<img src="8.jpg" alt="" /><br/><br/>
+
+（11）&nbsp;&nbsp;输入大写的E，按确认键<br/>
+A是最容易的，C是大神选的<br/>
+<img src="9.jpg" alt="" /><br/><br/>
+
+（12）&nbsp;&nbsp;输入？，按确认键。看看有哪些可以使用的命令<br/>
+<img src="10.jpg" alt="" /><br/><br/>
+
+(13)13.1&nbsp;&nbsp;输入小写的z，按确认键，删除所有分区<br/>
+13.2&nbsp;&nbsp;输入小写的a，按确认键，新建分区<br/>
+13.3&nbsp;&nbsp;直接按确认键，这是第一个分区a。openbsd用abdef表示分区号，c表示整个硬盘<br/>
+13.4&nbsp;&nbsp;按确认键<br/>
+13.5&nbsp;&nbsp;设定a分区大小，输入13G，按确认键。50或者60都可以<br/>
+13.6&nbsp;&nbsp;按确认键.这里还能选别的麼，可有大神知道？？？<br/>
+13.7&nbsp;&nbsp;输入斜杠&nbsp;&nbsp;/&nbsp;&nbsp;按确认键.这是总的挂载点<br/>
+13.8&nbsp;&nbsp;输入小写的a，按确认键，再新建分区<br/>
+13.9&nbsp;&nbsp;直接按确认键。<br/>
+13.10&nbsp;&nbsp;直接按确认键。<br/>
+13.11&nbsp;&nbsp;设定交换分区大小，输入3G，按确认键。<br/>
+13.12&nbsp;&nbsp;直接按确认键。<br/>
+13.13&nbsp;&nbsp;输入小写的p，按确认键。看看分好的分区<br/>
+<img src="11.jpg" alt="" /><br/><br/>
+
+（14）14.1&nbsp;&nbsp;输入q，按确认键。q是保存后退出<br/>
+14.2&nbsp;&nbsp;按确认键。<br/>
+14.3&nbsp;&nbsp;输入http&nbsp;&nbsp;按确认键。表示从网络安装。输入https可以麼？<br/>
+14.4&nbsp;&nbsp;按确认键。<br/>
+14.5&nbsp;&nbsp;输入？按确认键。看看可以选择的网址列表<br/>
+<img src="12.jpg" alt="" /><br/><br/>
+
+（15）15.1&nbsp;&nbsp;输入1按确认键，选择第一个网址<br/>
+15.2&nbsp;&nbsp;按确认键。<br/>
+15.3&nbsp;&nbsp;按确认键。<br/>
+15.4&nbsp;&nbsp;输入-game66.tgz按确认键。不安装游戏，-减号代表不安装<br/>
+15.5&nbsp;&nbsp;按确认键。开始下载安装<br/>
+<img src="13.jpg" alt="" /><br/><br/>
+（16）16.1&nbsp;&nbsp;按确认键。<br/>
+16.2&nbsp;&nbsp;按确认键。这是关于时间<br/>
+16.3&nbsp;&nbsp;输入R按确认键重启。<br/>
+<img src="14.jpg" alt="" /><br/><br/>
+
+（17）第一次进入系统前会自动下载安装一些驱动，稍等一会<br/>
+17.1&nbsp;&nbsp;输入root然后按确认键。<br/>
+17.1&nbsp;&nbsp;输入密码然后按确认键。现在进入了系统<br/>
+<img src="15.jpg" alt="" /><br/><br/>
+
+（18）输入pkg_add&nbsp;&nbsp;wget &nbsp;&nbsp;按确认键。d和w之间有空格<br/>
+&nbsp;&nbsp;pkg_add是安装软件的命令，wget是用来下载东西的命令<br/>
+（19）wget&nbsp;&nbsp; -c&nbsp;&nbsp;https://www.kerne1.org/pz/openbsd.sh输入后按确认键，有一个数字1，小心。<br/>
+（20）chmod &nbsp;&nbsp;777&nbsp;&nbsp; openbsd.sh输入完成后按确认键，表示给它可以运行的权限。<br/>
+（21）&nbsp;&nbsp;&nbsp;./openbsd.sh输入完成后按确认键，不要忽略前面的小数点哟！<br/>
+这是在下载一些图形化的软件，然后自动安装。再把一些我配置好的设置文件解压到硬盘里<br/>
+最后自动重启,如果不能自动重启，则手按主机上的重启键<br/><br/>
+
+重启后以root用户进入系统，输入startx然后按确认键，图形化桌面就显示出来了<br/>
+但是普通用户不能显示图形化桌面，不知是何原因。可有大神知道？？？<br/><br/>
+
+看pdf<br/>
+<img src="16.jpg" alt="" /><br/><br/>
+
+多窗口多标签的终端<br/>
+<img src="17.jpg" alt="" /><br/><br/>
+
+小巧的文件管理器，可以同时显示2个窗格，支持shell脚本<br/>
+<img src="18.jpg" alt="" /><br/><br/>
+
+多标签的文本编辑器，这个网页就是用它写的<br/>
+<img src="19.jpg" alt="" /><br/><br/>
+
+桌面和状态栏<br/>
+<img src="20.jpg" alt="" /><br/><br/>
+
+音乐播放<br/>
+<img src="21.jpg" alt="" /><br/><br/>
+
+图片浏览，裁剪及简单的修改图片，甚至能播放音视频<br/>
+<img src="22.jpg" alt="" /><br/><br/>
+
+GIMP，图片编辑软件<br/>
+<img src="23.jpg" alt="" /><br/><br/>
+
+SM视频播放软件<br/>
+<img src="24.jpg" alt="" /><br/>
+
+<br><br/><br><br/>
+参考网址：???<br/>
+说明：<br/>
+创建时间：2020.2.9<br/>
+修改时间:
+<script>
+document.write(document.lastModified);
+</script>
+<br/><br/><br/><br/>
+
+</body>
+</html>
