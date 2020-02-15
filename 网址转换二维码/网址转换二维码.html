@@ -5,7 +5,6 @@
 <title>网址转换二维码</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="../css/my.css" />
-<script src="qrcode.js"></script>
 </head>
 
 <body>
@@ -14,42 +13,9 @@
 <a href="../联系我/联系我.html" target="_blank">联系我</a>&nbsp;Copyright &copy; 2016. 
 <a href="https://www.kerne1.org">www.kerne1.org</a>&nbsp;&nbsp;All rights reserved.<br/><br/>
 
-请输入网址<input id="text" type="text" value="https://www.kerne1.org" style="width:66%" /><br/>
-<button onclick="">刷新F5</button><br/>
-<!--点击按钮为何不能刷新-->
-
-<div id="qrcode" style="padding:0px 40px;width:260px; height:260px; margin-top:50px;"></div>
-
-<script>
-var qrcode = new QRCode(document.getElementById("qrcode"), {
-	width : 250,
-	height : 250
-});
-
-function makeCode () {		
-	var elText = document.getElementById("text");
-	
-	if (!elText.value) {
-		alert("Input a text");
-		elText.focus();
-		return;
-	}
-	
-	qrcode.makeCode(elText.value);
-}
-
-makeCode();
-
-$("#text").
-	on("blur", function () {
-		makeCode();
-	}).
-	on("keydown", function (e) {
-		if (e.keyCode == 13) {
-			makeCode();
-		}
-	});
-</script>
+<div style="overflow:hidden;">
+<iframe src="9.html" frameborder="0" scrolling="no" style="width:399px; height:399px;"></iframe>
+</div>
 
 <br><br/><br><br/>
 参考网址：https://github.com/davidshimjs/qrcodejs<br/>
