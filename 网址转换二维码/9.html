@@ -9,15 +9,15 @@
 </head>
 
 <body>
-请输入网址<input id="text" type="text" value="https://www.kerne1.org" style="width:80%" /><br/>
+请输入网址<input id="text" type="text" value="https://www.kerne1.org" style="width:98%" /><br/>
 <button onclick="">转换</button><br/>
 <!--其实并不是靠点击按钮来转换,只要在页面空白处随意点击就能转换.-->
 <div id="qrcode" style="padding:0px 40px;width:260px; height:260px; margin-top:50px;"></div>
 
 <script>
 var qrcode = new QRCode(document.getElementById("qrcode"), {
-	width : 233,
-	height : 233
+	width : 245,
+	height : 245
 });
 
 function makeCode () {		
