@@ -13,10 +13,58 @@
 <a href="../联系我/联系我.html" target="_blank">联系我</a>&nbsp;Copyright &copy; 2016. 
 <a href="https://www.kerne1.org">www.kerne1.org</a>&nbsp;&nbsp;All rights reserved.<br/><br/>
 
+以前安装系统一般是把iso光盘文件刻录到cd上,再从光驱启动进行安装.或者刻录到U盘从U盘启<br/>
+动安装.可是当你没有光驱也没有U盘怎么办呢?下面分3种情况来说说<br/><br/>
+
+(1)你的系统是2000/XP/2003<br/>
+1.1下载<a href="https://www.kerne1.org/pz/grub-dos.zip">grub</a><br/>
+1.2把里面的文件解压到C盘根目录<br/>
+1.3编辑C:\boot.ini,把timeout的值改为大于0的数,在文件的末尾添加一行代码<br/>
+<code>C:\grldr.mbr="GRUB MENU"</code><br/>
+1.4下载<a href="https://ftp.openbsd.org/pub/OpenBSD/6.6/amd64/cd66.iso">openbsd</a>,放在C盘根目录里.<br/>
+1.5重启电脑.启动菜单多了一项GRUB MENU,点击进去就出现了openbsd--net-install,选择<br/>
+它,开始安装有可能是世界上最安全的操作系统.<br/><br/>
+
+(2)你的系统是win7/8/10<br/>
+2.1下载<a href="https://www.kerne1.org/pz/grub-dos.zip">grub</a><br/>
+2.2把里面的文件解压到C盘根目录<br/>
+2.3启动BOOTICE_x86_16.06.17_1.3.4.exe<br/>
+<img src="1.jpg" alt="" /><br/><br/>
+
+2.4添加实模式启动项<br/>
+<img src="2.jpg" alt="" /><br/><br/>
+
+2.5选择C盘所在的硬盘<br/>
+<img src="3.jpg" alt="" /><br/><br/>
+
+2.6选择C盘<br/><br/>
+<img src="4.jpg" alt="" /><br/><br/>
+
+2.7依次点击"默认","保存当前系统设置',"关闭"<br/>
+<img src="5.jpg" alt="" /><br/><br/>
+
+2.8下载<a href="https://ftp.openbsd.org/pub/OpenBSD/6.6/amd64/cd66.iso">openbsd</a>,放在C盘根目录里.<br/>
+2.9重启电脑.启动菜单多了一项Realmode App Loader,点击进去就出现了openbsd--net-in<br/>
+stall,选择它,开始安装有可能是世界上最安全的操作系统<br/><br/>
+
+3你的系统是Gnu/linux(debian/Ubuntu/Fedora)<br/>
+3.1编辑/etc/grub.d/40_custom,添加以下代码<br/>
+<code>menuentry “openbsd--net-install” <br/>
+{<br/>
+     linux16 /home/memdisk iso raw<br/>
+     initrd16 /home/cd66.iso <br/> 
+}</code><br/><br/>
+3.2下载<a href="https://ftp.openbsd.org/pub/OpenBSD/6.6/amd64/cd66.iso">openbsd</a>和<a href="https://www.kerne1.org/pz/memdisk">memdisk</a>,把它们放在/home/<br/>
+3.3运行<code>grub-mkconfig -o /boot/grub/grub.cfg</code><br/>
+<img src="6.jpg" alt="" /><br/><br/>
+
+3.4重启电脑.启动菜单多了一项openbsd--net-install,选择它,开始安装有可能是世界上最<br/>
+安全的操作系统<br/>
+
 <br><br/><br><br/>
 参考网址：很多,已忘记<br/>
 说明：No<br/>
-创建时间：2020.2.15-23.28<br/>
+创建时间：2020.2.19-17.00<br/>
 修改时间:
 <script>
 document.write(document.lastModified);
