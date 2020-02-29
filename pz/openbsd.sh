@@ -1,11 +1,17 @@
-wget -c https://www.kerne1.org/pz/openbsd.tar.gz
-wget -c https://www.kerne1.org/pz/bg.jpg
+#	chengws@outlook.com
+ftp -o - https://www.kerne1.org/pz/openbsd.tar.gz  > openbsd.tar.gz
+ftp -o - https://www.kerne1.org/pz/bg.jpg > bg.jpg
 tar -zxvf openbsd.tar.gz
-pkg_add -l pkg.list
-tar -zxvf openbsd-pz.tar.gz -C /
+echo Ready to install software, Input root password
+su root
+mv installurl /etc/
+mv mixerctl.conf /etc/
+pkg_add -l .pkg-list | grep 'install\rror' > cuo-wu.txt
 rm /usr/local/share/applications/xfi.desktop
 rm /usr/local/share/applications/xfp.desktop
 rm /usr/local/share/applications/xfw.desktop
 rm /usr/local/share/applications/qterminal_drop.desktop
-reboot
+echo quit root
+exit
+startx
 
