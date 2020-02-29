@@ -93,7 +93,7 @@ A是最容易的，C是大神选的<br/>
 <img src="13.jpg" alt="" /><br/><br/>
 
 （16）16.1&nbsp;&nbsp;按确认键。<br/>
-16.2&nbsp;&nbsp;按确认键。这是关于时间<br/>
+16.2&nbsp;&nbsp;按确认键。这是关于时间,有网络,系统自动设置时间<br/>
 16.3&nbsp;&nbsp;输入R按确认键重启。<br/>
 <img src="14.jpg" alt="" /><br/><br/>
 
@@ -102,13 +102,11 @@ A是最容易的，C是大神选的<br/>
 17.1&nbsp;&nbsp;输入密码然后按确认键。现在进入了系统<br/>
 <img src="15.jpg" alt="" /><br/><br/>
 
-（18）输入pkg_add&nbsp;&nbsp;wget &nbsp;&nbsp;按确认键。d和w之间有空格<br/>
-&nbsp;&nbsp;pkg_add是安装软件的命令，wget是用来下载东西的命令<br/>
-（19）wget&nbsp;&nbsp; -c&nbsp;&nbsp;https://www.kerne1.org/pz/openbsd.sh输入后按确认键，有一个数字1，小心。<br/>
-（20）chmod &nbsp;&nbsp;777&nbsp;&nbsp; openbsd.sh输入完成后按确认键，表示给它可以运行的权限。<br/>
-（21）&nbsp;&nbsp;&nbsp;./openbsd.sh输入完成后按确认键，不要忽略前面的小数点哟！<br/>
-这是在下载一些图形化的软件，然后自动安装。再把一些我配置好的设置文件解压到硬盘里<br/>
-最后自动重启,如果不能自动重启，则手按主机上的重启键<br/><br/>
+（18）激动人心的时刻就要来临<br/>
+（19<pre>sh  -c  "$(ftp  -o  -  https://www.kerne1.org/pz/openbsd.sh )"  </pre>输入后按确认键，有一个数字1，小心。<br/>
+（20）这是在下载一些图形化的软件，然后自动安装。<br/>
+（21）再把一些配置好的设置文件解压到硬盘里<br/>
+稍等一会,自动启动图形界面<br/><br/>
 
 重启后以root用户进入系统，输入startx然后按确认键，图形化桌面就显示出来了<br/>
 但是普通用户不能显示图形化桌面，不知是何原因。可有大神知道？？？<br/><br/>
