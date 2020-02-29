@@ -1,4 +1,5 @@
 #	chengws@outlook.com
+cd ~/
 ftp -o - https://www.kerne1.org/pz/openbsd.tar.gz  > openbsd.tar.gz
 ftp -o - https://www.kerne1.org/pz/bg.jpg > bg.jpg
 tar -zxvf openbsd.tar.gz
