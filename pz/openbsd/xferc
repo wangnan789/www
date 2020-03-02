@@ -31,7 +31,7 @@ root_mode=1
 treetwopanels_tree_pct=0.191
 generaltoolbar=1
 xpos=0
-locationbar=0
+locationbar=1
 xfv_replaced=1
 
 [HISTORY]
