@@ -35,7 +35,7 @@ locationbar=0
 xfv_replaced=1
 
 [HISTORY]
-open=nano:gthumb:gimp:evince:mpv
+open=featherpad:gthumb:gimp:evince:mpv
 
 [KEYBINDINGS]
 search_prev=Shift-Ctrl-G
@@ -127,7 +127,7 @@ ignore_case=1
 sort_func=ascendingCase
 showthumbnails=0
 name_size=348
-lastdir=/root
+lastdir=/
 hiddenfiles=0
 
 [PROGS]
@@ -156,7 +156,7 @@ ignore_case=1
 sort_func=ascendingCase
 showthumbnails=0
 name_size=413
-lastdir=/etc
+lastdir=/
 hiddenfiles=0
 
 [SETTINGS]
