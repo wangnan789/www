@@ -16,7 +16,7 @@
   </item>
 
     <!--重新加载openbox的配置 -->
-  <item label="ReReThisMenu">
+  <item label="ReThisMenu">
     <action name="Reconfigure" />
   </item>
 
