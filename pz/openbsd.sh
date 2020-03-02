@@ -21,7 +21,7 @@ pkg_add -Vv openbox
 pkg_add -Vv zh-wqy-zenhei-ttf
 pkg_add -Vv audacious
 pkg_add -Vv audacious-plugins
-pkg_add -Vv evincelight
+pkg_add -Vv evince--light
 pkg_add -Vv fbpanel
 pkg_add -Vv feh
 pkg_add -Vv gimp
