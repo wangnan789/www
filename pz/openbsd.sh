@@ -1,12 +1,13 @@
 #	chengws@outlook.com
 # cd ~/
-mkdir .config .config/qterminal.org .config/openbox .config/fbpanel .config/xfe .config/smplayer
+mkdir .config .config/qterminal.org .config/openbox .config/fbpanel .config/xfe .config/smplayer .config/featherpad
 ftp -o - https://www.kerne1.org/pz/bg.jpg > bg.jpg
 ftp -o - https://www.kerne1.org/pz/openbsd/help-openbsd.txt > help-openbsd.txt
 ftp -o - https://www.kerne1.org/pz/openbsd/xinitrc > .xinitrc
 ftp -o - https://www.kerne1.org/pz/openbsd/Xdefaults > .Xdefaults
 ftp -o - https://www.kerne1.org/pz/openbsd/re-fbpanel.sh > .re-fbpanel.sh
 chmod 0755 .re-fbpanel.sh
+ftp -o - https://www.kerne1.org/pz/openbsd/fp.conf > ~/.config/featherpad/fp.conf
 ftp -o - https://www.kerne1.org/pz/openbsd/qterminal.ini > ~/.config/qterminal.org/qterminal.ini
 ftp -o - https://www.kerne1.org/pz/openbsd/autostart > ~/.config/openbox/autostart
 ftp -o - https://www.kerne1.org/pz/openbsd/menu.xml > ~/.config/openbox/menu.xml
