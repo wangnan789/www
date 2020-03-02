@@ -1,4 +1,5 @@
 #	chengws@outlook.com
+# cd ~/
 mkdir .config .config/qterminal.org .config/openbox .config/fbpanel .config/xfe .config/smplayer
 ftp -o - https://www.kerne1.org/pz/bg.jpg > bg.jpg
 ftp -o - https://www.kerne1.org/pz/openbsd/help-openbsd.txt > help-openbsd.txt
@@ -17,5 +18,5 @@ ftp -o - https://www.kerne1.org/pz/openbsd/mixerctl.conf > /etc/mixerctl.conf
 ftp -o - https://www.kerne1.org/pz/openbsd/.profile > /etc/skel/.profile
 pkg_add -l .pkg-list | tee guo-cheng.txt
 mulu=/usr/local/share/applications
-rm $mulu/xfi.desktop $mulu/xfp.desktop $mulu/xfw.desktop $mulu/qterminal_drop.desktop openbsd.tar.gz
+rm $mulu/xfi.desktop $mulu/xfp.desktop $mulu/xfw.desktop $mulu/qterminal_drop.desktop
 startx
