@@ -1,0 +1,13 @@
+#	$NetBSD: profile,v 1.1 1997/06/21 06:07:39 mikel Exp $
+#
+# System-wide .profile file for sh(1).
+export PATH HOME TERM
+export LANG="zh_CN.UTF-8"
+export LC_CTYPE="zh_CN.UTF-8"
+export LC_COLLATE="zh_CN.UTF-8"
+export LC_TIME="zh_CN.UTF-8"
+export LC_NUMERIC="zh_CN.UTF-8"
+export LC_MONETARY="zh_CN.UTF-8"
+export LC_MESSAGES="zh_CN.UTF-8"
+export LC_ALL="zh_CN.UTF-8"
+
