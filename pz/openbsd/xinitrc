@@ -1,1 +1,16 @@
+export GTK_IM_MODULE="scim"
+export QT_IM_MODULE="scim"
+export XMODIFIERS="@im=SCIM"
+/usr/local/bin/scim -d
+
+export PATH HOME TERM
+export LANG="zh_CN.UTF-8"
+export LC_CTYPE="zh_CN.UTF-8"
+export LC_COLLATE="zh_CN.UTF-8"
+export LC_TIME="zh_CN.UTF-8"
+export LC_NUMERIC="zh_CN.UTF-8"
+export LC_MONETARY="zh_CN.UTF-8"
+export LC_MESSAGES="zh_CN.UTF-8"
+export LC_ALL="zh_CN.UTF-8"
+
 exec openbox-session

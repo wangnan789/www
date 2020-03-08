@@ -35,7 +35,7 @@ locationbar=1
 xfv_replaced=1
 
 [HISTORY]
-open=leafpad:gthumb:gimp:evince:vlc
+open=featherpad:gthumb:gimp:evince:mpv
 
 [KEYBINDINGS]
 search_prev=Shift-Ctrl-G
@@ -132,13 +132,13 @@ hiddenfiles=0
 
 [PROGS]
 archiver=7z x
-videoplayer=vlc
+videoplayer=smplayer
 audioplayer=audacious
 xterm=qterminal
 pdfviewer=evince
 imgviewer=gthumb
-txteditor=leafpad
-txtviewer=leafpad
+txteditor=featherpad
+txtviewer=featherpad
 
 [LEFT PANEL]
 type_size=172

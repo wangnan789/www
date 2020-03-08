@@ -6,13 +6,13 @@
 
 <menu id="root-menu" label="Openbox 3">
 
-  <item label="Xterm">
-    <action name="Execute"><execute>/usr/X11R6/bin/uxterm</execute></action>
+  <item label="Qtermi">
+    <action name="Execute"><execute>qterminal</execute></action>
   </item>
 
     <!--重新加载状态栏 -->
   <item label="RePanel">
-    <action name="Execute"><execute>~/.re-fbpanel.sh</execute></action>
+    <action name="Execute"><execute>~/.re-xfce4-panel.sh</execute></action>
   </item>
 
     <!--重新加载openbox的配置 -->

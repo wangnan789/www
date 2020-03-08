@@ -1,1 +1,28 @@
-待写
+pkg search wget		查找
+pkg info wget		信息
+
+pkg install wget		安装
+pkg delete wget		删除软件
+pkg upgrade		升级
+
+pkg query -e '%a =	0' %o		非自动安装
+pkg query -e '%a =	1' %o		自动安装
+
+pkg autoremove		删除不需要的依赖
+pkg check -d -a		检查缺少的依赖
+
+pkg which /usr/local/bin/abcd123	归属
+
+pkg stats	软件的数量与大小,包括软件仓库以及已经安装
+
+**********************************************************
+/etc		系统级配置
+/usr/local/etc		一般配置
+~/.config	~/.xinitrc	~/.profile	~/.login	~/.login_conf	~/.*shrc		个人配置
+不知道他们的优先级?
+/etc/pkg/freebsd.conf		设置软件仓库地址
+/usr/local/etc/X11/xinit/xinitrc	startx启动配置,		这个优先~/.xinitrc
+/usr/local/etc/xdg		一些桌面图形配置
+/usr/local/share/locale/		各种语言文件
+/usr/share/skel		一些配置的原始版本
+**********************************************************

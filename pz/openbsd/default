@@ -32,7 +32,7 @@ Plugin {
         }
         separator {
         }
-	menu {  
+	menu {
 	    name = 电脑
 	    icon = computer
 
@@ -88,7 +88,7 @@ Plugin {
     config {
         ShowIconified = true
         ShowMapped    = true
-        ShowAllDesks  = false
+        ShowAllDesks  = true
         tooltips = true
         IconsOnly = false
         MaxTaskWidth = 120
@@ -115,18 +115,22 @@ Plugin {
 }
 
 #下面的未启用
+
 #Plugin {
 #   type = tray
 #}
 
+电源
 #plugin {
 #    type = battery
 #}
 
+#音量 没有这个插件
 #plugin {
 #    type = volume
 #}
 
+#内存
 #Plugin {
 #   type = mem
 #   expand = false

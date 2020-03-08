@@ -1,6 +1,9 @@
 pkg_info	audacity		(显示软件的相关信息
 pkg_info -Q audacity	(在第一个存储库查找软件, Qa 在所有的存储库查找
 pkg_info -mz          (输出手动安装软件的列表
+pkg_info -L	audacity			(安装在系统里的文件
+pkg_info -s	audacity			(大小
+
 
 pkg_add  	audacity		(安装软件
 pkg_add  -s audacity  (虚拟安装,显示安装大小
