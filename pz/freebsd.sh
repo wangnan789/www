@@ -1,21 +1,21 @@
 #	chengws@outlook.com
 mkdir -p .config/qterminal.org .config/openbox .config/xfe .config/xfce4/xfconf/xfce-perchannel-xml /usr/local/etc/pkg/repos
-fetch https://www.kerne1.org/pz/openbsd/qterminal.ini -o ~/.config/qterminal.org/
-fetch https://www.kerne1.org/pz/bg.jpg
-fetch https://www.kerne1.org/pz/openbsd/tmux.conf -o .tmux.conf
-fetch https://www.kerne1.org/pz/openbsd/xferc -o ~/.config/xfe/
-fetch https://www.kerne1.org/pz/openbsd/xinitrc -o .xinitrc
-fetch https://www.kerne1.org/pz/freebsd/FreeBSD.conf -o /usr/local/etc/pkg/repos/
-fetch https://www.kerne1.org/pz/freebsd/menu.xml -o ~/.config/openbox/
-fetch https://www.kerne1.org/pz/freebsd/re-xfce4-panel.sh
-fetch https://www.kerne1.org/pz/freebsd/autostart -o ~/.config/openbox/
-fetch https://www.kerne1.org/pz/freebsd/help-freebsd.txt
-fetch https://www.kerne1.org/pz/freebsd/login_conf -o .login_conf
+fetch --no-verify-peer https://www.kerne1.org/pz/openbsd/qterminal.ini -o ~/.config/qterminal.org/
+fetch --no-verify-peer https://www.kerne1.org/pz/bg.jpg
+fetch --no-verify-peer https://www.kerne1.org/pz/openbsd/tmux.conf -o .tmux.conf
+fetch --no-verify-peer https://www.kerne1.org/pz/openbsd/xferc -o ~/.config/xfe/
+fetch --no-verify-peer https://www.kerne1.org/pz/openbsd/xinitrc -o .xinitrc
+fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/FreeBSD.conf -o /usr/local/etc/pkg/repos/
+fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/menu.xml -o ~/.config/openbox/
+fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/re-xfce4-panel.sh
+fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/autostart -o ~/.config/openbox/
+fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/help-freebsd.txt
+fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/login_conf -o .login_conf
 mulu=/usr/local/share/applications
-fetch https://www.kerne1.org/pz/xfce4/xfce4-taskmanager.rc -o ~/.config/xfce4/
-fetch https://www.kerne1.org/pz/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml -o ~/.config/xfce4/xfconf/xfce-perchannel-xml/
-fetch https://www.kerne1.org/pz/xfce4/reboot.desktop -o $mulu/
-fetch https://www.kerne1.org/pz/xfce4/shutdown.desktop -o $mulu/
+fetch --no-verify-peer https://www.kerne1.org/pz/xfce4/xfce4-taskmanager.rc -o ~/.config/xfce4/
+fetch --no-verify-peer https://www.kerne1.org/pz/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml -o ~/.config/xfce4/xfconf/xfce-perchannel-xml/
+fetch --no-verify-peer https://www.kerne1.org/pz/xfce4/reboot.desktop -o $mulu/
+fetch --no-verify-peer https://www.kerne1.org/pz/xfce4/shutdown.desktop -o $mulu/
 pkg update -y
 echo y | pkg install xorg-minimal openbox
 echo y | pkg install wqy-fonts qterminal
@@ -43,3 +43,4 @@ echo "NoDisplay=true" >> $mulu/exo-terminal-emulator.desktop
 echo "NoDisplay=true" >> $mulu/exo-web-browser.desktop
 echo "NoDisplay=true" >> $mulu/xfce4-about.desktop
 startx
+exit
