@@ -5,7 +5,7 @@ fetch --no-verify-peer https://www.kerne1.org/pz/bg.jpg
 fetch --no-verify-peer https://www.kerne1.org/pz/openbsd/tmux.conf -o .tmux.conf
 fetch --no-verify-peer https://www.kerne1.org/pz/openbsd/xferc -o ~/.config/xfe/
 fetch --no-verify-peer https://www.kerne1.org/pz/openbsd/xinitrc -o .xinitrc
-fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/FreeBSD.conf -o /usr/local/etc/pkg/repos/
+#fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/FreeBSD.conf -o /usr/local/etc/pkg/repos/
 fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/menu.xml -o ~/.config/openbox/
 fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/re-xfce4-panel.sh
 fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/autostart -o ~/.config/openbox/
