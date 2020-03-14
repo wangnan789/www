@@ -16,7 +16,7 @@ fetch --no-verify-peer https://www.kerne1.org/pz/xfce4/xfce4-taskmanager.rc -o ~
 fetch --no-verify-peer https://www.kerne1.org/pz/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml -o ~/.config/xfce4/xfconf/xfce-perchannel-xml/
 fetch --no-verify-peer https://www.kerne1.org/pz/xfce4/reboot.desktop -o $mulu/
 fetch --no-verify-peer https://www.kerne1.org/pz/xfce4/shutdown.desktop -o $mulu/
-pkg update -y
+pkg update
 echo y | pkg install xorg-minimal openbox
 echo y | pkg install wqy-fonts qterminal
 echo y | pkg install xfce4-panel xfce4-taskmanager
