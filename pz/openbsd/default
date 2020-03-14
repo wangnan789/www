@@ -74,9 +74,9 @@ Plugin {
             action = qterminal
         }
 	button {
-            icon = firefox
+            icon = web-browser
             tooltip = 网页
-            action = firefox
+            action = firefox-exr
     	}
     }
 }

@@ -1,4 +1,20 @@
 body {
-  background-color:#98cef0;
-  
+background-color:#98cef0;
+width: 690px;
       }
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #98cef0;
+}
+
+code
+{
+background-color:#EFE7D6;
+border: 1pt solid black;
+}
+
+
+

@@ -3,17 +3,21 @@ pkg info wget		信息
 
 pkg install wget		安装
 pkg delete wget		删除软件
+pkg  update   更新库
 pkg upgrade		升级
 
-pkg query -e '%a =	0' %o		非自动安装
+pkg prime-list		非自动安装
 pkg query -e '%a =	1' %o		自动安装
 
 pkg autoremove		删除不需要的依赖
 pkg check -d -a		检查缺少的依赖
-
+pkg clean -a   清理缓存
 pkg which /usr/local/bin/abcd123	归属
 
 pkg stats	软件的数量与大小,包括软件仓库以及已经安装
+
+如果不能安装软件,删除/var/db/pkg/目录下的所有文件,再执行下面的命令
+pkg update -f && pkg upgrade -y
 
 **********************************************************
 /etc		系统级配置

@@ -1,0 +1,21 @@
+[Desktop Entry]
+Name=Shutdown
+Name[zh_CN]=关机
+Name[zh_HK]=关机
+Name[zh_TW]=关机
+GenericName=Reboot
+GenericName[zh_CN]=关机
+GenericName[zh_HK]=关机
+GenericName[zh_TW]=关机
+Comment=Reboot
+Comment[zh_CN]=关机
+Comment[zh_HK]=关机
+Comment[zh_TW]=关机
+TryExec=halt -p
+Exec=halt -p
+StartupNotify=true
+Terminal=false
+Type=Application
+Icon=
+Categories=Utility;X-XFCE;X-Xfce-Toplevel;
+OnlyShowIn=XFCE;
