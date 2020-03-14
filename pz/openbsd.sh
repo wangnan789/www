@@ -17,25 +17,25 @@ ftp -o - https://www.kerne1.org/pz/openbsd/default > ~/.config/fbpanel/default
 ftp -o - https://www.kerne1.org/pz/openbsd/xferc > ~/.config/xfe/xferc
 ftp -o - https://www.kerne1.org/pz/openbsd/installurl > /etc/installurl
 ftp -o - https://www.kerne1.org/pz/openbsd/mixerctl.conf > /etc/mixerctl.conf
-pkg_add  openbox
-pkg_add zh-wqy-zenhei-ttf
-pkg_add fbpanel
-pkg_add qterminal
+pkg_add -I openbox
+pkg_add -I zh-wqy-zenhei-ttf
+pkg_add -I fbpanel
+pkg_add -I qterminal
 #目前仅发现leafpad支持输入中文
-pkg_add scim scim-tables scim-pinyin
-pkg_add xfe
-pkg_add xfce4-taskmanager
-pkg_add audacious
-pkg_add audacious-plugins
-pkg_add evince--light
-pkg_add feh
-pkg_add gimp
-pkg_add gthumb
-pkg_add meld
-pkg_add vlc nano
-pkg_add wget
-pkg_add leafpad
-pkg_add firefox-esr
+pkg_add -I scim scim-tables scim-pinyin
+pkg_add -I xfe
+pkg_add -I xfce4-taskmanager
+pkg_add -I audacious
+pkg_add -I audacious-plugins
+pkg_add -I evince--light
+pkg_add -I feh
+pkg_add -I gimp
+pkg_add -I gthumb
+pkg_add -I meld
+pkg_add -I vlc nano
+pkg_add -I wget aria2
+pkg_add -I leafpad
+pkg_add -I firefox-esr
 
 wei=`find /usr -name gnomeblue-theme`
 sed  -i "s#iconpath=#&$wei#"  ~/.config/xfe/xferc
