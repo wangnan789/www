@@ -7,23 +7,20 @@ fetch --no-verify-peer https://www.kerne1.org/pz/openbsd/xferc -o ~/.config/xfe/
 fetch --no-verify-peer https://www.kerne1.org/pz/openbsd/xinitrc -o .xinitrc
 #fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/FreeBSD.conf -o /usr/local/etc/pkg/repos/
 fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/menu.xml -o ~/.config/openbox/
-fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/re-xfce4-panel.sh
+fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/re-xfce4-panel.sh -o .re-xfce4-panel.sh
+chmod 0755 .re-xfce4-panel.sh
 fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/autostart -o ~/.config/openbox/
 fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/help-freebsd.txt
 fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/login_conf -o .login_conf
-mulu=/usr/local/share/applications
 fetch --no-verify-peer https://www.kerne1.org/pz/xfce4/xfce4-taskmanager.rc -o ~/.config/xfce4/
 fetch --no-verify-peer https://www.kerne1.org/pz/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml -o ~/.config/xfce4/xfconf/xfce-perchannel-xml/
-fetch --no-verify-peer https://www.kerne1.org/pz/xfce4/reboot.desktop -o $mulu/
-fetch --no-verify-peer https://www.kerne1.org/pz/xfce4/shutdown.desktop -o $mulu/
-pkg update
+pkg update -y
 echo y | pkg install xorg-minimal openbox
 echo y | pkg install wqy-fonts qterminal
 echo y | pkg install xfce4-panel xfce4-taskmanager
-echo y | pkg install xfe vlc nano
-echo y | pkg install evince-lite firefox
-echo y | pkg install gimp gthumb
-echo y | pkg install meld wget leafpad
+echo y | pkg install xfe vlc
+echo y | pkg install firefox evince-lite
+echo y | pkg install wget leafpad gpicview mtpaint
 echo y | pkg install audacious audacious-plugins
 echo y | pkg install ibus ibus-m17n ibus-table zh-ibus-libpinyin
 dbus-uuidgen > /etc/machine-id
@@ -31,6 +28,9 @@ cp /usr/local/bin/vlc /usr/local/bin/vlc-bf
 sed -i 's/geteuid/getppid/' /usr/local/bin/vlc
 wei=`find /usr -name gnomeblue-theme`
 sed  -i "s#iconpath=#&$wei#"  ~/.config/xfe/xferc
+mulu=/usr/local/share/applications
+fetch --no-verify-peer https://www.kerne1.org/pz/xfce4/reboot.desktop -o $mulu/
+fetch --no-verify-peer https://www.kerne1.org/pz/xfce4/shutdown.desktop -o $mulu/
 sed -i 's/Utility;//' $mulu/xfce4-taskmanager.desktop
 echo "NoDisplay=true" >> $mulu/xfi.desktop
 echo "NoDisplay=true" >> $mulu/xfp.desktop
