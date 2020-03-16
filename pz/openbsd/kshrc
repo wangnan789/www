@@ -7,4 +7,13 @@ export LC_TIME="zh_CN.UTF-8"
 export LC_NUMERIC="zh_CN.UTF-8"
 export LC_MONETARY="zh_CN.UTF-8"
 export LC_MESSAGES="zh_CN.UTF-8"
-export LC_ALL="zh_CN.UTF-8"
+export LC_ALL=
+
+
+export CLICOLOR=1
+PS1='\[\e[34;47m\]\u@\h-\#$ '
+	#BSD#@export CLICOLOR=1
+	alias ls='ls --color=auto'
+	alias grep='grep --colour=auto'
+	alias egrep='egrep --colour=auto'
+	alias fgrep='fgrep --colour=auto'
