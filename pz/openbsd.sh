@@ -18,28 +18,17 @@ ftp -o - https://www.kerne1.org/pz/openbsd/xferc > ~/.config/xfe/xferc
 ftp -o - https://www.kerne1.org/pz/openbsd/installurl > /etc/installurl
 ftp -o - https://www.kerne1.org/pz/openbsd/mixerctl.conf > /etc/mixerctl.conf
 pkg_add -I openbox
-pkg_add -I zh-wqy-zenhei-ttf
-pkg_add -I fbpanel
-pkg_add -I qterminal
+pkg_add -I qterminal zh-wqy-zenhei-ttf
+pkg_add -I fbpanel 
 #目前仅发现leafpad支持输入中文
 pkg_add -I scim scim-tables scim-pinyin
-pkg_add -I xfe
+pkg_add -I xfe gpicview wget leafpad
 pkg_add -I xfce4-taskmanager
-pkg_add -I audacious
-pkg_add -I audacious-plugins
-pkg_add -I evince--light
-pkg_add -I feh
-pkg_add -I gimp
-pkg_add -I gthumb
-pkg_add -I meld
-pkg_add -I vlc nano
-pkg_add -I wget aria2
-pkg_add -I leafpad
-pkg_add -I firefox-esr
-
+pkg_add -I audacious audacious-plugins
+pkg_add -I vlc mtpaint
+pkg_add -I firefox
 wei=`find /usr -name gnomeblue-theme`
 sed  -i "s#iconpath=#&$wei#"  ~/.config/xfe/xferc
-
 cp /usr/local/bin/vlc /usr/local/bin/vlc-bf
 sed -i 's/geteuid/getppid/' /usr/local/bin/vlc
 mulu=/usr/local/share/applications
@@ -49,3 +38,4 @@ echo "NoDisplay=true" >> $mulu/xfp.desktop
 echo "NoDisplay=true" >> $mulu/xfw.desktop
 echo "NoDisplay=true" >> $mulu/qterminal_drop.desktop
 startx
+exit
