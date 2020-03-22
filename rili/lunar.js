@@ -877,11 +877,11 @@ function Lunar(){
 
  //html月历生成,结果返回在lun中,curJD为当前日期(用于设置今日标识)
  this.yueLiHTML=function(By,Bm,curJD){
-  var sty_head =' style="font-family: 宋体; font-size: 14px; text-align: center; background-color: #E0E0FF; color: #000000; font-weight: bold" ';
+  var sty_head =' style="font-family: 宋体; font-size: 14px; text-align: center; background-color: #ff4e76; color: #000000; font-weight: bold" ';//星期1-7的颜色--红色
   var sty_body =' style="font-family: 宋体; font-size: 12px; text-align: center " ';
   var sty_date =' style="font-family: Arial Black; text-align: center;font-size: 20px" ';
-  var sty_date2=' style="font-family: Arial Black; text-align: center;font-size: 20px; color: #FF0000" ';
-  var sty_cur  =' style="background-color:#90D050" ';
+  var sty_date2=' style="font-family: Arial Black; text-align: center;font-size: 20px; color: #FF0000" ';//周末颜色--红色
+  var sty_cur  =' style="background-color:#ffb1ba" ';//今天日期颜色--浅红
 
   var i,j, c,c2, cr="",isM;
   var ob; //日历物件
@@ -892,7 +892,7 @@ function Lunar(){
   if(c.length>33) c = '<span style="font-size:12px">'+c+'</span>';
   else            c = '<span style="font-size:16px;font-weight:bold">'+c+'</span>';
 
-  var ta0='<tr><td colspan=7 style="background-color:#5555ff" style="color=#FFFF00">'+c+'</td></tr>'; //显示年号
+  var ta0='<tr><td colspan=7 style="background-color:#5555ff" >'+c+'</td></tr>'; //显示年号,颜色--蓝色
 
   //月历处理
   ta0+='<tr>'

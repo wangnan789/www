@@ -1,6 +1,5 @@
 body {
 background-color:#98cef0;
-width: 690px;
       }
 
 .sticky {
@@ -16,5 +15,10 @@ background-color:#EFE7D6;
 border: 1pt solid black;
 }
 
+ol {
+display:block;
+margin:0em;
+}
 
+li { height:0.2em; }
 

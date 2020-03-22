@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+<title>Linux—shell相关信息-转载</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../css/my.css" />
+<style>
+table,table tr th, table tr td { border:0.1em solid ; }
+table{ border-collapse: collapse; }  
+td{ text-align:center; }
+</style>
+</head>
+
+<body>
+
+<div class="sticky">
+我们都是地球人,大家相亲相爱互相尊重帮助,不要打架不要打仗不要伤害,世界永远和平美好.<br/>
+<a href="../联系我/联系我.html" target="_blank">联系我</a>&nbsp;Copyright &copy; 2016. 
+<a href="https://www.kerne1.org">www.kerne1.org</a>&nbsp;&nbsp;All rights reserved.</div><br/>
+
+<pre><ul><li><a href="#输入与输出">输入与输出</a></li>
+<li><a href="#两种命令替换形式">两种命令替换形式$( )、``</a></li>
+<li><a href="#${ }变量替换">${ }变量替换</a></li>
+<li><a href="#取路径、文件名、后缀">取路径、文件名、后缀</a></li>
+<li><a href="#取子串及替换">取子串及替换</a></li>
+<li><a href="#根据状态为变量赋值">根据状态为变量赋值</a></li>
+<li><a href="#数组">数组</a></li>
+<li><a href="#$(( ))与整数运算">$(( ))与整数运算</a></li>
+<li><a href="#进制转换">进制转换</a></li>
+<li><a href="#(( ))重定义变量值">(( ))重定义变量值</a></li>
+<li><a href="#read 读取控制台输入">read 读取控制台输入</a></li>
+<li><a href="#确定参数是否存在">确定参数是否存在</a></li>
+<li><a href="#read -t 等待时间">read -t 等待时间</a></li>
+<li><a href="#read -n 输入字符个数">read -n 输入字符个数</a></li>
+<li><a href="#read -s输入密码">read -s输入密码</a></li>
+<li><a href="#read 读取一行文本">read 读取一行文本</a></li>
+<li><a href="#shell输入自动化">shell输入自动化</a></li>
+</ul>
+		 <b id="输入与输出">Shell中的输入与输出</b>
+
+ Linux Shell 环境中支持输入输出重定向，用符号"<"和">"来表示。0、1和2分别表示标
+准输入、标准输出和标准错误信息输出，可以用来指定需要重定向的标准输入或输出，比如  
+<code> 2>a.txt </code>表示将错误信息输出到文件a.txt中。
+
+同时，还可以在这三个标准输入输出之间实现重定向，比如将错误信息重定向到标准输出，可
+以用<code> 2>&1 </code>来实现。
+
+ Linux下还有一个非凡的文件/dev/null，它就像一个无底洞，所有重定向到它的信息都会
+消失得无影无踪。这一点非常有用，当我们不需要回显程序的所有信息时，就可以将输出重定
+向到/dev/null。
+
+ 假如想要正常输出和错误信息都不显示，则要把标准输出和标准错误都重定向到/dev/null
+例如：<code> ls 1>/dev/null 2>/dev/null </code>
+
+ 还有一种做法是将错误重定向到标准输出，然后再重定向到 /dev/null，例如：
+<code> ls >/dev/null 2>&1 </code>
+注意：此处的顺序不能更改，否则达不到想要的效果，此时先将标准输出重定向到/dev/null
+然后将标准错误重定向到标准输出，由于标准输出已经重定向到了/dev/null，因此标准错误
+也会重定向到/dev/null，于是一切静静静。
+————————————————
+版权声明：本文为CSDN博主「jack-zhu」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转
+载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/zhu_xun/article/details/16818691
+
+         <b>$(( ))、$( )、``与${ }的区别</b>
+
+<b id="两种命令替换形式">命令替换</b>
+在bash中，$( )与` `（反引号）都是用来作命令替换的。
+命令替换与变量替换差不多，都是用来重组命令行的，先完成引号里的命令行,然后将其结果
+替换出来，再重组成新的命令行。
+
+例1<code>
+ echo today is $(date "+%Y-%m-%d") 
+ today is 2014-07-01              </code>
+
+$( )与｀｀
+在操作上，这两者都是达到相应的效果，但是建议使用$( )，理由如下：
+
+｀｀很容易与''搞混乱，尤其对初学者来说。
+在多层次的复合替换中，｀｀必须要额外的跳脱处理（反斜线），而$( )比较直观。
+最后，$( )的弊端是，并不是所有的类unix系统都支持这种方式，但反引号是肯定支持的。
+
+例2<code>
+ # 将cmd1执行结果作为cmd2参数，再将cmd2结果作为cmd3的参数 
+ cmd3 $(cmd2 $(cmd1)) 
+ # 如果是用反引号，直接引用是不行的，还需要作跳脱处理 
+ cmd3 `cmd2 \`cmd1\`` </code>
+
+ <b id="${ }变量替换">${ }变量替换</b>
+一般情况下，$var与${var}是没有区别的，但是用${ }会比较精确的界定变量名称的范围
+<code>    $ A=B 
+    $ echo ${A}B 
+    BB 
+</code>
+
+<b id="取路径、文件名、后缀">取路径、文件名、后缀</b>
+先赋值一个变量为一个路径，如下：
+<code> file=/dir1/dir2/dir3/my.file.txt </code>
+<table><thead><tr><th> 命令 </th><th> 解释 </th><th> 结果 </th></tr></thead><tbody>
+<tr><td> ${file#*/} </td><td> 删掉第一条 / 及其左边的字符串 </td><td> dir1/dir2/dir3/my.file.txt </td></tr>
+<tr><td> ${file##*/} </td><td> 删掉最后一条 / 及其左边的字符串 </td><td> my.file.txt </td></tr>
+<tr><td> ${file#*.} </td><td> 删掉第一个 . 及其左边的字符串 </td><td> file.txt </td></tr>
+<tr><td> ${file##*.} </td><td> 删掉最后一个 . 及其左边的字符串 </td><td> txt </td></tr>
+<tr><td> ${file%/*} </td><td> 删掉最后一条 / 及其右边的字符串 </td><td> /dir1/dir2/dir3 </td></tr>
+<tr><td> ${file%%/*} </td><td> 删掉第一条 / 及其右边的字符串 </td><td> (空值) </td></tr>
+<tr><td> ${file%.*} </td><td> 删掉最后一个 . 及其右边的字符串 </td><td> /dir1/dir2/dir3/my.file </td></tr>
+<tr><td> ${file%%.*} </td><td> 删掉第一个 . 及其右边的字符串 </td><td> /dir1/dir2/dir3/my </td></tr></tbody></table>
+
+<b id="取子串及替换">取子串及替换</b>
+<table><thead><tr><th> 命令 </th><th> 解释 </th><th> 结果 </th></tr></thead><tbody>
+<tr><td> ${file:0:5} </td><td> 提取最左边的 5 个字节 </td><td> /dir1</td></tr>
+<tr><td> ${file:5:5} </td><td> 提取第 5 个字节右边的连续 5 个字节 </td><td> /dir2 </td></tr>
+<tr><td> ${file/dir/path} </td><td> 将第一个 dir 替换为 path </td><td> /path1/dir2/dir3/my.file.txt </td></tr>
+<tr><td> ${file//dir/path} </td><td> 将全部 dir 替换为 path </td><td> /path1/path2/path3/my.file.txt </td></tr>
+<tr><td> ${#file} </td><td> 获取变量长度 </td><td>27<br></td></tr></tbody></table>
+
+<b id="根据状态为变量赋值">根据状态为变量赋值</b>
+<table><thead><tr><th> 命令 </th><th> 解释 </th><th> 备注 </th></tr></thead><tbody>
+<tr><td> ${file-my.file.txt} </td><td> 若 $file 没设定,则使用 my.file.txt 作传回值 </td><td> 空值及非空值不作处理 </td></tr>
+<tr><td> ${file:-my.file.txt} </td><td> 若 $file 没有设定或为空值,则使用 my.file.txt 作传回值 </td><td> 非空值时不作处理 </td></tr>
+<tr><td> ${file+my.file.txt} </td><td> 若$file 设为空值或非空值,均使用my.file.txt作传回值 </td><td> 没设定时不作处理 </td></tr>
+<tr><td> ${file:+my.file.txt} </td><td> 若 $file 为非空值,则使用 my.file.txt 作传回值 </td><td> 没设定及空值不作处理 </td></tr>
+<tr><td> ${file=txt} </td><td> 若 $file 没设定,则回传 txt ,并将 $file 赋值为 txt </td><td> 空值及非空值不作处理 </td></tr>
+<tr><td> ${file:=txt} </td><td> 若 $file 没设定或空值,则回传 txt ,将 $file 赋值为txt </td><td> 非空值时不作处理 </td></tr>
+<tr><td> ${file?my.file.txt} </td><td> 若 $file 没设定,则将 my.file.txt 输出至 STDERR </td><td> 空值及非空值不作处理 </td></tr>
+<tr><td> ${file:?my.file.txt} </td><td> 若 $file没设定或空值,则将my.file.txt输出至STDERR </td><td> 非空值时不作处理 <br></td></tr></tbody></table>
+
+<b id="数组">数组</b>
+<code>    A="a b c def"   # 定义字符串 
+    A=(a b c def)   # 定义字符数组 
+</code>
+<table><thead><tr><th> 命令</th><th> 解释 </th><th> 结果 </th></tr></thead><tbody>
+<tr><td> ${A[@]} </td><td> 返回数组全部元素 </td><td> a b c def </td></tr>
+<tr><td> ${A[*]} </td><td> 同上 </td><td> a b c def </td></tr>
+<tr><td> ${A[0]} </td><td> 返回数组第一个元素 </td><td> a </td></tr>
+<tr><td> ${#A[@]} </td><td> 返回数组元素总个数 </td><td> 4 </td></tr>
+<tr><td> ${#A[*]} </td><td> 同上 </td><td> 4 </td></tr>
+<tr><td> ${#A[3]} </td><td> 返回第四个元素的长度，即def的长度 </td><td> 3 </td></tr>
+<tr><td> A[3]=xyz </td><td> 则是将第四个组数重新定义为 xyz </td><td>  </td></tr>
+</tbody></table>
+
+<b id="$(( ))与整数运算"> $(( ))与整数运算</b>
+bash中整数运算符号
+<table><thead><tr><th> 符号 </th><th> 功能 </th></tr></thead><tbody>
+<tr><td> + - * / </td><td> 分别为加、减、乘、除 </td></tr>
+<tr><td> % </td><td> 余数运算 </td></tr>
+<tr><td>  | ^ ! </td><td> 分别为“AND、OR、XOR、NOT” </td></tr>
+</tbody></table>
+
+在 $(( )) 中的变量名称,可于其前面加 $ 符号来替换,也可以不用。
+<code>    $ a=5;b=7;c=2 
+    $ echo $((a+b*c)) 
+    19 
+    $ echo $(($a+$b*$c)) 
+    19 
+</code>
+
+<b id="进制转换">进制转换</b>
+$(( ))可以将其他进制转成十进制数显示出来。用法如下：
+<code> echo $((N#xx)) </code>
+其中，N为进制，xx为该进制下某个数值，命令执行后可以得到该进制数转成十进制后的值。
+<code>    $ echo $((2#110))   # 二进制转十进制 
+    6 
+    $ echo $((16#2a))   ＃ 十六进制转十进制 
+    42 
+    $ echo $((8#11))    ＃ 八进制转十进制 
+    9 
+</code>
+
+<b id="(( ))重定义变量值">(( ))重定义变量值</b>
+<code>    $ a=5;b=7 
+    $ ((a++));echo $a 
+    6 
+    $ ((a--));echo $a 
+    5 
+	$ ((a&lt;b));echo $? 
+	0 
+</code>
+使用(( ))作整数测试时，不要跟[ ]的整数测试搞混乱了。
+————————————————
+版权声明：本文为CSDN博主「jack-zhu」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转
+载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/number_0_0/article/details/73291182
+
+
+
+         <b id="read 读取控制台输入">shell读取控制台输入</b>
+
+read 读取控制台输入
+基本语法
+read(选项)(参数)
+选项：
+-p：指定读取值时的提示符；
+-t：指定读取值时等待的时间（秒），如果没有在指定的时间内输入，就不再等待了。。
+参数
+变量：指定读取值的变量名
+<code>#!/bin/bash 
+#例 1：读取控制台输入的一个 num 值 
+read -p "请您输入一个数字" NUM1 
+echo "您输入的数字是$NUM1" 
+#例 2：读取控制台输入的一个 num 值，在 10 秒内输入 
+read -t 10 -p "请您在10秒钟内输入一个数字" NUM2 
+echo "您输入的数字是$NUM2" </code>
+————————————————
+版权声明：本文为CSDN博主「lay500」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载
+请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/czh500/article/details/84783650
+
+         <b id="确定参数是否存在">确定参数是否存在</b>
+在使用参数之前一定要检查参数是否存在
+<code>#!/bin/bash 
+if [ -n "$1" ] 
+then 
+	echo "Hello $1" 
+else 
+	echo "please input ont paremeter" 
+fi </code>
+
+<b id="read -t 等待时间">等待时间</b>
+read -t 等待时间。如果计时器过期，会返回一个非0退出码
+<code>#!/bin/bash 
+if read -t 5 -p "Please enter your name: " name 
+then 
+	echo "hello $name" 
+else 
+	echo "too late" 
+fi </code>
+
+<b id="read -n 输入字符个数">输入字符个数</b>
+read -n 输入字符个数。当字符达到预设的字符数时，就自动退出，将输入的数据赋给变量
+<code>#!/bin/bash 
+read -n1 -p "Do you want to continue [Y/N]?" answer 
+case $answer in 
+Y | y) echo 
+	echo "contine on ..";; 
+N | n) echo 
+	echo "byebye!" 
+	exit;; 
+esac 
+echo "End" </code>
+
+<b id="read -s输入密码">输入密码</b>
+read -s输入密码（实际上，数据会被显示，只是read命令会将文本颜色设成跟背景色一样）
+<code>#!/bin/bash 
+read -s -p "Enter your password: " pas 
+echo "password:$pas" </code>
+
+<b id="read 读取一行文本">读取一行文本</b>
+每次调用read命令，它都会从文件中读取一行文本。当文件中再没有内容时，read命令会退
+出并返回非零退出状态码。
+<code>#!/bin/bash 
+count=1 
+cat out.txt | while read line 
+do 
+	echo "Line $count:$line" 
+	count=$[ $count + 1] 
+done </code>
+————————————————
+版权声明：本文为CSDN博主「Ocean&amp;&amp;Star」的原创文章，遵循 CC 4.0 BY-SA
+版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/zhizhengguan/article/details/88391694
+
+﻿﻿       <b id="shell输入自动化">shell中交互输入自动化﻿﻿</b>
+shell中有时我们需要交互，但是呢我们又不想每次从stdin输入，想让其自动化，这时我们
+就要使shell交互输入自动化了。这个功能很有用的哟。好好学习。
+1利用重定向
+重定向的方法应该是最简单的
+以下的test.sh是要求我们从stdin中分别输入no,name然后将输入的no,name打印出来
+<code># cat test.sh 
+#! /bin/bash 
+read -p "enter number:" no 
+read -p "enter name:" name 
+echo you have entered $no, $name </code>
+
+以下是作为输入的文件内容：
+<code># cat input.data 
+1 
+lufubo </code>
+
+然后我们利用重定向来完成交互的自动化：
+<code># ./test.sh &lt; input.data 
+you have entered 1, lufubo </code>
+看吧！效果不错吧！哈哈
+
+2 利用管道完成交互的自动化
+这个就是利用管道特点，让前个命令的输出作为后个命令的输入完成的,也用上面例子举例：
+<code># echo -e "1\nlufbo\n" | ./test.sh 
+you have entered 1, lufbo </code>
+上面中的 "1\nlufbo\n" 中的“\n”是换行符的意思，这个比较简单的。
+
+3利用expect
+expect是用来交互自动化的工具，但它有可能不是随系统就安装好的，有时需要自己手工安
+装该命令,以下脚本完成跟上述相同的功能
+<code># cat expect_test.sh 
+#! /usr/bin/expect 
+spawn ./test.sh 
+expect "enter number:" 
+send "1\n" 
+expect "enter name:" 
+send "lufubo\n" 
+expect off </code>
+
+注意：第一行是/usr/bin/expect，这个是选用解释器的意思，我们shell一般选的是 /bin/bash,这里不是
+spawn: 指定需要将哪个命令自动化
+expect:需要等待的消息
+send:是要发送的命令
+expect off:指明命令交互结束
+————————————————
+版权声明：本文为CSDN博主「lufubo」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载
+请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/lufubo/article/details/7627393
+
+
+
+参考网址：网络
+说明：未完全测试
+创建时间：2020.3.21
+修改时间:<script>document.write(document.lastModified);</script>
+
+<pre></body></html>
