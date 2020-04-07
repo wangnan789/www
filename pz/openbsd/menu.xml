@@ -7,7 +7,7 @@
 <menu id="root-menu" label="Openbox 3">
 
   <item label="Xterm">
-    <action name="Execute"><execute>/usr/X11R6/bin/uxterm</execute></action>
+    <action name="Execute"><execute>/usr/X11R6/bin/xterm</execute></action>
   </item>
 
     <!--重新加载状态栏 -->

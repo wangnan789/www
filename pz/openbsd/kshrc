@@ -1,5 +1,7 @@
 HISTFILE="$HOME/.ksh_history"
 HISTSIZE=5000
+
+#有时候未必起作用
 export LANG="zh_CN.UTF-8"
 export LC_CTYPE="zh_CN.UTF-8"
 export LC_COLLATE="zh_CN.UTF-8"

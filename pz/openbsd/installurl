@@ -1,7 +1,7 @@
 #	chengws@outlook.com
 #这个文件的位置放在/etc/
-https://cdn.openbsd.org/pub/OpenBSD/
-#https://mirrors.tuna.tsinghua.edu.cn/OpenBSD/
+#https://cdn.openbsd.org/pub/OpenBSD/
+https://mirrors.tuna.tsinghua.edu.cn/OpenBSD/
 #https://cloudflare.cdn.openbsd.org/pub/OpenBSD/
 #https://mirror.vdms.com/pub/OpenBSD/
 #https://mirror.leaseweb.com/pub/OpenBSD/

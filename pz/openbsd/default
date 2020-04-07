@@ -76,7 +76,7 @@ Plugin {
 	button {
             icon = web-browser
             tooltip = 网页
-            action = firefox-exr
+            action = firefox
     	}
     }
 }
