@@ -61,7 +61,6 @@ pkg_add -I openbox
 pkg_add -I qterminal zh-wqy-zenhei-ttf
 
 #安装状态栏
-
 pkg_add -I fbpanel 
 
 #安装scim拼音输入法,目前仅发现leafpad支持输入中文
