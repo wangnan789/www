@@ -1,10 +1,10 @@
 // Gecko = Netscape 7.x & Mozilla 1.4+
 
 LastNo=0;
-SPACECHAR=" "; // ¿Õ°××ÖÔª¡£
-CandChinesePart=new Array(); //ºîÑ¡×Ö£¬ÖĞÎÄ×Ö²¿·İ
-CandCompPart=new Array();    //ºîÑ¡×Ö, ºóÂë²¿·İ£¬Èç¡°ÎÒo¡±ÀïµÄo
-AsciiStr="a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z"; //¶¨ÒåÊ¹ÓÃµÄ±àÂë¡£
+SPACECHAR=" "; // ç©ºç™½å­—å…ƒã€‚
+CandChinesePart=new Array(); //ä¾¯é€‰å­—ï¼Œä¸­æ–‡å­—éƒ¨ä»½
+CandCompPart=new Array();    //ä¾¯é€‰å­—, åç éƒ¨ä»½ï¼Œå¦‚â€œæˆ‘oâ€é‡Œçš„o
+AsciiStr="a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z"; //å®šä¹‰ä½¿ç”¨çš„ç¼–ç ã€‚
 AsciiStr=AsciiStr.split(',');
 CodeList=CodeList.split(',');
 
@@ -12,28 +12,28 @@ CtrlDown=false;
 CancelKey=false;
 passNextKeyPress = true;
 //==KeyCode 33..47
-//Symbol1 = "£¡£¢££¡ç£¥£¦£§£¨£©£ª£«£¬£­¡££¯";
+//Symbol1 = "ï¼ï¼‚ï¼ƒï¼„ï¼…ï¼†ï¼‡ï¼ˆï¼‰ï¼Šï¼‹ï¼Œï¼ã€‚ï¼";
 //==KeyCode 58..64
-//Symbol2 = "£º£»£¼£½£¾£¿£À";
+//Symbol2 = "ï¼šï¼›ï¼œï¼ï¼ï¼Ÿï¼ ";
 //==KeyCode 91..96
-//Symbol3 = "£Û¡¢£ı£Ş£ß£à";
+//Symbol3 = "ï¼»ã€ï½ï¼¾ï¼¿ï½€";
 //==KeyCode 123..126
-//Symbol4 = "£û£ü£İ¡«";
+//Symbol4 = "ï½›ï½œï¼½ï½";
 
-Punct2 =  new Array('£»','£½','£¬','£­','¡£','£¯','£à');
-Punct3 =  new Array('£Û','¡¢','£İ','£§');
+Punct2 =  new Array('ï¼›','ï¼','ï¼Œ','ï¼','ã€‚','ï¼','ï½€');
+Punct3 =  new Array('ï¼»','ã€','ï¼½','ï¼‡');
 
-//==°´£Ó£È£É£Æ£ÔÊä³öµÄ·ûºÅ
-SPunct1 = new Array('£©','£¡','£À','££','¡ç','£¥','£Ş','£¦','£ª','£¨');
-SPunct2 = new Array('£º','£«','£¼','£ß','£¾','£¿','¡«');
-SPunct3 = new Array('£û','£ü','£ı','£¢');
+//==æŒ‰ï¼³ï¼¨ï¼©ï¼¦ï¼´è¾“å‡ºçš„ç¬¦å·
+SPunct1 = new Array('ï¼‰','ï¼','ï¼ ','ï¼ƒ','ï¼„','ï¼…','ï¼¾','ï¼†','ï¼Š','ï¼ˆ');
+SPunct2 = new Array('ï¼š','ï¼‹','ï¼œ','ï¼¿','ï¼','ï¼Ÿ','ï½');
+SPunct3 = new Array('ï½›','ï½œ','ï½','ï¼‚');
 
-//==È«ĞÎÊı×ÖºÍ×ÖÄ¸
-FullShape_No=new Array("£°","£±","£²","£³","£´","£µ","£¶","£·","£¸","£¹");
-FullShape_BigAZ=new Array("£Á","£Â","£Ã","£Ä","£Å","£Æ","£Ç","£È","£É","£Ê","£Ë","£Ì","£Í","£Î","£Ï","£Ğ","£Ñ","£Ò","£Ó","£Ô", "£Õ","£Ö","£×","£Ø","£Ù","£Ú");
-FullShape_SmallAZ=new Array('£á','£â','£ã','£ä','£å','£æ','£ç','£è','£é','£ê','£ë','£ì','£í','£î','£ï','£ğ','£ñ','£ò','£ó','£ô','£õ','£ö','£÷','£ø','£ù','£ú');
+//==å…¨å½¢æ•°å­—å’Œå­—æ¯
+FullShape_No=new Array("ï¼","ï¼‘","ï¼’","ï¼“","ï¼”","ï¼•","ï¼–","ï¼—","ï¼˜","ï¼™");
+FullShape_BigAZ=new Array("ï¼¡","ï¼¢","ï¼£","ï¼¤","ï¼¥","ï¼¦","ï¼§","ï¼¨","ï¼©","ï¼ª","ï¼«","ï¼¬","ï¼­","ï¼®","ï¼¯","ï¼°","ï¼±","ï¼²","ï¼³","ï¼´", "ï¼µ","ï¼¶","ï¼·","ï¼¸","ï¼¹","ï¼º");
+FullShape_SmallAZ=new Array('ï½','ï½‚','ï½ƒ','ï½„','ï½…','ï½†','ï½‡','ï½ˆ','ï½‰','ï½Š','ï½‹','ï½Œ','ï½','ï½','ï½','ï½','ï½‘','ï½’','ï½“','ï½”','ï½•','ï½–','ï½—','ï½˜','ï½™','ï½š');
 
-// ¶ş·ÖËÑË÷·¨
+// äºŒåˆ†æœç´¢æ³•
 function FindIn(s) {
 var find=-1,low=0,mid=0,high=CodeList.length;
 var sEng="";
@@ -69,8 +69,8 @@ function GetStr(No, s){
       break;
     }
   }
-  if(No>10 && CodeList[No-10].indexOf(s)==0) IME.Cand.value+='-.¡û\n';
-  if(i==10 && No<=CodeList.length-11 && CodeList[No+i].indexOf(s)==0) IME.Cand.value+='+.¡ú';
+  if(No>10 && CodeList[No-10].indexOf(s)==0) IME.Cand.value+='-.â†\n';
+  if(i==10 && No<=CodeList.length-11 && CodeList[No+i].indexOf(s)==0) IME.Cand.value+='+.â†’';
   LastNo=No;
 }
 
@@ -82,13 +82,13 @@ function Grep(s){
     if(No>=0){GetStr(No, s);}
   }
 
-  //==×Ô¶¯ÉÏ×Ö
+  //==è‡ªåŠ¨ä¸Šå­—
   if( IME.AutoUp.checked==true && CandChinesePart[0]!="" && CandChinesePart[1]=="" && CandCompPart[0]=="" ) {
     SendCand(0);
   }
 }
 
-// ËÍºòÑ¡×Öµ½ÊäÈëÇø
+// é€å€™é€‰å­—åˆ°è¾“å…¥åŒº
 function SendCand(n){
   if ( n>=0 && n<=9 ) {
     SendStr(CandChinesePart[n]);
@@ -97,7 +97,7 @@ function SendCand(n){
   }
 }
 
-// ÉèÑ¡Çø£ºÔİÊ±ÎŞÓÃ
+// è®¾é€‰åŒºï¼šæš‚æ—¶æ— ç”¨
 function setSelectionRange(input, selectionStart, selectionEnd) {
   if (input.setSelectionRange) {
     input.focus();
@@ -110,7 +110,7 @@ function setSelectionRange(input, selectionStart, selectionEnd) {
     range.select();
   }
 }
-// Éè¹â±êÎ»ÖÃ£ºÔİÊ±ÎŞÓÃ
+// è®¾å…‰æ ‡ä½ç½®ï¼šæš‚æ—¶æ— ç”¨
 function setCaretToEnd (input) {
   setSelectionRange(input, input.value.length, input.value.length);
 }
@@ -121,7 +121,7 @@ function setCaretToPos (input, pos) {
   setSelectionRange(input, pos, pos);
 }
 
-// ËÍ×Ö´®µ½ÊäÈëÇø
+// é€å­—ä¸²åˆ°è¾“å…¥åŒº
 function SendStr(s) {
   if (s=="") { return }
 
@@ -129,7 +129,7 @@ function SendStr(s) {
   case 1: // IE
     var r=document.selection.createRange();
     r.text=s;
-    r.select(); // ²»ÖªºÎ¹Ê£¬´ËÂë¿ÉÈ¡ÏûÑ¡Çø¡£
+    r.select(); // ä¸çŸ¥ä½•æ•…ï¼Œæ­¤ç å¯å–æ¶ˆé€‰åŒºã€‚
     break;
   case 2: // Gecko
     /*
@@ -142,27 +142,27 @@ function SendStr(s) {
     var obj = IME.InputArea;
     var selectionStart = obj.selectionStart;
     var selectionEnd = obj.selectionEnd;
-    var oldScrollTop = obj.scrollTop;  //ÒòGecko²»»á¹öµ½¸Ã¹öµÄµØ·½¡£
+    var oldScrollTop = obj.scrollTop;  //å› Geckoä¸ä¼šæ»šåˆ°è¯¥æ»šçš„åœ°æ–¹ã€‚
     var oldScrollHeight = obj.scrollHeight;
     var oldLen = obj.value.length;
 
-    obj.value = obj.value.substring(0, selectionStart) + s + obj.value.substring(selectionEnd); // ÕâÊ±Gecko»á½«scrollTop¸Ä³É0
+    obj.value = obj.value.substring(0, selectionStart) + s + obj.value.substring(selectionEnd); // è¿™æ—¶Geckoä¼šå°†scrollTopæ”¹æˆ0
     obj.selectionStart = obj.selectionEnd = selectionStart + s.length;
-    if (obj.value.length == oldLen) { // Èç¹ûÓÃ»§ÔÚºóÃæÊäÈë£¬¾ÍÖ±½Ó¹öµ½ºóÃæ¡£
+    if (obj.value.length == oldLen) { // å¦‚æœç”¨æˆ·åœ¨åé¢è¾“å…¥ï¼Œå°±ç›´æ¥æ»šåˆ°åé¢ã€‚
       obj.scrollTop = obj.scrollHeight;
-    } else if (obj.scrollHeight > oldScrollHeight) { // Èç¹ûTextAreaÔö¼ÓÁË¸ß¶È£¬¾Í¹öÏÂÒ»µãµã
+    } else if (obj.scrollHeight > oldScrollHeight) { // å¦‚æœTextAreaå¢åŠ äº†é«˜åº¦ï¼Œå°±æ»šä¸‹ä¸€ç‚¹ç‚¹
       obj.scrollTop = oldScrollTop + obj.scrollHeight - oldScrollHeight;
-    } else { // ÆäËüÇéĞÎ¾Í¹ö»ØÖ®Ç°µÄµØ·½
+    } else { // å…¶å®ƒæƒ…å½¢å°±æ»šå›ä¹‹å‰çš„åœ°æ–¹
       obj.scrollTop = oldScrollTop;
     }
     
     break;
-  default: // ÆäËü£¬¾ÍÔÚºóÃæ¼Ó×ÖËãÁË
+  default: // å…¶å®ƒï¼Œå°±åœ¨åé¢åŠ å­—ç®—äº†
     IME.InputArea.value += s;
   }
 }
 
-// ½«°ëĞÎ×ÖÄ¸»»³ÉÈ«ĞÎ×ÖÄ¸
+// å°†åŠå½¢å­—æ¯æ¢æˆå…¨å½¢å­—æ¯
 function ToFullShapeLetter(aStr) {
   var s="";
 
@@ -203,7 +203,7 @@ function ImeKeyDown(e) {
 
   //==Tab
   case 9:
-    SendStr('¡¡');
+    SendStr('ã€€');
     CancelKey = true;
     return (false); 
 
@@ -212,9 +212,9 @@ function ImeKeyDown(e) {
     IME.Comp.value="";
     IME.Cand.value="";
     CancelKey = true;
-    return (false); //Esc»á°ÑÈ«²¿ÎÄ×ÖÉ¾³ı£¬¹Ê½ûÖ¹ Esc¼ü ÆğÈÎºÎ×÷ÓÃ¡£
+    return (false); //Escä¼šæŠŠå…¨éƒ¨æ–‡å­—åˆ é™¤ï¼Œæ•…ç¦æ­¢ Escé”® èµ·ä»»ä½•ä½œç”¨ã€‚
 
-  //ÏòÇ°·­Ò³
+  //å‘å‰ç¿»é¡µ
   case 109: //firfox keycode '-'
        if(browser != 2) break;
   case 189: //ie keycode '-'
@@ -234,7 +234,7 @@ function ImeKeyDown(e) {
     break;
     //return(true);
 
-  //Ïòºó·­Ò³
+  //å‘åç¿»é¡µ
   case 61: //firfox keycode '-'
        if(browser != 2) break;
   case 187: //ie keycode '-'
@@ -325,7 +325,7 @@ function ImeKeyDown(e) {
 
   if (e.ctrlKey) { return (true) };
 
-  //==Êı×ÖºÍ·ûºÅ
+  //==æ•°å­—å’Œç¬¦å·
   if (key>=48 && key<=57) {
     if (e.shiftKey) { // 0-9????
       if (IME.FullShape.checked || !IME.EnglishMode.checked) {
@@ -350,7 +350,7 @@ function ImeKeyDown(e) {
     }
     return (true);
   }
-  //==ÆäËü·ûºÅ
+  //==å…¶å®ƒç¬¦å·
   if (IME.FullShape.checked || !IME.EnglishMode.checked) {
     if (key>=186 && key<=192) {
       SendStr( e.shiftKey ? SPunct2[key-186] : Punct2[key-186] );
@@ -367,7 +367,7 @@ function ImeKeyDown(e) {
   if (browser==2) {
     if (IME.FullShape.checked || !IME.EnglishMode.checked) {
       switch (key) {
-      case 59: // "Gecko Ö®·ÖºÅºÍÃ°ºÅ" µÄ keyCode ÊÇ 59
+      case 59: // "Gecko ä¹‹åˆ†å·å’Œå†’å·" çš„ keyCode æ˜¯ 59
         SendStr( e.shiftKey ? SPunct2[0] : Punct2[0] );
         CancelKey = true;
         return (false);
@@ -395,9 +395,9 @@ function ImeKeyPress(e) {
 		return (true);
 	}
 
-  // Gecko Ëä²»ÄÜÓÚ OnKeyDown È¡Ïû¼ü£¬µ«ËüÈ´ÊÇÔÚ OnKeyPress Ö®ºó²ÅÖ´ĞĞ¼üµÄ¶¯×÷£¬¹ÊÓÚ OnKeyPress È¡Ïû¼üÒàÎŞËùÎ½¡£
-  // µ« Opera ÔÚ OnKeyPress Ö®Ç°ÒÑÖ´ĞĞ¼üµÄ¶¯×÷£¬¹ÊÈÔÎ´ÄÜÈ¡Ïû Backspace µÈ¼ü¡£  
-  // ÎªÊ²Ã´²»Á¬IEÒ²ÔÚ´ËÈ¡Ïû¶àÒ»´Î£¿¼´ÔÚOnKeyDownÈ¡Ïû£¬ÔÚOnKeyPressÔÙÈ¡Ïû¡£Òò»á³öÏÖÒ»¸öÎÊÌâ£º¿ìËÙÊäÈëÎÄ×ÖÊ±£¬µÚÒ»¸ö×Ö»á±»È¡Ïû¡£Ô­ÒòÎ´Öª¡£
+  // Gecko è™½ä¸èƒ½äº OnKeyDown å–æ¶ˆé”®ï¼Œä½†å®ƒå´æ˜¯åœ¨ OnKeyPress ä¹‹åæ‰æ‰§è¡Œé”®çš„åŠ¨ä½œï¼Œæ•…äº OnKeyPress å–æ¶ˆé”®äº¦æ— æ‰€è°“ã€‚
+  // ä½† Opera åœ¨ OnKeyPress ä¹‹å‰å·²æ‰§è¡Œé”®çš„åŠ¨ä½œï¼Œæ•…ä»æœªèƒ½å–æ¶ˆ Backspace ç­‰é”®ã€‚  
+  // ä¸ºä»€ä¹ˆä¸è¿IEä¹Ÿåœ¨æ­¤å–æ¶ˆå¤šä¸€æ¬¡ï¼Ÿå³åœ¨OnKeyDownå–æ¶ˆï¼Œåœ¨OnKeyPresså†å–æ¶ˆã€‚å› ä¼šå‡ºç°ä¸€ä¸ªé—®é¢˜ï¼šå¿«é€Ÿè¾“å…¥æ–‡å­—æ—¶ï¼Œç¬¬ä¸€ä¸ªå­—ä¼šè¢«å–æ¶ˆã€‚åŸå› æœªçŸ¥ã€‚
   if (browser==2 || browser==3) {
     if (CancelKey) {
       CancelKey = false;
@@ -407,7 +407,7 @@ function ImeKeyPress(e) {
 
   if (e.ctrlKey) { return (true); }
 
-  // ÎªºÎ²»½«A-ZµÄ´¦Àí·ÅÔÚOnKeyDown ? ÒòÎŞ´ÓÖªµÀCaps LockµÄ×´¿ö¡£
+  // ä¸ºä½•ä¸å°†A-Zçš„å¤„ç†æ”¾åœ¨OnKeyDown ? å› æ— ä»çŸ¥é“Caps Lockçš„çŠ¶å†µã€‚
   //==A-Z
   if ( key>=65 && key<=90 ) {
     if (IME.FullShape.checked) {
@@ -436,7 +436,7 @@ function ImeKeyPress(e) {
     }
   }
 
-  // Gecko µÄÄ³Ğ©¼ü»á²úÉúÁ½¸öKeyCode£¬Èç?ºÍ/£¬ĞëÈ¡ÏûÆäÖĞÒ»¸ö£¬·ñÔò½«Ò»¼üÁ½×Ö
+  // Gecko çš„æŸäº›é”®ä¼šäº§ç”Ÿä¸¤ä¸ªKeyCodeï¼Œå¦‚?å’Œ/ï¼Œé¡»å–æ¶ˆå…¶ä¸­ä¸€ä¸ªï¼Œå¦åˆ™å°†ä¸€é”®ä¸¤å­—
   if (browser==2) {
     switch (key) {
     case 47: case 63:
@@ -472,7 +472,7 @@ function BodyOnLoad() {
     4;
   if(browser == 2 && navigator.userAgent.indexOf('Safari') != -1) browser =
 5;
-  // Gecko µÄJavaScriptĞëÒÔDOM·½Ê½±íÊ¾Îï¼ş£¬getElementByIdÊÇ¡°·½±ã·¨¡±¡£IEÒàÍ¨Ïş´Ë·¨¡£OperaËÆºõÒàÏşµÃ¡£
+  // Gecko çš„JavaScripté¡»ä»¥DOMæ–¹å¼è¡¨ç¤ºç‰©ä»¶ï¼ŒgetElementByIdæ˜¯â€œæ–¹ä¾¿æ³•â€ã€‚IEäº¦é€šæ™“æ­¤æ³•ã€‚Operaä¼¼ä¹äº¦æ™“å¾—ã€‚
   IME = {
     InputArea: document.getElementById("InputArea"),
     Comp:      document.getElementById("Comp"),
@@ -494,17 +494,17 @@ function LoadImeTable() {
 
 
 fuhao = new Array();
-fuhao[1] = "¡££¬¡¢£»£º£¿£¡¡­¡ª¡¤¡¥¡¦¡§¡®¡¯¡°¡±¡©¡«¡¬¡Ã£¢£§£à£ü¡¨¡²¡³¡´¡µ¡¶¡·¡¸¡¹¡º¡»£®¡¼¡½¡¾¡¿£¨£©£Û£İ£û£ı¦à¦á¦â¦ã¦ä¦å¦æ¦ç¦è¦é¦ê¦ë¦ì¦í¦î¦ï¦ğ¦ñ¦ò¦ó¦ô¦õ";
-fuhao[2] = "¡Ö¡Ô¡Ù£½¡Ü¡İ£¼£¾¡Ú¡Û¡Ë¡À£«£­¡Á¡Â£¯¡Ò¡Ó¡Ø¡Ş¡Ä¡Å¡Æ¡Ç¡È¡É¡Ê¡ß¡à¡Í¡Î¡Ï¡Ğ¡Ñ¡Õ¡×¡Ì¨P¨Q¨R¨S";
-fuhao[3] = "¢¡¢¢¢£¢¤¢¥¢¦¢§¢¨¢©¢ª¢ñ¢ò¢ó¢ô¢õ¢ö¢÷¢ø¢ù¢ú¢û¢ü¢±¢²¢³¢´¢µ¢¶¢·¢¸¢¹¢º¢»¢¼¢½¢¾¢¿¢À¢Á¢Â¢Ã¢Ä¢Å¢Æ¢Ç¢È¢É¢Ê¢Ë¢Ì¢Í¢Î¢Ï¢Ğ¢Ñ¢Ò¢Ó¢Ô¢Õ¢Ö¢×¢Ø¢Ù¢Ú¢Û¢Ü¢İ¢Ş¢ß¢à¢á¢â¢å¢æ¢ç¢è¢é¢ê¢ë¢ì¢í¢î";
-fuhao[4] = "£¤¡é¡ê¨G¨H©O¡æ¡á¡â¡ã¡ä¡å¡è¡ë¡ì¡í¡î¡ï¡ğ¡ñ¡ò¡ó¡ô¡õ¡ö¡÷¡ø¨‹¨Œ¨¨¨¨¡ù¡ú¡û¡ü¡ı¨I¨J¨K¨L¡ş£ß£ş¨D¨‘¨’¨“";
-fuhao[5] = "©¤©¥©¦©§©¨©©©ª©«©¬©­©®©¯©°©±©²©³©´©µ©¶©·©¸©¹©º©»©¼©½©¾©¿©À©Á©Â©Ã©Ä©Å©Æ©Ç©È©É©Ê©Ë©Ì©Í©Î©Ï©Ğ©Ñ©Ò©Ó©Ô©Õ©Ö©×©Ø©Ù©Ú©Û©Ü©İ©Ş©ß©à©á©â©ã©ä©å©æ©ç©è©é©ê©ë©ì©í©î©ï¨T¨U¨V¨W¨X¨Y¨Z¨[¨\¨]¨^¨_¨`¨a¨b¨c¨d¨e¨f¨g¨h¨i¨j¨k¨l¨m¨n¨o¨p¨q¨r¨s¨t¨u¨v¨w¨x¨y¨z¨{¨|¨}¨~¨€¨¨‚¨ƒ¨„¨…¨†¨‡¨ˆ¨‰¨Š";
-fuhao[6] = "¦¡¦¢¦£¦¤¦¥¦¦¦§¦¨¦©¦ª¦«¦¬¦­¦®¦¯¦°¦±¦²¦³¦´¦µ¦¶¦·¦¸¦Á¦Â¦Ã¦Ä¦Å¦Æ¦Ç¦È¦É¦Ê¦Ë¦Ì¦Í¦Î¦Ï¦Ğ¦Ñ¦Ò¦Ó¦Ô¦Õ¦Ö¦×¦Ø";
-fuhao[7] = "§¡§¢§£§¤§¥§¦§§§¨§©§ª§«§¬§­§®§¯§°§±§²§³§´§µ§¶§·§¸§¹§º§»§¼§½§¾§¿§À§Á§Ñ§Ò§Ó§Ô§Õ§Ö§×§Ø§Ù§Ú§Û§Ü§İ§Ş§ß§à§á§â§ã§ä§å§æ§ç§è§é§ê§ë§ì§í§î§ï§ğ§ñ";
-fuhao[8] = "¨¡¨¢¨£¨¤¨¥¨¦¨§¨¨¨©¨ª¨«¨¬¨­¨®¨¯¨°¨±¨²¨³¨´¨µ¨¶¨·¨¸¨¹";
-fuhao[9] = "¨Å¨Æ¨Ç¨È¨É¨Ê¨Ë¨Ì¨Í¨Î¨Ï¨Ğ¨Ñ¨Ò¨Ó¨Ô¨Õ¨Ö¨×¨Ø¨Ù¨Ú¨Û¨Ü¨İ¨Ş¨ß¨à¨á¨â¨ã¨ä¨å¨æ¨ç¨è¨é¨B¨@¡¦¨A";
-fuhao[10] = "¤¡¤¢¤£¤¤¤¥¤¦¤§¤¨¤©¤ª¤«¤¬¤­¤®¤¯¤°¤±¤²¤³¤´¤µ¤¶¤·¤¸¤¹¤º¤»¤¼¤½¤¾¤¿¤À¤Á¤Â¤Ã¤Ä¤Å¤Æ¤Ç¤È¤É¤Ê¤Ë¤Ì¤Í¤Î¤Ï¤Ğ¤Ñ¤Ò¤Ó¤Ô¤Õ¤Ö¤×¤Ø¤Ù¤Ú¤Û¤Ü¤İ¤Ş¤ß¤à¤á¤â¤ã¤ä¤å¤æ¤ç¤è¤é¤ê¤ë¤ì¤í¤î¤ï¤ğ¤ñ¤ò¤ó";
-fuhao[11] = "¥¡¥¢¥£¥¤¥¥¥¦¥§¥¨¥©¥ª¥«¥¬¥­¥®¥¯¥°¥±¥²¥³¥´¥µ¥¶¥·¥¸¥¹¥º¥»¥¼¥½¥¾¥¿¥À¥Á¥Â¥Ã¥Ä¥Å¥Æ¥Ç¥È¥É¥Ê¥Ë¥Ì¥Í¥Î¥Ï¥Ğ¥Ñ¥Ò¥Ó¥Ô¥Õ¥Ö¥×¥Ø¥Ù¥Ú¥Û¥Ü¥İ¥Ş¥ß¥à¥á¥â¥ã¥ä¥å¥æ¥ç¥è¥é¥ê¥ë¥ì¥í¥î¥ï¥ğ¥ñ¥ò¥ó¥ô¥õ¥ö";
+fuhao[1] = "ã€‚ï¼Œã€ï¼›ï¼šï¼Ÿï¼â€¦â€”Â·Ë‰Ë‡Â¨â€˜â€™â€œâ€ã€…ï½â€–âˆ¶ï¼‚ï¼‡ï½€ï½œã€ƒã€”ã€•ã€ˆã€‰ã€Šã€‹ã€Œã€ã€ã€ï¼ã€–ã€—ã€ã€‘ï¼ˆï¼‰ï¼»ï¼½ï½›ï½ï¸µï¸¶ï¸¹ï¸ºï¸¿ï¹€ï¸½ï¸¾ï¹ï¹‚ï¹ƒï¹„ï¿½æ­ƒæ™ç€é“´ç©°ç˜­é¢šèƒç±€ï¿½";
+fuhao[2] = "â‰ˆâ‰¡â‰ ï¼â‰¤â‰¥ï¼œï¼â‰®â‰¯âˆ·Â±ï¼‹ï¼Ã—Ã·ï¼âˆ«âˆ®âˆâˆâˆ§âˆ¨âˆ‘âˆâˆªâˆ©âˆˆâˆµâˆ´âŠ¥âˆ¥âˆ âŒ’âŠ™â‰Œâˆ½âˆšâ‰’â‰¦â‰§âŠ¿";
+fuhao[3] = "â…°â…±â…²â…³â…´â…µâ…¶â…·â…¸â…¹â… â…¡â…¢â…£â…¤â…¥â…¦â…§â…¨â…©â…ªâ…«â’ˆâ’‰â’Šâ’‹â’Œâ’â’â’â’â’‘â’’â’“â’”â’•â’–â’—â’˜â’™â’šâ’›â‘´â‘µâ‘¶â‘·â‘¸â‘¹â‘ºâ‘»â‘¼â‘½â‘¾â‘¿â’€â’â’‚â’ƒâ’„â’…â’†â’‡â‘ â‘¡â‘¢â‘£â‘¤â‘¥â‘¦â‘§â‘¨â‘©ãˆ ãˆ¡ãˆ¢ãˆ£ãˆ¤ãˆ¥ãˆ¦ãˆ§ãˆ¨ãˆ©";
+fuhao[4] = "ï¿¥ï¿ ï¿¡â„…â„‰ã¡â„ƒâ™‚â™€Â°â€²â€³Â¤â€°Â§â„–â˜†â˜…â—‹â—â—â—‡â—†â–¡â– â–³â–²â–¼â–½â—¢â—£â—¤â—¥â€»â†’â†â†‘â†“â†–â†—â†˜â†™ã€“ï¼¿ï¿£â€•â˜‰âŠ•ã€’";
+fuhao[5] = "â”€â”â”‚â”ƒâ”„â”…â”†â”‡â”ˆâ”‰â”Šâ”‹â”Œâ”â”â”â”â”‘â”’â”“â””â”•â”–â”—â”˜â”™â”šâ”›â”œâ”â”â”Ÿâ” â”¡â”¢â”£â”¤â”¥â”¦â”§â”¨â”©â”ªâ”«â”¬â”­â”®â”¯â”°â”±â”²â”³â”´â”µâ”¶â”·â”¸â”¹â”ºâ”»â”¼â”½â”¾â”¿â•€â•â•‚â•ƒâ•„â•…â•†â•‡â•ˆâ•‰â•Šâ•‹â•â•‘â•’â•“â•”â••â•–â•—â•˜â•™â•šâ•›â•œâ•â•â•Ÿâ• â•¡â•¢â•£â•¤â•¥â•¦â•§â•¨â•©â•ªâ•«â•¬â•­â•®â•¯â•°â•±â•²â•³â–â–‚â–ƒâ–„â–…â–†â–‡â–ˆâ–‰â–Šâ–‹â–Œâ–â–â–â–“â–”â–•";
+fuhao[6] = "Î‘Î’Î“Î”Î•Î–Î—Î˜Î™ÎšÎ›ÎœÎÎÎŸÎ Î¡Î£Î¤Î¥Î¦Î§Î¨Î©Î±Î²Î³Î´ÎµÎ¶Î·Î¸Î¹ÎºÎ»Î¼Î½Î¾Î¿Ï€ÏÏƒÏ„Ï…Ï†Ï‡ÏˆÏ‰";
+fuhao[7] = "ĞĞ‘Ğ’Ğ“Ğ”Ğ•ĞĞ–Ğ—Ğ˜Ğ™ĞšĞ›ĞœĞĞĞŸĞ Ğ¡Ğ¢Ğ£Ğ¤Ğ¥Ğ¦Ğ§Ğ¨Ğ©ĞªĞ«Ğ¬Ğ­Ğ®Ğ¯Ğ°Ğ±Ğ²Ğ³Ğ´ĞµÑ‘Ğ¶Ğ·Ğ¸Ğ¹ĞºĞ»Ğ¼Ğ½Ğ¾Ğ¿Ñ€ÑÑ‚ÑƒÑ„Ñ…Ñ†Ñ‡ÑˆÑ‰ÑŠÑ‹ÑŒÑÑÑ";
+fuhao[8] = "ÄÃ¡ÇÃ Ä“Ã©Ä›Ã¨Ä«Ã­ÇÃ¬ÅÃ³Ç’Ã²Å«ÃºÇ”Ã¹Ç–Ç˜ÇšÇœÃ¼";
+fuhao[9] = "ã„…ã„†ã„‡ã„ˆã„‰ã„Šã„‹ã„Œã„ã„ã„ã„ã„‘ã„’ã„“ã„”ã„•ã„–ã„—ã„˜ã„™ã„šã„›ã„œã„ã„ã„Ÿã„ ã„¡ã„¢ã„£ã„¤ã„¥ã„¦ã„§ã„¨ã„©Ë™ËŠË‡Ë‹";
+fuhao[10] = "ãã‚ãƒã„ã…ã†ã‡ãˆã‰ãŠã‹ãŒããããã‘ã’ã“ã”ã•ã–ã—ã˜ã™ãšã›ãœãããŸã ã¡ã¢ã£ã¤ã¥ã¦ã§ã¨ã©ãªã«ã¬ã­ã®ã¯ã°ã±ã²ã³ã´ãµã¶ã·ã¸ã¹ãºã»ã¼ã½ã¾ã¿ã‚€ã‚ã‚‚ã‚ƒã‚„ã‚…ã‚†ã‚‡ã‚ˆã‚‰ã‚Šã‚‹ã‚Œã‚ã‚ã‚ã‚ã‚‘ã‚’ã‚“";
+fuhao[11] = "ã‚¡ã‚¢ã‚£ã‚¤ã‚¥ã‚¦ã‚§ã‚¨ã‚©ã‚ªã‚«ã‚¬ã‚­ã‚®ã‚¯ã‚°ã‚±ã‚²ã‚³ã‚´ã‚µã‚¶ã‚·ã‚¸ã‚¹ã‚ºã‚»ã‚¼ã‚½ã‚¾ã‚¿ãƒ€ãƒãƒ‚ãƒƒãƒ„ãƒ…ãƒ†ãƒ‡ãƒˆãƒ‰ãƒŠãƒ‹ãƒŒãƒãƒãƒãƒãƒ‘ãƒ’ãƒ“ãƒ”ãƒ•ãƒ–ãƒ—ãƒ˜ãƒ™ãƒšãƒ›ãƒœãƒãƒãƒŸãƒ ãƒ¡ãƒ¢ãƒ£ãƒ¤ãƒ¥ãƒ¦ãƒ§ãƒ¨ãƒ©ãƒªãƒ«ãƒ¬ãƒ­ãƒ®ãƒ¯ãƒ°ãƒ±ãƒ²ãƒ³ãƒ´ãƒµãƒ¶";
 
 
 function disp_fuhao(selObj){
