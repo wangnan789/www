@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+<title>在线拼音输入法</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="../css/my.css" />
+<script language=javascript src="zxpinyinuuu.js" charset="utf-8"></script>
+<script language=javascript src="zxpinyinimeuuu.js" charset="utf-8"></script>
+
+</head>
+
+<body >
+
+<div class="sticky">
+我们都是地球人,大家相亲相爱互相尊重帮助,不要打架不要打仗不要伤害,世界永远和平美好.<br/>
+<a href="https://www.kerne1.org">www.kerne1.org</a>&nbsp;&nbsp;All rights reserved.</div><br/>
+
+
+<form style="FONT-SIZE: 100%" name="form1" action="return false" method="post">
+
+<script language="javascript">window.onload=function(){BodyOnLoad();}</script> 
+
+<!-- 小框 -->
+<input name=Comp id=Comp onfocus=IME.InputArea.focus(); style="width:120px;height:22px;font-size:14px;">
+<br/>
+
+<!-- 中框 -->
+<textarea name="Cand" id="Cand" style="width:150px;height:215px;font-size:14px;overflow:hidden;" onfocus="IME.InputArea.focus();"></textarea>
+
+<!-- 大框 -->
+<textarea id=InputArea  onkeypress="return ImeKeyPress(event)" onkeydown="return ImeKeyDown(event)" onkeyup="return ImeKeyUp(event)" class="form-control";
+style="WIDTH: 480px; height:215px;  rows="9" cols="59"placeholder= "JS实现简单的拼音输入法(请将系统输入法设置为英文)" >
+</textarea>
+
+<br/>
+<input id=EnglishMode onfocus=IME.InputArea.focus() type=checkbox name=EnglishMode> 英文(Ctrl)
+<input id=FullShape onfocus=IME.InputArea.focus() type=checkbox name=FullShape> 全角字符(F12)
+<input id=AutoUp onfocus=IME.InputArea.focus() type=checkbox name=AutoUp> 自动上屏　翻页 PageUp/PageDown 
+
+<select id="select1" style="FONT-SIZE: 11pt" onchange="disp_fuhao(this)" name="select1">
+    <option selected>各类符号</option>
+        <option value="biaodian">标点符号</option>
+        <option value="shuxue">数学符号</option>
+        <option value="shuzi">数字序号</option>
+        <option value="teshu">特殊符号</option>
+        <option value="zhibiao">制表符号</option>
+        <option value="xila">希腊字母</option>
+        <option value="ewen">俄文字母</option>
+        <option value="pinyin">拼音字母</option>
+        <option value="zhuyin">注音符号</option>
+        <option value="hiragana">平假名表</option>
+        <option value="katakana">片假名表</option>
+</select>
+<div id="button_field" style="width:770px; text-align:left;"></div>
+
+</form>
+
+<pre>
+
+参考网址：http://tools.jb51.net/transcoding/zxpinyin
+          https://qq.ip138.com/ime/pinyin_jianti/
+说明：各类符号不能输入，不知何原因
+创建时间：2020.05.03-20.37
+修改时间:<script>document.write(document.lastModified);</script>
+</pre></body></html>
