@@ -1,0 +1,69 @@
+## Constantly display the cursor position in the status bar.  Note that
+## this overrides "quickblank".
+#set constantshow
+set quickblank
+
+set linenumbers
+set matchbrackets "(<[{)>]}"
+
+## Use the blank line below the title bar as extra editing space.
+set morespace
+
+#set mouse
+set multibuffer
+
+## dos  mac
+unset noconvert
+
+#set nohelp
+
+## Enable soft line wrapping (AKA full-line display).
+set softwrap
+#set nowrap
+
+## Fix numeric keypad key confusion problem.
+set rebindkeypad
+
+## Put the cursor on the highlighted item in the file browser;
+## useful for people who use a braille display.
+set showcursor
+
+## Use smooth scrolling as the default.
+set smooth
+
+## Allow nano to be suspended.
+set suspend
+
+## Save automatically on exit; don't prompt.
+set tempfile
+
+## Snip whitespace at the end of lines when justifying or hard-wrapping.
+set trimblanks
+
+## Disallow file modification. 
+# set view
+
+## Paint the interface elements of nano.  These are examples;
+## by default there are no colors, except for errorcolor.
+# set titlecolor brightwhite,blue
+# set statuscolor brightwhite,green
+# set errorcolor brightwhite,red
+# set selectedcolor brightwhite,magenta
+# set numbercolor cyan
+# set keycolor cyan
+# set functioncolor green
+## In root's .nanorc you might want to use:
+ set titlecolor brightwhite,blue
+ set statuscolor brightwhite,red
+ set errorcolor brightwhite,red
+ set selectedcolor brightwhite,cyan
+ set numbercolor black
+ set keycolor brightmagenta
+ set functioncolor magenta
+
+
+
+
+
+
+

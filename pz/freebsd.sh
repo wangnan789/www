@@ -3,16 +3,16 @@
 mkdir -p .config/qterminal.org .config/openbox .config/xfe .config/xfce4/xfconf/xfce-perchannel-xml /usr/local/etc/pkg/repos
 
 #下载qterminal的配置,这是多窗口的终端
-fetch --no-verify-peer https://www.kerne1.org/pz/openbsd/qterminal.ini -o ~/.config/qterminal.org/
+fetch --no-verify-peer https://www.kerne1.org/pz/qterminal.org/qterminal.ini -o ~/.config/qterminal.org/
 
 #下载桌面背景图片,不是必须的
 fetch --no-verify-peer https://www.kerne1.org/pz/bg.jpg
 
 #下载tmux的配置
-fetch --no-verify-peer https://www.kerne1.org/pz/openbsd/tmux.conf -o .tmux.conf
+fetch --no-verify-peer https://www.kerne1.org/pz/tmux/tmux.conf -o .tmux.conf
 
 #下载xfe的配置
-fetch --no-verify-peer https://www.kerne1.org/pz/openbsd/xferc -o ~/.config/xfe/
+fetch --no-verify-peer https://www.kerne1.org/pz/xfe/xferc -o ~/.config/xfe/
 
 #下载启动图形化桌面的配置
 fetch --no-verify-peer https://www.kerne1.org/pz/openbsd/xinitrc -o .xinitrc
@@ -21,7 +21,7 @@ fetch --no-verify-peer https://www.kerne1.org/pz/openbsd/xinitrc -o .xinitrc
 fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/FreeBSD.conf -o /usr/local/etc/pkg/repos/
 
 #openbox的菜单,只在桌面有效
-fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/menu.xml -o ~/.config/openbox/
+fetch --no-verify-peer https://www.kerne1.org/pz/openbox/menu-freebsd.xml -o ~/.config/openbox/menu.xml
 
 #下载重启状态栏的脚本
 fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/re-xfce4-panel.sh -o .re-xfce4-panel.sh
@@ -29,7 +29,7 @@ fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/re-xfce4-panel.sh -o .r
 chmod 0755 .re-xfce4-panel.sh
 
 #openbox启动时自动执行的命令
-fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/autostart -o ~/.config/openbox/
+fetch --no-verify-peer https://www.kerne1.org/pz/openbox/autostart-freebsd -o ~/.config/openbox/autostart
 
 #关于一些freebsd帮助
 fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/help-freebsd.txt
