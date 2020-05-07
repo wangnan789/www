@@ -15,7 +15,8 @@ td{ text-align:center; }
 <body>
 
 <div class="sticky">
-我们都是地球人,大家相亲相爱互相尊重帮助,不要打架不要打仗不要伤害,世界永远和平美好.<br/>
+<br/>
+我们都是地球人,大家相亲相爱,互相尊重帮助;不要打架,不要打仗,不要伤害;世界永远和平美好.<br/>
 <a href="../联系我/联系我.html" target="_blank">联系我</a>&nbsp;Copyright &copy; 2016. 
 <a href="https://www.kerne1.org">www.kerne1.org</a>&nbsp;&nbsp;All rights reserved.</div><br/>
 
@@ -41,20 +42,29 @@ td{ text-align:center; }
 
  Linux Shell 环境中支持输入输出重定向，用符号"<"和">"来表示。0、1和2分别表示标
 准输入、标准输出和标准错误信息输出，可以用来指定需要重定向的标准输入或输出，比如  
-<code> 2>a.txt </code>表示将错误信息输出到文件a.txt中。
+<code><div class="div-code">
+ ls 2>a.txt
+ </div></code>表示将错误信息输出到文件a.txt中。
 
 同时，还可以在这三个标准输入输出之间实现重定向，比如将错误信息重定向到标准输出，可
-以用<code> 2>&1 </code>来实现。
+以用
+<code><div class="div-code">
+ ls 2>&1 
+ </div></code>来实现。
 
  Linux下还有一个非凡的文件/dev/null，它就像一个无底洞，所有重定向到它的信息都会
 消失得无影无踪。这一点非常有用，当我们不需要回显程序的所有信息时，就可以将输出重定
 向到/dev/null。
 
  假如想要正常输出和错误信息都不显示，则要把标准输出和标准错误都重定向到/dev/null
-例如：<code> ls 1>/dev/null 2>/dev/null </code>
+例如：<code><div class="div-code">
+ ls 1>/dev/null 2>/dev/null 
+ </div></code>
 
  还有一种做法是将错误重定向到标准输出，然后再重定向到 /dev/null，例如：
-<code> ls >/dev/null 2>&1 </code>
+<code><div class="div-code">
+ ls >/dev/null 2>&1 
+ </div></code>
 注意：此处的顺序不能更改，否则达不到想要的效果，此时先将标准输出重定向到/dev/null
 然后将标准错误重定向到标准输出，由于标准输出已经重定向到了/dev/null，因此标准错误
 也会重定向到/dev/null，于是一切静静静。
@@ -70,9 +80,10 @@ td{ text-align:center; }
 命令替换与变量替换差不多，都是用来重组命令行的，先完成引号里的命令行,然后将其结果
 替换出来，再重组成新的命令行。
 
-例1<code>
+例1<code><div class="div-code">
  echo today is $(date "+%Y-%m-%d") 
- today is 2014-07-01              </code>
+ today is 2014-07-01             
+ </div></code>
 
 $( )与｀｀
 在操作上，这两者都是达到相应的效果，但是建议使用$( )，理由如下：
@@ -81,22 +92,26 @@ $( )与｀｀
 在多层次的复合替换中，｀｀必须要额外的跳脱处理（反斜线），而$( )比较直观。
 最后，$( )的弊端是，并不是所有的类unix系统都支持这种方式，但反引号是肯定支持的。
 
-例2<code>
+例2<code><div class="div-code">
  # 将cmd1执行结果作为cmd2参数，再将cmd2结果作为cmd3的参数 
  cmd3 $(cmd2 $(cmd1)) 
  # 如果是用反引号，直接引用是不行的，还需要作跳脱处理 
- cmd3 `cmd2 \`cmd1\`` </code>
+ cmd3 `cmd2 \`cmd1\`` 
+ </div></code>
 
  <b id="${ }变量替换">${ }变量替换</b>
 一般情况下，$var与${var}是没有区别的，但是用${ }会比较精确的界定变量名称的范围
-<code>    $ A=B 
-    $ echo ${A}B 
-    BB 
-</code>
+<code><div class="div-code">
+ $ A=B 
+ $ echo ${A}B 
+ BB 
+ </div></code>
 
 <b id="取路径、文件名、后缀">取路径、文件名、后缀</b>
 先赋值一个变量为一个路径，如下：
-<code> file=/dir1/dir2/dir3/my.file.txt </code>
+<code><div class="div-code">
+ file=/dir1/dir2/dir3/my.file.txt 
+ </div></code>
 <table><thead><tr><th> 命令 </th><th> 解释 </th><th> 结果 </th></tr></thead><tbody>
 <tr><td> ${file#*/} </td><td> 删掉第一条 / 及其左边的字符串 </td><td> dir1/dir2/dir3/my.file.txt </td></tr>
 <tr><td> ${file##*/} </td><td> 删掉最后一条 / 及其左边的字符串 </td><td> my.file.txt </td></tr>
@@ -127,9 +142,10 @@ $( )与｀｀
 <tr><td> ${file:?my.file.txt} </td><td> 若 $file没设定或空值,则将my.file.txt输出至STDERR </td><td> 非空值时不作处理 <br></td></tr></tbody></table>
 
 <b id="数组">数组</b>
-<code>    A="a b c def"   # 定义字符串 
-    A=(a b c def)   # 定义字符数组 
-</code>
+<code><div class="div-code">
+ A="a b c def"   # 定义字符串 
+ A=(a b c def)   # 定义字符数组 
+ </div></code>
 <table><thead><tr><th> 命令</th><th> 解释 </th><th> 结果 </th></tr></thead><tbody>
 <tr><td> ${A[@]} </td><td> 返回数组全部元素 </td><td> a b c def </td></tr>
 <tr><td> ${A[*]} </td><td> 同上 </td><td> a b c def </td></tr>
@@ -149,34 +165,39 @@ bash中整数运算符号
 </tbody></table>
 
 在 $(( )) 中的变量名称,可于其前面加 $ 符号来替换,也可以不用。
-<code>    $ a=5;b=7;c=2 
-    $ echo $((a+b*c)) 
-    19 
-    $ echo $(($a+$b*$c)) 
-    19 
-</code>
+<code><div class="div-code">
+ $ a=5;b=7;c=2 
+ $ echo $((a+b*c)) 
+ 19 
+ $ echo $(($a+$b*$c)) 
+ 19 
+ </div></code>
 
 <b id="进制转换">进制转换</b>
 $(( ))可以将其他进制转成十进制数显示出来。用法如下：
-<code> echo $((N#xx)) </code>
+<code><div class="div-code">
+ echo $((N#xx)) 
+ </div></code>
 其中，N为进制，xx为该进制下某个数值，命令执行后可以得到该进制数转成十进制后的值。
-<code>    $ echo $((2#110))   # 二进制转十进制 
-    6 
-    $ echo $((16#2a))   ＃ 十六进制转十进制 
-    42 
-    $ echo $((8#11))    ＃ 八进制转十进制 
-    9 
-</code>
+<code><div class="div-code">
+ $ echo $((2#110))   # 二进制转十进制 
+ 6 
+ $ echo $((16#2a))   ＃ 十六进制转十进制 
+ 42 
+ $ echo $((8#11))    ＃ 八进制转十进制 
+ 9 
+ </div></code>
 
 <b id="(( ))重定义变量值">(( ))重定义变量值</b>
-<code>    $ a=5;b=7 
-    $ ((a++));echo $a 
-    6 
-    $ ((a--));echo $a 
-    5 
-	$ ((a&lt;b));echo $? 
-	0 
-</code>
+<code><div class="div-code">
+ $ a=5;b=7 
+ $ ((a++));echo $a 
+ 6 
+ $ ((a--));echo $a 
+ 5 
+ $ ((a&lt;b));echo $? 
+ 0 
+ </div></code>
 使用(( ))作整数测试时，不要跟[ ]的整数测试搞混乱了。
 ————————————————
 版权声明：本文为CSDN博主「jack-zhu」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转
@@ -195,13 +216,15 @@ read(选项)(参数)
 -t：指定读取值时等待的时间（秒），如果没有在指定的时间内输入，就不再等待了。。
 参数
 变量：指定读取值的变量名
-<code>#!/bin/bash 
-#例 1：读取控制台输入的一个 num 值 
-read -p "请您输入一个数字" NUM1 
-echo "您输入的数字是$NUM1" 
-#例 2：读取控制台输入的一个 num 值，在 10 秒内输入 
-read -t 10 -p "请您在10秒钟内输入一个数字" NUM2 
-echo "您输入的数字是$NUM2" </code>
+<code><div class="div-code">
+ #!/bin/bash 
+ #例 1：读取控制台输入的一个 num 值 
+ read -p "请您输入一个数字" NUM1 
+ echo "您输入的数字是$NUM1" 
+ #例 2：读取控制台输入的一个 num 值，在 10 秒内输入 
+ read -t 10 -p "请您在10秒钟内输入一个数字" NUM2 
+ echo "您输入的数字是$NUM2" 
+ </div></code>
 ————————————————
 版权声明：本文为CSDN博主「lay500」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载
 请附上原文出处链接及本声明。
@@ -209,97 +232,116 @@ echo "您输入的数字是$NUM2" </code>
 
          <b id="确定参数是否存在">确定参数是否存在</b>
 在使用参数之前一定要检查参数是否存在
-<code>#!/bin/bash 
-if [ -n "$1" ] 
-then 
-	echo "Hello $1" 
-else 
-	echo "please input ont paremeter" 
-fi </code>
+<code><div class="div-code">
+ #!/bin/bash 
+ if [ -n "$1" ] 
+ then 
+ echo "Hello $1" 
+ else 
+ echo "please input ont paremeter" 
+ fi </div></code>
 
 <b id="read -t 等待时间">等待时间</b>
 read -t 等待时间。如果计时器过期，会返回一个非0退出码
-<code>#!/bin/bash 
-if read -t 5 -p "Please enter your name: " name 
-then 
-	echo "hello $name" 
-else 
-	echo "too late" 
-fi </code>
+<code><div class="div-code">
+ #!/bin/bash 
+ if read -t 5 -p "Please enter your name: " name 
+ then 
+ echo "hello $name" 
+ else 
+ echo "too late" 
+ fi 
+ </div></code>
 
 <b id="read -n 输入字符个数">输入字符个数</b>
 read -n 输入字符个数。当字符达到预设的字符数时，就自动退出，将输入的数据赋给变量
-<code>#!/bin/bash 
-read -n1 -p "Do you want to continue [Y/N]?" answer 
-case $answer in 
-Y | y) echo 
-	echo "contine on ..";; 
-N | n) echo 
-	echo "byebye!" 
-	exit;; 
-esac 
-echo "End" </code>
+<code><div class="div-code">
+ #!/bin/bash 
+ read -n1 -p "Do you want to continue [Y/N]?" answer 
+ case $answer in 
+ Y | y) echo 
+ echo "contine on ..";; 
+ N | n) echo 
+ echo "byebye!" 
+ exit;; 
+ esac 
+ echo "End" 
+ </div></code>
 
 <b id="read -s输入密码">输入密码</b>
 read -s输入密码（实际上，数据会被显示，只是read命令会将文本颜色设成跟背景色一样）
-<code>#!/bin/bash 
-read -s -p "Enter your password: " pas 
-echo "password:$pas" </code>
+<code><div class="div-code">
+ #!/bin/bash 
+ read -s -p "Enter your password: " pas 
+ echo "password:$pas" 
+ </div></code>
 
 <b id="read 读取一行文本">读取一行文本</b>
 每次调用read命令，它都会从文件中读取一行文本。当文件中再没有内容时，read命令会退
 出并返回非零退出状态码。
-<code>#!/bin/bash 
-count=1 
-cat out.txt | while read line 
-do 
-	echo "Line $count:$line" 
-	count=$[ $count + 1] 
-done </code>
+<code><div class="div-code">
+ #!/bin/bash 
+ count=1 
+ cat out.txt | while read line 
+ do 
+ echo "Line $count:$line" 
+ count=$[ $count + 1] 
+ done 
+ </div></code>
 ————————————————
 版权声明：本文为CSDN博主「Ocean&amp;&amp;Star」的原创文章，遵循 CC 4.0 BY-SA
 版权协议，转载请附上原文出处链接及本声明。
 原文链接：https://blog.csdn.net/zhizhengguan/article/details/88391694
 
-﻿﻿       <b id="shell输入自动化">shell中交互输入自动化﻿﻿</b>
+<b id="shell输入自动化">shell中交互输入自动化﻿﻿</b>
 shell中有时我们需要交互，但是呢我们又不想每次从stdin输入，想让其自动化，这时我们
 就要使shell交互输入自动化了。这个功能很有用的哟。好好学习。
 1利用重定向
 重定向的方法应该是最简单的
 以下的test.sh是要求我们从stdin中分别输入no,name然后将输入的no,name打印出来
-<code># cat test.sh 
-#! /bin/bash 
-read -p "enter number:" no 
-read -p "enter name:" name 
-echo you have entered $no, $name </code>
+<code><div class="div-code">
+ # cat test.sh 
+ #! /bin/bash 
+ read -p "enter number:" no 
+ read -p "enter name:" name 
+ echo you have entered $no, $name 
+ </div></code>
 
 以下是作为输入的文件内容：
-<code># cat input.data 
-1 
-lufubo </code>
+<code><div class="div-code">
+ # cat input.data 
+ 1 
+ lufubo 
+</div></code>
 
 然后我们利用重定向来完成交互的自动化：
-<code># ./test.sh &lt; input.data 
-you have entered 1, lufubo </code>
+<code><div class="div-code">
+ # ./test.sh &lt; input.data 
+ you have entered 1, lufubo 
+ </div></code>
 看吧！效果不错吧！哈哈
 
 2 利用管道完成交互的自动化
 这个就是利用管道特点，让前个命令的输出作为后个命令的输入完成的,也用上面例子举例：
-<code># echo -e "1\nlufbo\n" | ./test.sh 
-you have entered 1, lufbo </code>
+<code><div class="div-code">
+ # echo -e "1\nlufbo\n" | ./test.sh 
+ you have entered 1, lufbo 
+ </div></code>
 上面中的 "1\nlufbo\n" 中的“\n”是换行符的意思，这个比较简单的。
 
 3利用expect
 expect是用来交互自动化的工具，但它有可能不是随系统就安装好的，有时需要自己手工安
 装该命令,以下脚本完成跟上述相同的功能
-<code># cat expect_test.sh 
-#! /usr/bin/expect 
-spawn ./test.sh 
-expect "enter number:" 
-send "1\n" 
-expect "enter name:" 
-send "lufubo\n" 
-expect off </code>
+<code><div class="div-code">
+ # cat expect_test.sh 
+ #! /usr/bin/expect 
+ spawn ./test.sh 
+ expect "enter number:" 
+ send "1\n" 
+ expect "enter name:" 
+ send "lufubo\n" 
+ expect off 
+ </div></code>
 
 注意：第一行是/usr/bin/expect，这个是选用解释器的意思，我们shell一般选的是 /bin/bash,这里不是
 spawn: 指定需要将哪个命令自动化

@@ -9,10 +9,13 @@ background-color:#98cef0;
   background-color: #98cef0;
 }
 
-code
+
+
+.div-code
 {
-background-color:#EFE7D6;
-border: 1pt solid black;
+  background-color:#EFE7D6;
+  width: 600px;
+  border: 1px solid red;
 }
 
 ol {
