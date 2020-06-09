@@ -7,18 +7,10 @@
 <link rel="stylesheet" type="text/css" href="../css/my.css" />
 </head>
 
-<body>
-
-<div class="sticky">
-<br/>
-我们都是地球人,大家相亲相爱,互相尊重帮助;不要打架,不要打仗,不要伤害;世界永远和平美好.<br/>
-<a href="../联系我/联系我.html" target="_blank">联系我</a>&nbsp;Copyright &copy; 2016. 
-<a href="https://www.kerne1.org">www.kerne1.org</a>&nbsp;&nbsp;All rights reserved.</div><br/>
-
-<pre>
+<body><pre>
+<p id="tou" ></p><script>$( "#tou" ).load( "../gonggong/tou.html" );</script>
 以前安装系统一般是把iso文件刻录到光盘上,再从光驱启动进行安装.或者刻录到U盘从U盘
 启动安装.可是当你没有光驱也没有U盘怎么办呢?下面分3种情况来说说
-
 
 <b style="font-size:150% ; color:red">(1)你的系统是2000/XP/2003</b>
 <ol start="11"><li>下载<a href="https://www.kerne1.org/pz/grub-dos.zip">grub</a></li>
@@ -57,11 +49,11 @@
 <b style="font-size:150% ; color:red">(3)你的系统是Gnu/linux(debian/Ubuntu/Fedora)</b>
 <ol start="31"><li>编辑/etc/grub.d/40_custom,添加以下代码</li>
 <code><div class="div-code">
-menuentry “openbsd--net-install”           
- {                                          
- linux16 /home/memdisk iso raw         
- initrd16 /home/cd66.iso               
- }                                           
+menuentry "openbsd--net-install"
+ { 
+ linux16 /home/memdisk iso raw 
+ initrd16 /home/cd66.iso 
+ } 
  </div></code>
 
 <li>下载<a href="https://ftp.openbsd.org/pub/OpenBSD/6.6/amd64/cd66.iso">openbsd</a>和<a href="https://www.kerne1.org/pz/memdisk">memdisk</a>,把它们放在/home/</li>
@@ -76,9 +68,14 @@ menuentry “openbsd--net-install”
 </ol>
 
 
-参考网址：很多,已忘记
-说明：No
-创建时间：2020.2.19-17.00
-修改时间:<script>document.write(document.lastModified);</script>
+参考网址 : 很多,已忘记
+说明 : No
+创建时间 : 2020-2-19
+修改时间 : 2020-06-09
 
-</pre></body></html>
+<p id="dashang" ></p><script>$( "#dashang" ).load( "../gonggong/dashang.html" );</script>
+<p id="guanggao" ></p><script>$( "#guanggao" ).load( "../gonggong/guanggao.html" );</script>
+
+</pre>
+<script src="../js/jquery.min.js"></script>
+</body></html>

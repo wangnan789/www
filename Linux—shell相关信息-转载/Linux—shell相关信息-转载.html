@@ -12,15 +12,9 @@ td{ text-align:center; }
 </style>
 </head>
 
-<body>
-
-<div class="sticky">
-<br/>
-我们都是地球人,大家相亲相爱,互相尊重帮助;不要打架,不要打仗,不要伤害;世界永远和平美好.<br/>
-<a href="../联系我/联系我.html" target="_blank">联系我</a>&nbsp;Copyright &copy; 2016. 
-<a href="https://www.kerne1.org">www.kerne1.org</a>&nbsp;&nbsp;All rights reserved.</div><br/>
-
-<pre><ul><li><a href="#输入与输出">输入与输出</a></li>
+<body><pre>
+<p id="tou" ></p><script>$( "#tou" ).load( "../gonggong/tou.html" );</script>
+<ul><li><a href="#输入与输出">输入与输出</a></li>
 <li><a href="#两种命令替换形式">两种命令替换形式$( )、``</a></li>
 <li><a href="#${ }变量替换">${ }变量替换</a></li>
 <li><a href="#取路径、文件名、后缀">取路径、文件名、后缀</a></li>
@@ -239,7 +233,8 @@ read(选项)(参数)
  echo "Hello $1" 
  else 
  echo "please input ont paremeter" 
- fi </div></code>
+ fi 
+ </div></code>
 
 <b id="read -t 等待时间">等待时间</b>
 read -t 等待时间。如果计时器过期，会返回一个非0退出码
@@ -312,7 +307,7 @@ shell中有时我们需要交互，但是呢我们又不想每次从stdin输入�
  # cat input.data 
  1 
  lufubo 
-</div></code>
+ </div></code>
 
 然后我们利用重定向来完成交互的自动化：
 <code><div class="div-code">
@@ -355,9 +350,14 @@ expect off:指明命令交互结束
 
 
 
-参考网址：网络
-说明：未完全测试
-创建时间：2020.3.21
-修改时间:<script>document.write(document.lastModified);</script>
+参考网址 : 网络
+说明 : 未完全测试
+创建时间 : 2020.3.21
+修改时间 : 2020-06-09
 
-<pre></body></html>
+<p id="dashang" ></p><script>$( "#dashang" ).load( "../gonggong/dashang.html" );</script>
+<p id="guanggao" ></p><script>$( "#guanggao" ).load( "../gonggong/guanggao.html" );</script>
+
+</pre>
+<script src="../js/jquery.min.js"></script>
+</body></html>

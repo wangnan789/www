@@ -9,17 +9,11 @@
 <script src=eph0.js></script>
 <script src=lunar.js></script>
 <style> body{ width: 41em; } </style>
+<script src="../js/jquery.min.js"></script>
 </head>
 
-<body>
-
-<div class="sticky">
-<br/>
-我们都是地球人,大家相亲相爱,互相尊重帮助;不要打架,不要打仗,不要伤害;世界永远和平美好.<br/>
-<a href="../联系我/联系我.html" target="_blank">联系我</a>&nbsp;Copyright &copy; 2016. 
-<a href="https://www.kerne1.org">www.kerne1.org</a>&nbsp;&nbsp;All rights reserved.</div><br/>
-
-<pre>
+<body><pre>
+<p id="tou" ></p><script>$( "#tou" ).load( "../gonggong/tou.html" );</script>
 可查询-4713至9999 <input id="Cal_y" size="4" type="text" value="2008" />年 <input id="Cal_m" maxlength="2" size="2" type="text" value="1" />月 <input onclick="getLunar()" type="button" value="显示" />  <input onclick="changeMonth(2)" type="button" value="返回今日" />
                <input onclick="changeYear(1)" type="button" value="年份加" />  <input onclick="changeYear(0)" type="button" value="年份减" />  <input onclick="changeMonth(1)" type="button" value="月份加" />  <input onclick="changeMonth(0)" type="button" value="月份减" />
 <div id="Cal2"></div>
@@ -99,9 +93,12 @@ function getLunar(){ //月历页面生成
 getLunar(); //调用月历页面生成函数
 </script>
 
-参考网址：http://www.fjptsz.com/xxjs/xjw/rj/115.htm
-说明：此日历是在“寿星万年历”的基础上修改而得，已获得作者的允许使用。非常感谢！
-创建时间：不详
-修改时间:<script>document.write(document.lastModified);</script>
+参考网址 : http://www.fjptsz.com/xxjs/xjw/rj/115.htm
+说明 : 此日历是在“寿星万年历”的基础上修改而得，已获得作者的允许使用。非常感谢！
+创建时间 : 不详
+修改时间 : 2020-06-04
+
+<p id="dashang" ></p><script>$( "#dashang" ).load( "../gonggong/dashang.html" );</script>
+<p id="guanggao" ></p><script>$( "#guanggao" ).load( "../gonggong/guanggao.html" );</script>
 
 </pre></body></html>
