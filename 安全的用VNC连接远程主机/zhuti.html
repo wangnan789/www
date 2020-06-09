@@ -6,38 +6,31 @@ VNC是一个连接系统，允许您使用键盘和鼠标与远程服务器上�
 <code><div class="div-code">
   apt update    
   </div></code>
-
 <li>安装必要的软件</li>
 <code><div class="div-code">
   apt install openbox qterminal tightvncserver
   </div></code>
-
 <li>开启vnc服务</li>
 <code><div class="div-code">
   vncserver    
   </div></code>
-
 <li>设置密码</li>
 <code><div class="div-code">
   Password:
   Verify:   
   </div></code>
-
 <li>无说明</li>
 <code><div class="div-code">
   Would you like to enter a view-only password (y/n)? n
   </div></code>
-
 <li>以下操作在本地主机进行.使用SSH安全转发到VNC的连接</li>
 <code><div class="div-code">
   ssh -L 5901:127.0.0.1:5901 -C -N -l user-name your_server_ip
   </div></code>
-
 <li>安装vnc软件</li>
 <code><div class="div-code">
   apt install gvncviewer
   </div></code>
-
 <li>开始连接,弹出一个窗口，输入第４步密码</li>
 <code><div class="div-code">
   gvncviewer your_server_ip:1
