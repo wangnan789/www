@@ -1,0 +1,13 @@
+.taskProgress md-progress-linear {
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+
+#translitSource #translitInput {
+  border: 2px;
+}
+
+input, label, p, pre, md-select, #completeThanks {
+  padding-left: 15px;
+  padding-right: 15px;
+}
