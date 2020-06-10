@@ -1,0 +1,13 @@
+# devuan
+ deb http://deb.devuan.org/merged/ beowulf-security main non-free contrib
+ deb http://deb.devuan.org/merged/ beowulf-updates main non-free contrib
+ deb http://deb.devuan.org/merged/ beowulf main non-free contrib
+
+#debian
+#deb https://mirrors.ustc.edu.cn/debian stable main contrib non-free
+#deb https://mirrors.ustc.edu.cn/debian stable-updates main contrib non-free
+#deb http://security.debian.org/debian-security/ stable/updates main non-free contrib
+
+# disk
+#deb [trusted=yes] file:///media/dvd1/  stretch contrib main
+

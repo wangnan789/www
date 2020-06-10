@@ -1,0 +1,31 @@
+dpkg -i firefox安装本地deb软件
+dppg -l 列表
+dpkg -S gzip 归属
+dpkg -L firefox 显示一个包安装到系统里面的文件目录信息
+apt depends firefox 使用依赖
+apt rdepends firefox 反依赖
+
+apt autoremove  自动删除不要的依赖
+apt purge firefox 卸载并清除配置
+apt search firefox 搜索软件
+apt show firefox 软件的相关信息
+apt install firefox
+apt -f install 修正（依赖关系）安装
+apt update 更新软件信息数据库
+
+ 更新已安装的软件
+apt full-upgrade 升级系统
+apt dist-upgrade
+apt source firefox下载软件的源代码
+apt clean 清理下载文件的存档
+shutdown -r now 重启
+lsb_release -a 看版本号
+sed -i 's/stretch/buster/g' /etc/apt/sources.list
+清除所有已删除包的残馀配置文件
+dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
+deb http://security.debian.org/debian-security buster/updates main contrib non-free
+
+apt-get install locales-all
+sudo dpkg-reconfigure locales
+
+
