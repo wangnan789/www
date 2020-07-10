@@ -4,57 +4,57 @@
 mkdir -p .scim .config/qterminal.org .config/openbox .config/fbpanel .config/xfe
 
 #下载桌面背景图片,不是必须的
-ftp -o - https://www.kerne1.org/pz/bg.jpg > bg.jpg
+ftp -o - https://www.kfchy.com/pz/bg.jpg > bg.jpg
 
 #下载scim输入法的配置
-ftp -o - https://www.kerne1.org/pz/scim/config > ~/.scim/config
+ftp -o - https://www.kfchy.com/pz/scim/config > ~/.scim/config
 
 #一些常用操作命令
-ftp -o - https://www.kerne1.org/pz/openbsd/help-openbsd.txt > help-openbsd.txt
+ftp -o - https://www.kfchy.com/pz/openbsd/help-openbsd.txt > help-openbsd.txt
 
 #下载启动图形化桌面的配置
-ftp -o - https://www.kerne1.org/pz/openbsd/xinitrc > .xinitrc
+ftp -o - https://www.kfchy.com/pz/openbsd/xinitrc > .xinitrc
 
 #下载xterm的配置
-ftp -o - https://www.kerne1.org/pz/openbsd/Xdefaults > .Xdefaults
+ftp -o - https://www.kfchy.com/pz/openbsd/Xdefaults > .Xdefaults
 
 #下载重启状态栏的脚本
-ftp -o - https://www.kerne1.org/pz/openbsd/re-fbpanel.sh > .re-fbpanel.sh
+ftp -o - https://www.kfchy.com/pz/openbsd/re-fbpanel.sh > .re-fbpanel.sh
 #给它可执行的权限
 chmod 0755 .re-fbpanel.sh
 
 #下载ksh的配置
-ftp -o - https://www.kerne1.org/pz/openbsd/kshrc > .kshrc
+ftp -o - https://www.kfchy.com/pz/openbsd/kshrc > .kshrc
 
 #下载tmux的配置
-ftp -o - https://www.kerne1.org/pz/tmux/tmux.conf > .tmux.conf
+ftp -o - https://www.kfchy.com/pz/tmux/tmux.conf > .tmux.conf
 
 #下载用户的配置
-ftp -o - https://www.kerne1.org/pz/openbsd/profile > .profile
+ftp -o - https://www.kfchy.com/pz/openbsd/profile > .profile
 
 #下载qterminal的配置,这是多窗口的终端
-ftp -o - https://www.kerne1.org/pz/qterminal.org/qterminal.ini > ~/.config/qterminal.org/qterminal.ini
+ftp -o - https://www.kfchy.com/pz/qterminal.org/qterminal.ini > ~/.config/qterminal.org/qterminal.ini
 
 #openbox启动时自动执行的命令
-ftp -o - https://www.kerne1.org/pz/openbox/autostart > ~/.config/openbox/autostart
+ftp -o - https://www.kfchy.com/pz/openbox/autostart > ~/.config/openbox/autostart
 
 #openbox的配置
-ftp -o - https://www.kerne1.org/pz/openbox/rc.xml > ~/.config/openbox/rc.xml
+ftp -o - https://www.kfchy.com/pz/openbox/rc.xml > ~/.config/openbox/rc.xml
 
 #openbox的菜单,只在桌面有效
-ftp -o - https://www.kerne1.org/pz/openbox/menu.xml > ~/.config/openbox/menu.xml
+ftp -o - https://www.kfchy.com/pz/openbox/menu.xml > ~/.config/openbox/menu.xml
 
 #下载状态栏的配置
-ftp -o - https://www.kerne1.org/pz/fbpanel/default > ~/.config/fbpanel/default
+ftp -o - https://www.kfchy.com/pz/fbpanel/default > ~/.config/fbpanel/default
 
 #下载xfe的配置
-ftp -o - https://www.kerne1.org/pz/xfe/xferc > ~/.config/xfe/xferc
+ftp -o - https://www.kfchy.com/pz/xfe/xferc > ~/.config/xfe/xferc
 
 #此文件是软件仓库的地址
-ftp -o - https://www.kerne1.org/pz/openbsd/etc/installurl > /etc/installurl
+ftp -o - https://www.kfchy.com/pz/openbsd/etc/installurl > /etc/installurl
 
 #各种音频设置
-ftp -o - https://www.kerne1.org/pz/openbsd/etc/mixerctl.conf > /etc/mixerctl.conf
+ftp -o - https://www.kfchy.com/pz/openbsd/etc/mixerctl.conf > /etc/mixerctl.conf
 
 #安装窗口管理器,I--是非交互式的,有时候某些软件要你决定安装哪个依赖,有了选项I,会自
 #动选择.实现全程自动化安装软件.
