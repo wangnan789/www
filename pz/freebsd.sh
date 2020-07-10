@@ -3,44 +3,44 @@
 mkdir -p .config/qterminal.org .config/openbox .config/xfe .config/xfce4/xfconf/xfce-perchannel-xml /usr/local/etc/pkg/repos
 
 #下载qterminal的配置,这是多窗口的终端
-fetch --no-verify-peer https://www.kerne1.org/pz/qterminal.org/qterminal.ini -o ~/.config/qterminal.org/
+fetch --no-verify-peer https://www.kfchy.com/pz/qterminal.org/qterminal.ini -o ~/.config/qterminal.org/
 
 #下载桌面背景图片,不是必须的
-fetch --no-verify-peer https://www.kerne1.org/pz/bg.jpg
+fetch --no-verify-peer https://www.kfchy.com/pz/bg.jpg
 
 #下载tmux的配置
-fetch --no-verify-peer https://www.kerne1.org/pz/tmux/tmux.conf -o .tmux.conf
+fetch --no-verify-peer https://www.kfchy.com/pz/tmux/tmux.conf -o .tmux.conf
 
 #下载xfe的配置
-fetch --no-verify-peer https://www.kerne1.org/pz/xfe/xferc -o ~/.config/xfe/
+fetch --no-verify-peer https://www.kfchy.com/pz/xfe/xferc -o ~/.config/xfe/
 
 #下载启动图形化桌面的配置
-fetch --no-verify-peer https://www.kerne1.org/pz/openbsd/xinitrc -o .xinitrc
+fetch --no-verify-peer https://www.kfchy.com/pz/openbsd/xinitrc -o .xinitrc
 
 #此文件是软件仓库的地址
-fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/FreeBSD.conf -o /usr/local/etc/pkg/repos/
+fetch --no-verify-peer https://www.kfchy.com/pz/freebsd/FreeBSD.conf -o /usr/local/etc/pkg/repos/
 
 #openbox的菜单,只在桌面有效
-fetch --no-verify-peer https://www.kerne1.org/pz/openbox/menu-freebsd.xml -o ~/.config/openbox/menu.xml
+fetch --no-verify-peer https://www.kfchy.com/pz/openbox/menu-freebsd.xml -o ~/.config/openbox/menu.xml
 
 #下载重启状态栏的脚本
-fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/re-xfce4-panel.sh -o .re-xfce4-panel.sh
+fetch --no-verify-peer https://www.kfchy.com/pz/freebsd/re-xfce4-panel.sh -o .re-xfce4-panel.sh
 #给它可执行的权限
 chmod 0755 .re-xfce4-panel.sh
 
 #openbox启动时自动执行的命令
-fetch --no-verify-peer https://www.kerne1.org/pz/openbox/autostart-freebsd -o ~/.config/openbox/autostart
+fetch --no-verify-peer https://www.kfchy.com/pz/openbox/autostart-freebsd -o ~/.config/openbox/autostart
 
 #关于一些freebsd帮助
-fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/help-freebsd.txt
+fetch --no-verify-peer https://www.kfchy.com/pz/freebsd/help-freebsd.txt
 
 #下载用户登录时的配置,用于指定系统语言
-fetch --no-verify-peer https://www.kerne1.org/pz/freebsd/login_conf -o .login_conf
+fetch --no-verify-peer https://www.kfchy.com/pz/freebsd/login_conf -o .login_conf
 
-fetch --no-verify-peer https://www.kerne1.org/pz/xfce4/xfce4-taskmanager.rc -o ~/.config/xfce4/
+fetch --no-verify-peer https://www.kfchy.com/pz/xfce4/xfce4-taskmanager.rc -o ~/.config/xfce4/
 
 #状态栏的配置
-fetch --no-verify-peer https://www.kerne1.org/pz/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml -o ~/.config/xfce4/xfconf/xfce-perchannel-xml/
+fetch --no-verify-peer https://www.kfchy.com/pz/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml -o ~/.config/xfce4/xfconf/xfce-perchannel-xml/
 
 #启用pkg,用它来安装软件
 pkg update -y
@@ -82,8 +82,8 @@ sed  -i "s#iconpath=#&$wei#"  ~/.config/xfe/xferc
 
 #添加重启和关机图标
 mulu=/usr/local/share/applications
-fetch --no-verify-peer https://www.kerne1.org/pz/xfce4/reboot.desktop -o $mulu/
-fetch --no-verify-peer https://www.kerne1.org/pz/xfce4/shutdown.desktop -o $mulu/
+fetch --no-verify-peer https://www.kfchy.com/pz/xfce4/reboot.desktop -o $mulu/
+fetch --no-verify-peer https://www.kfchy.com/pz/xfce4/shutdown.desktop -o $mulu/
 
 #隐藏几个快捷图标,使得开始菜单更清爽
 sed -i 's/Utility;//' $mulu/xfce4-taskmanager.desktop
