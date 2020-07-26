@@ -1,0 +1,6 @@
+#在后台启动状态栏
+fbpanel &
+
+#设置桌面背景
+feh --bg-fill ~/bg.jpg 
+mixerctl outputs.master=248,248
