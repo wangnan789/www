@@ -11,3 +11,38 @@ pkg_add  -s audacity  (虚拟安装,显示安装大小
 pkg_delete	audacity	(删除软件
 pkg_delete -a				  (删除未使用的依赖包
 pkg_delete -X				  (大写X,删除所有手动安装的软件,但不删除用户目录的文件
+
+＊＊＊＊＊＊＊＊＊＊＊＊＊＊＊
+
+sysctl hw.disknames			(查看硬盘
+
+mixerctl outputs.master=248,248			（修改音量
+
+fdisk -iy sd0			（写入mbr
+fdisk -iy -g -b 960 sd0		（GPT for UEFI
+
+dd if=install*.fs of=/dev/rsd6c bs=1m
+dd if=/dev/rsd0a of=openbsd.pbr bs=512 count=1
+
+fdisk -e sd1		
+disklabel -E sd0
+***************
+bfb4775bb839756--是硬盘duid，a是分区号，把下面行1写入／etc／fstab
+再执行行2的命令，每天晚上自动备份跟分区／， 这是使用dd完成的“磁盘映像”副本，而不是逐个文件的副本
+bfb4775bb8397569.a /altroot ffs xx 0 0
+echo ROOTBACKUP=1 >>/etc/daily.local
+＊＊＊＊＊＊＊＊＊
+要使用dump（8）和restore（8）将目录/ SRC下的所有内容复制到目录/ DST，请执行以下操作
+cd /SRC && dump 0f - . | (cd /DST && restore -rf - )
+
+tar版
+cd /SRC && tar cf - . | (cd /DST && tar xpf - )
+
+＊＊＊＊＊＊＊＊＊＊＊＊
+挂再iso
+vnconfig vnd0 /tmp/ISO.image
+mount -t cd9660 /dev/vnd0c /mnt
+
+卸载iso
+umount /mnt
+vnconfig -u vnd0
