@@ -36,7 +36,7 @@ ftp -o - https://www.kfchy.com/pz/openbsd/profile > .profile
 ftp -o - https://www.kfchy.com/pz/qterminal.org/qterminal.ini > ~/.config/qterminal.org/qterminal.ini
 
 #openbox启动时自动执行的命令
-ftp -o - https://www.kfchy.com/pz/openbox/autostart > ~/.config/openbox/autostart
+ftp -o - https://www.kfchy.com/pz/openbox/autostart-openbsd > ~/.config/openbox/autostart
 
 #openbox的配置
 ftp -o - https://www.kfchy.com/pz/openbox/rc.xml > ~/.config/openbox/rc.xml
