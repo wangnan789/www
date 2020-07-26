@@ -78,8 +78,8 @@ pkg_add -I xfce4-taskmanager
 #安装音频播放
 pkg_add -I audacious audacious-plugins
 
-#安装功能强大的多媒体播放程序VLC,和图片编辑
-pkg_add -I vlc mtpaint
+#安装功能强大的多媒体播放程序VLC
+pkg_add -I vlc
 
 #安装网页浏览软件
 pkg_add -I firefox
@@ -100,8 +100,5 @@ echo "NoDisplay=true" >> $mulu/xfp.desktop
 echo "NoDisplay=true" >> $mulu/xfw.desktop
 echo "NoDisplay=true" >> $mulu/qterminal_drop.desktop
 
-#现在启动图形化桌面
-startx
-
-#退出脚本
-exit
+#重启系统
+reboot
