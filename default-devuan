@@ -1,0 +1,145 @@
+########################################
+## fbpanel configuration file         ##
+########################################
+#	chengws@outlook.com
+Global {
+    edge = bottom
+    allign = center
+    margin = 0
+    widthtype = percent
+    width = 100
+    height = 24
+    transparent = true
+   #tintcolor = #ffffff
+    alpha = 222
+    setdocktype = true
+    setpartialstrut = true
+    autohide = false
+    heightWhenHidden = 2
+    roundcorners = false
+    #roundcornersradius = 7
+    layer = none
+    MaxElemHeight = 32
+}
+
+Plugin {
+    type = menu
+    config {
+        IconSize = 22
+        icon = start-here
+        # Use a nice Debian logo for the menu list ;-)
+        image = emblem-favorite
+        systemmenu {
+        }
+        separator {
+        }
+	menu {  
+	    name = Computer
+	    icon = computer
+            item {
+                name = 锁住Lock
+                icon = changes-prevent
+                action = xtrlock
+            }
+            item {
+                name = 重启Rebook
+                icon = audio-speakers
+                action = sudo reboot
+            }
+            item {
+                name = 关机Shutdown
+                icon = ac-adapter
+                action = sudo halt -p
+            }
+            item {
+                name = OutToCmd
+                icon = application-exit
+                action = /usr/lib/fbpanel/fbpanel/xlogout
+            }
+        }
+    }
+}
+
+Plugin {
+    type = launchbar
+    config {
+        button {
+            icon = system-file-manager
+            tooltip = 文件
+            action = pcmanfm
+        }
+        button {
+            icon = utilities-terminal
+            tooltip = 命令行
+            action = tilix
+        }
+	button {
+            icon = web-browser
+            tooltip = 网页
+            action = firefox
+    	}
+    }
+}
+
+Plugin {
+    type = taskbar
+    expand = true
+    config {
+        ShowIconified = true
+        ShowMapped    = true
+        ShowAllDesks  = false
+        tooltips = true
+        IconsOnly = false
+        MaxTaskWidth = 130
+    }
+}
+
+Plugin {
+    type = wincmd
+    config {
+        icon = gnome-fs-desktop
+        tooltip = 全部缩小
+    }
+}
+
+#plugin {
+#    type = volume
+#}
+
+plugin {
+    type = battery
+}
+
+# Digital Clock
+#Plugin {
+#    type = dclock
+#    config {
+#        ShowSeconds = false
+#        HoursView = 24
+#        TooltipFmt = %A %x
+#       #Action = xmessage Please define some command &
+#    }
+#}
+
+# Text Clock
+# ClockFmt: (string) Clock format string.  May contain strftime conversion
+#           specifications and Pango markup information.
+# TooltipFmt: (string) Tooltip format string.
+# Action: (string) Shell command to execute when clock is clicked.
+# ShowCalendar: (boolean) Show a GTK calendar widget when the clock is
+#               clicked.  Only valid if Action is unset.
+# ShowTooltip: (boolean) Show tooltip for clock.
+Plugin {
+    type = tclock
+    config {
+        ClockFmt = <b>%I:%M</b>
+        # 2 line view, time in bold above and date below
+        # ClockFmt = <span font="Sans 8"><b>%-l:%M</b> %P&#xA;%a %B %-e</span>
+        TooltipFmt = %A %x
+        #Action = xmessage Please define some command &
+        ShowCalendar = false
+        ShowTooltip = true
+    }
+}
+
+
