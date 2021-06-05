@@ -1,13 +1,14 @@
 #	chengws@outlook.com
 # cd ~/
 #创建一些文件夹
-mkdir -p .scim .config/qterminal.org .config/openbox .config/fbpanel .config/xfe
+mkdir -p  .config/openbox .config/fbpanel .config/xfe .config/qterminal.org
+#.scim .config/qterminal.org
 
 #下载桌面背景图片,不是必须的
 ftp -o - https://www.kfchy.com/pz/bg.jpg > bg.jpg
 
 #下载scim输入法的配置
-ftp -o - https://www.kfchy.com/pz/scim/config > ~/.scim/config
+#ftp -o - https://www.kfchy.com/pz/scim/config > ~/.scim/config
 
 #一些常用操作命令
 ftp -o - https://www.kfchy.com/pz/openbsd/help-openbsd.txt > help-openbsd.txt
@@ -33,10 +34,10 @@ ftp -o - https://www.kfchy.com/pz/tmux/tmux.conf > .tmux.conf
 ftp -o - https://www.kfchy.com/pz/openbsd/profile > .profile
 
 #下载qterminal的配置,这是多窗口的终端
-ftp -o - https://www.kfchy.com/pz/qterminal.org/qterminal.ini > ~/.config/qterminal.org/qterminal.ini
+#ftp -o - https://www.kfchy.com/pz/qterminal.org/qterminal.ini > ~/.config/qterminal.org/qterminal.ini
 
 #openbox启动时自动执行的命令
-ftp -o - https://www.kfchy.com/pz/openbox/autostart-openbsd > ~/.config/openbox/autostart
+ftp -o - https://www.kfchy.com/pz/openbox/autostart > ~/.config/openbox/autostart
 
 #openbox的配置
 ftp -o - https://www.kfchy.com/pz/openbox/rc.xml > ~/.config/openbox/rc.xml
@@ -67,30 +68,30 @@ pkg_add -I qterminal zh-wqy-zenhei-ttf
 pkg_add -I fbpanel 
 
 #安装scim拼音输入法,目前仅发现leafpad支持输入中文
-pkg_add -I scim scim-tables scim-pinyin
+#pkg_add -I scim scim-tables scim-pinyin
 
-#安装文件管理器,图片浏览,文本编辑程序
-pkg_add -I xfe gpicview wget leafpad
+#安装文件管理器
+pkg_add -I xfe 
 
 #安装任务管理器
 pkg_add -I xfce4-taskmanager
 
 #安装音频播放
-pkg_add -I audacious audacious-plugins
+#pkg_add -I audacious audacious-plugins
 
-#安装功能强大的多媒体播放程序VLC
-pkg_add -I vlc
+#安装功能强大的多媒体播放程序VLC,和图片编辑
+#pkg_add -I vlc mtpaint
 
 #安装网页浏览软件
-pkg_add -I firefox
+#pkg_add -I firefox
 
 #设置xfe图标的路径
 wei=`find /usr -name gnomeblue-theme`
 sed  -i "s#iconpath=#&$wei#"  ~/.config/xfe/xferc
 
 #原来VLC不能在root用户使用,现在修改root用户也可使用
-cp /usr/local/bin/vlc /usr/local/bin/vlc-bf
-sed -i 's/geteuid/getppid/' /usr/local/bin/vlc
+#cp /usr/local/bin/vlc /usr/local/bin/vlc-bf
+#sed -i 's/geteuid/getppid/' /usr/local/bin/vlc
 
 #隐藏几个快捷图标,使得开始菜单更清爽
 mulu=/usr/local/share/applications
@@ -100,5 +101,8 @@ echo "NoDisplay=true" >> $mulu/xfp.desktop
 echo "NoDisplay=true" >> $mulu/xfw.desktop
 echo "NoDisplay=true" >> $mulu/qterminal_drop.desktop
 
-#重启系统
-reboot
+#现在启动图形化桌面
+startx
+
+#退出脚本
+exit

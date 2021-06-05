@@ -7,5 +7,5 @@ me:\
 	:setenv=LC_MONETARY=zh_CN.UTF-8:\
 	:setenv=LC_NUMERIC=zh_CN.UTF-8:\
 	:setenv=LC_TIME=zh_CN.UTF-8:\
-	:charset=UTF-8:\
+	:charset=UTF-8:
 #	:xmodifiers="@im=SCIM":

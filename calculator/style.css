@@ -1,0 +1,134 @@
+﻿body
+{
+    font-family: 'Segoe UI', 'Helvetica', Arial, sans-serif;
+
+}
+
+#calc {
+
+	padding: 40px;
+	margin: 20px auto 0;
+    -ms-touch-action: manipulation;
+}
+
+/* 计算结果*/
+#display {
+    display: block;
+    height: 42pt;
+    line-height: 42pt;
+    cursor: none;
+    width: 420px;
+    font-family: 'Segoe UI Light', 'Segoe UI', 'Helvetica', Arial, sans-serif;
+    margin: 20px 0;
+    font-size: 30pt;
+    text-align: right;
+    padding: 0;
+    overflow: hidden;
+	border: 0;
+}
+
+/* 顶部的算式*/
+#descriptionDisplay {
+    text-align: right;
+    height: 22pt;
+    line-height:18pt;
+    font-size:15pt;
+    width: 420px;
+    cursor: none;
+    font-family: 'Segoe UI', 'Helvetica', Arial, sans-serif;
+    padding: 0;
+    border: 0;
+}
+
+.fixFloat {
+	clear: both;
+}
+
+
+.dockLeft {
+    float: left;
+}
+
+#numpad {
+    width: 240px;
+}
+
+#operations {
+    width: 80px;
+}
+
+.dockRight {
+    float: left;
+    width: 75px;
+}
+
+.buttonBox {
+    display: inline-block;
+    margin: 0 5px 5px 0;
+}
+
+.buttonBox:last-child {
+    margin-right: 0;
+}
+
+/*+-x/,c,ac*/
+button {
+    width: 67px;
+    height: 67px;
+    margin: 0;
+    padding: 0;
+	border: 4px solid white;
+	font-size: 20pt;
+	font-family: "Segoe UI Semilight", "Segoe UI", Helvetica, Arial, sans-serif;
+/*	background: #A0C4FF;  */
+    box-sizing:content-box;
+}
+
+button:hover {
+    border-color: red;
+}
+
+#operations button {
+	font-family: "Segoe UI Light", Helvetica, Arial, sans-serif;	
+	font-size: 30pt;
+}
+/* 数字颜色*/
+#numpad button {
+	background: #518EF0;
+    border-color: #518EF0;    
+}
+
+/* 数字外圈颜色*/
+#numpad button:hover {
+	border-color: red;
+}
+
+button[data-value='0'] {
+    width: 147px;
+}
+
+button:active {
+    height:63px;
+    width: 63px;
+    margin:2px;
+}
+
+button[data-value='0']:active {
+    width: 143px;
+}
+
+/* 等号*/
+#equalButton {
+	height: 147px;
+	background: #518EF0;
+    border-color: #518EF0;    
+	font-family: "Segoe UI", Helvetica, Arial, sans-serif;	
+}
+/* 等号外圈*/
+#equalButton:hover {
+    border-color: red;
+}
+
+    #equalButton:active {
+        height: 143px;
+    }

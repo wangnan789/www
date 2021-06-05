@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+<title>计算器</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="jquery-1.6.2.min.js"></script>
+<script src="script.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/my.css" />
+<link rel="stylesheet" type="text/css" href="style.css"  />
+<link href="calculator.ico" rel="shortcut icon" />
+</head>
+
+<body>
+<pre><div id="tou" ></div><script>$( "#tou" ).load( "/gonggong/tou.html" );</script></pre>
+<div id="calc">
+
+<input id="descriptionDisplay" readonly="true" />
+<input type="text" readonly="true" id="display" />
+
+<div id="numpad" class="dockLeft"></div>
+<div id="operations" class="dockLeft"></div>
+
+<div id="otherOperations" class="dockRight">
+ <div class="buttonBox"><button id="clearButton" data-value="clear">C</button></div>
+ <div class="buttonBox"><button id="allClearButton" data-value="allClear">AC</button></div>
+ <div class="buttonBox"><button id="equalButton" data-value="=">=</button></div>
+</div>
+<br class="fixFloat" />
+
+</div>
+
+<pre>
+参考网址 : <a href="https://testdrive-archive.azurewebsites.net/HTML5/OfflineCalculator/Default.html" target="_blank">OfflineCalculator</a>
+说明 : 这个更高级<a href="https://mathsolver.microsoft.com/zh" target="_blank">Calculator</a>
+创建时间 : 2021-05-20
+修改时间 : 2021-05-20
+<div id="dashang" ></div><script>$( "#dashang" ).load( "/gonggong/dashang.html" );</script>
+<div id="guanggao" ></div><script>$( "#guanggao" ).load( "/gonggong/guanggao.html" );</script></pre>
+</body></html>

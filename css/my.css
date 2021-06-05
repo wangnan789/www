@@ -14,7 +14,7 @@ background-color:#98cef0;
 .div-code
 {
   background-color:#EFE7D6;
-  width: 600px;
+  width: 609px;
   border: 1px solid red;
 }
 
@@ -24,4 +24,10 @@ margin:0em;
 }
 
 li { height:0.2em; }
+
+table,table tr th, table tr td {border:0.1em solid ; }
+table{ border-collapse: collapse; }  
+td{ width: 9em;  text-align:center; }
+
+
 
