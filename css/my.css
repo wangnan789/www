@@ -2,14 +2,7 @@ body {
 background-color:#98cef0;
       }
 
-.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  background-color: #98cef0;
-}
-
-
+pre{margin:0;border:0;padding:0;}
 
 .div-code
 {
@@ -21,13 +14,19 @@ background-color:#98cef0;
 ol {
 display:block;
 margin:0em;
+list-style-position:inside;
+padding:0;
+
 }
 
-li { height:0.2em; }
+li { 
+height:0;
+}
 
 table,table tr th, table tr td {border:0.1em solid ; }
 table{ border-collapse: collapse; }  
 td{ width: 9em;  text-align:center; }
+
 
 
 
