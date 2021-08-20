@@ -3,11 +3,12 @@ background-color:#98cef0;
       }
 
 pre{margin:0;border:0;padding:0;}
-
+div{margin:0;border:0;padding:0;}
 .div-code
 {
+word-wrap: break-word;
   background-color:#EFE7D6;
-  width: 609px;
+  width: 599px;
   border: 1px solid red;
 }
 
