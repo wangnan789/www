@@ -2,16 +2,51 @@
 <html lang="zh-Hans">
 
 <head>
-<title>传遍全球</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="/js/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/my.css" />
+    <title>传遍全球</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/two-panels.css" />
 </head>
 
-<body><pre>
-<div id="tou" ></div><script>$( "#tou" ).load( "/gonggong/tou.html" );</script>
-<div id="zhuti" ></div><script>$( "#zhuti" ).load( "/zhuti.html" );</script>
-<div id="zhici" ></div><script>$( "#zhici" ).load( "/gonggong/zhici.html" );</script>
-<div id="wei" ></div><script>$( "#wei" ).load( "/wei.html" );</script>
-<div id="guanggao" ></div><script>$( "#guanggao" ).load( "/gonggong/guanggao.html" );</script>
-</pre></body></html>
+<body>
+    <div class='two-panels'>
+        <div class='tree-panel'>
+            <ol>
+                <li class='leaf'><a href='#' onclick="changeFrame('寿星万年历/寿星万年历.html')">寿星万年历</a></li>
+
+                <li class='leaf'><a href='#' onclick="changeFrame('我的网站建设历程/我的网站建设历程.html')">我的网站建设历程</a></li>
+
+                <li class='leaf'><a href='#' onclick="changeFrame('网址转换二维码/网址转换二维码.html')">网址转换二维码</a></li>
+
+                <li class='leaf'><a href='#' onclick="changeFrame('三星S6屏幕左右颠倒的解决办法/三星S6屏幕左右颠倒的解决办法.html')">三星S6屏幕左右颠倒的解决办法</a></li>
+
+                <li class='leaf'><a href='#' onclick="changeFrame('不用光盘不用U盘也能安装系统/不用光盘不用U盘也能安装系统.html')">不用光盘不用U盘也能安装系统</a></li>
+
+                <li class='leaf'><a href='#' onclick="changeFrame('几个文本编辑器常用操作的快捷键/几个文本编辑器常用操作的快捷键.html')">几个文本编辑器常用操作的快捷键</a></li>
+
+                <li class='leaf'><a href='#' onclick="changeFrame('shell下用read读取用户输入/shell下用read读取用户输入.html')">shell下用read读取用户输入</a></li>
+
+                <li class='leaf'><a href='#' onclick="changeFrame('俄罗斯方块-在线版/俄罗斯方块-在线版.html')">俄罗斯方块-在线版</a></li>
+
+                <li class='leaf'><a href='#' onclick="changeFrame('在线拼音输入法/在线拼音输入法.html')">在线拼音输入法</a></li>
+
+                <li class='leaf'><a href='#' onclick="changeFrame('安全的用VNC连接远程主机/安全的用VNC连接远程主机.html')">安全的用VNC连接远程主机</a></li>
+
+                <li class='leaf'><a href='#' onclick="changeFrame('金庸小说/金庸小说.html')">金庸小说</a></li>
+
+                <li class='leaf'><a href='#' onclick="changeFrame('calculator/calculator.html')">calculator</a></li>
+
+                <li class='leaf'><a href='#' onclick="changeFrame('text-editor/text-editor.html')">text-editor</a></li>
+            </ol>
+        </div>
+        <div class='page-panel'><iframe src='' id='page_frame'></iframe></div>
+    </div>
+    <script>
+        function changeFrame(file_path) {
+            var iframe = document.getElementById("page_frame");
+            iframe.src = file_path;
+        }
+    </script>
+</body>
+
+</html>

@@ -2,16 +2,30 @@
 <html lang="zh-Hans">
 
 <head>
-<title>网址转换二维码</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="/js/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/my.css" />
+    <title>网址转换二维码</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/my.css" />
 </head>
 
 <body><pre>
-<div id="tou" ></div><script>$( "#tou" ).load( "/gonggong/tou.html" );</script>
-<div id="zhuti" ></div><script>$( "#zhuti" ).load( "zhuti.html" );</script>
-<div id="zhici" ></div><script>$( "#zhici" ).load( "/gonggong/zhici.html" );</script>
-<div id="wei" ></div><script>$( "#wei" ).load( "wei.html" );</script>
-<div id="guanggao" ></div><script>$( "#guanggao" ).load( "/gonggong/guanggao.html" );</script>
-</pre></body></html>
+<div id="tou" ></div>
+<div style="overflow:hidden;">
+<iframe src="9.html" frameborder="0" scrolling="no" style="width:100%; height:450px;"></iframe>
+</div>
+<div id="zhici" ></div>
+创建时间 : 不详
+修改时间 : 2022-04-10
+说明 : No
+参考网址 :
+<ol><li><a href="https://github.com/davidshimjs/qrcodejs">https://github.com/davidshimjs/qrcodejs</a></li>
+</ol>
+<div id="guanggao" ></div></pre>
+    <script>
+        $("#tou").load("/gonggong/tou.html")
+        $("#zhici").load("/gonggong/zhici.html")
+        $("#guanggao").load("/gonggong/guanggao.html")
+    </script>
+</body>
+
+</html>

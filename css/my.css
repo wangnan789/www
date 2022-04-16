@@ -8,7 +8,7 @@ div{margin:0;border:0;padding:0;}
 {
 word-wrap: break-word;
   background-color:#EFE7D6;
-  width: 599px;
+  width: 600px;
   border: 1px solid red;
 }
 
@@ -27,7 +27,6 @@ height:0;
 table,table tr th, table tr td {border:0.1em solid ; }
 table{ border-collapse: collapse; }  
 td{ width: 9em;  text-align:center; }
-
 
 
 

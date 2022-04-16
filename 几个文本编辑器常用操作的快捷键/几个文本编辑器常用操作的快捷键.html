@@ -2,16 +2,63 @@
 <html lang="zh-Hans">
 
 <head>
-<title>几个文本编辑器常用操作的快捷键</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="/js/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/my.css" />
+    <title>几个文本编辑器常用操作的快捷键</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/my.css" />
 </head>
 
 <body><pre>
-<div id="tou" ></div><script>$( "#tou" ).load( "/gonggong/tou.html" );</script>
-<div id="zhuti" ></div><script>$( "#zhuti" ).load( "zhuti.html" );</script>
-<div id="zhici" ></div><script>$( "#zhici" ).load( "/gonggong/zhici.html" );</script>
-<div id="wei" ></div><script>$( "#wei" ).load( "wei.html" );</script>
-<div id="guanggao" ></div><script>$( "#guanggao" ).load( "/gonggong/guanggao.html" );</script>
-</pre></body></html>
+<div id="tou" ></div>
+                   几个文本编辑器常用操作的快捷键
+<table cellspacing="0" >
+
+<thead>
+<tr><th> 功能 </th><th> nano </th><th> emacs </th><th> vi </th></tr>
+</thead>
+
+<tbody>
+<tr><td > 打开 </td><td> nano+文件名 </td><td> ctrl+x ctrl+f </td><td> : e 文件名 </td></tr>
+<tr><td > 保存 </td><td> ctrl+o </td><td> ctrl+x ctrl+s </td><td> : w </td></tr>
+<tr><td > 另存 </td><td> 未知 </td><td> ctrl+x ctrl+w </td><td> : w 文件名 </td></tr>
+<tr><td > 退出 </td><td> ctrl+x </td><td> ctrl+x ctrl+c </td><td> : q </td></tr>
+<tr><td > 输入 </td><td> 直接输入 </td><td> 直接输入 </td><td> a,A,i,I </td></tr>
+<tr><td > 光标移动 </td><td> ctrl+f(bpn) </td><td> ctrl+f(bpn) </td><td> h,j,k,l </td></tr>
+<tr><td > 标记 </td><td> alt+A </td><td> ctrl+@ </td><td> 未知 </td></tr>
+<tr><td > 复制 </td><td> alt+6 </td><td> alt+w </td><td> Y(行复制) </td></tr>
+<tr><td > 剪切 </td><td> ctrl+k </td><td> ctrl+w </td><td> x </td></tr>
+<tr><td > 粘贴 </td><td> ctrl+u </td><td> ctrl+y </td><td> p </td></tr>
+<tr><td > 删除 </td><td> backspace </td><td> ctrl+d </td><td> x </td></tr>
+<tr><td > 撤销 </td><td> alt+u </td><td> ctrl+x+u </td><td> x </td></tr>
+<tr><td > 查找 </td><td> ctrl+w(Q) </td><td> ctrl+s(r) </td><td> :/ </td></tr>
+<tr><td > 替换 </td><td> ctrl+\ </td><td> alt+% </td><td> :%s/aa/bb/g </td></tr>
+<tr><td > 行首 </td><td> ctrl+a </td><td> ctrl+a </td><td> Shift+6 </td></tr>
+<tr><td > 行尾 </td><td> ctrl+e </td><td> ctrl+e </td><td> Shift+4 </td></tr>
+<tr><td > 文件头 </td><td> alt+\ </td><td> 未知 </td><td> gg </td></tr>
+<tr><td > 文件尾 </td><td> alt+/ </td><td> 未知 </td><td> G </td></tr>
+<tr><td > 翻页 </td><td> ctrl+y(v) </td><td> ctrl+v,alt+v </td><td> ctrl+f(b) </td></tr>
+<tr><td > 跳转行 </td><td> ctrl+_ </td><td> alt+g+g </td><td> 数字+G </td></tr>
+<tr><td > 列操作 </td><td> 未试 </td><td> 测试失效 </td><td> 复杂 </td></tr>
+<tr><td > 长行 </td><td> 极不顺畅 </td><td> 不顺畅 </td><td> 极不顺畅 </td></tr>
+<tr><td > 大文件 </td><td> 未试 </td><td> 未试 </td><td> 未试 </td></tr>
+<tr><td > 记住 </td><td> 不需 </td><td> 需要 </td><td> 需要 </td></tr>
+</tbody>
+
+</table>
+奇淫巧技:emacs,输入99个a <code> ctrl-u 99 a </code>
+
+
+<div id="zhici" ></div>
+创建时间 : 不详
+修改时间 : 2022-04-10
+说明 : No
+参考网址 : 网络，很多很多，已忘记原网址
+<div id="guanggao" ></div></pre>
+    <script>
+        $("#tou").load("/gonggong/tou.html")
+        $("#zhici").load("/gonggong/zhici.html")
+        $("#guanggao").load("/gonggong/guanggao.html")
+    </script>
+</body>
+
+</html>

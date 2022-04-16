@@ -2,16 +2,84 @@
 <html lang="zh-Hans">
 
 <head>
-<title>不用光盘不用U盘也能安装系统</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="/js/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/my.css" />
+    <title>不用光盘不用U盘也能安装系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/my.css" />
 </head>
 
 <body><pre>
-<div id="tou" ></div><script>$( "#tou" ).load( "/gonggong/tou.html" );</script>
-<div id="zhuti" ></div><script>$( "#zhuti" ).load( "zhuti.html" );</script>
-<div id="zhici" ></div><script>$( "#zhici" ).load( "/gonggong/zhici.html" );</script>
-<div id="wei" ></div><script>$( "#wei" ).load( "wei.html" );</script>
-<div id="guanggao" ></div><script>$( "#guanggao" ).load( "/gonggong/guanggao.html" );</script>
-</pre></body></html>
+<div id="tou" ></div>
+以前安装系统一般是把iso文件刻录到光盘,再从光驱启动进行安装.或刻录到
+U盘启动安装.可是当你没有光驱也没有U盘怎么办呢?下面分3种情况来说说
+
+<b style="font-size:150% ; color:red">(1)你的系统是2000/XP/2003</b>
+<ol start="11"><li>下载<a href="https://www.kerne1.org/pz/grub-dos.zip">grub</a></li>
+<li>把里面的文件解压到C盘根目录</li>
+<li>编辑C:\boot.ini,把timeout的值改为大于0的数,在末尾添加一行代码</li>
+<code><div class="div-code">
+  C:\grldr.mbr="GRUB MENU"
+  </div></code>
+<li>下载<a href="https://ftp.openbsd.org/pub/OpenBSD/6.6/amd64/cd66.iso">openbsd</a>,放在C盘根目录里</li>
+<li>重启电脑.多了一项启动菜单,点进去就出现了openbsd--net-install</li>
+<li>选择它,开始安装有可能是世界上最安全的操作系统</li>
+</ol>
+<b style="font-size:150% ; color:red">(2)你的系统是win7/8/10</b>
+<ol start="21"><li>下载<a href="https://www.kerne1.org/pz/grub-dos.zip">grub</a></li>
+<li>把里面的文件解压到C盘根目录</li>
+<li>启动BOOTICE_x86_16.06.17_1.3.4.exe</li>
+<img src="1.jpg" alt="" />
+
+<li>添加实模式启动项</li>
+<img src="2.jpg" alt="" />
+
+<li>选择C盘所在的硬盘</li>
+<img src="3.jpg" alt="" />
+
+<li>选择C盘</li>
+<img src="4.jpg" alt="" />
+
+<li>依次点击"默认","保存当前系统设置","关闭"</li>
+<img src="5.jpg" alt="" />
+
+<li>下载<a href="https://ftp.openbsd.org/pub/OpenBSD/6.6/amd64/cd66.iso">openbsd</a>,放在C盘根目录里</li>
+<li>重启电脑.启动菜单多了一项Realmode App Loader,点击进去就出现了
+openbsd--net-install,选择它,安装有可能是世界上最安全的操作系统</li>
+</ol>
+
+<b style="font-size:150% ; color:red">(3)你的系统是Gnu/linux(debian/Ubuntu/Fedora)</b>
+<ol start="31"><li>编辑/etc/grub.d/40_custom,添加以下代码</li>
+<code><div class="div-code">
+menuentry "openbsd--net-install"
+ {
+ linux16 /home/memdisk iso raw
+ initrd16 /home/cd66.iso
+ }
+ </div></code>
+
+<li>下载<a href="https://ftp.openbsd.org/pub/OpenBSD/6.6/amd64/cd66.iso">openbsd</a>和<a href="https://www.kerne1.org/pz/memdisk">memdisk</a>,把它们放在/home/</li>
+<li>运行</li>
+<code><div class="div-code">
+ grub-mkconfig -o /boot/grub/grub.cfg
+ </div></code>
+<img src="6.jpg" alt="" />
+
+<li>重启电脑.启动菜单多了一项openbsd--net-install,选择它,安装有
+可能是世界上最安全的操作系统</li>
+</ol>
+
+
+<div id="zhici" ></div>
+创建时间 : 2020-2-19
+修改时间 : 2022-04-10
+说明 : No
+参考网址 : 很多,已忘记
+<div id="guanggao" ></div></pre>
+    <script>
+        $("#tou").load("/gonggong/tou.html")
+        $("#zhici").load("/gonggong/zhici.html")
+        $("#guanggao").load("/gonggong/guanggao.html")
+    </script>
+</body>
+
+</html>

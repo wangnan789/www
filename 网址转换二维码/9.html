@@ -2,46 +2,45 @@
 <html lang="zh-Hans">
 
 <head>
-<title> </title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="/js/jquery.min.js"></script>
-<script src="/js/qrcode.js"></script>
+    <title> </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="/js/jquery.min.js"></script>
+    <script src="qrcode.js"></script>
 </head>
 
 <body>
-请输入网址<input id="text" type="text" value="https://www.kfchy.com" style="width:98%" /><br/>
-<button onclick="">转换</button><br/>
-<!--其实并不是靠点击按钮来转换,只要在页面空白处随意点击就能转换.-->
-<div id="qrcode" style="padding:0px 40px;width:260px; height:260px; margin-top:50px;"></div>
+    请输入网址<input id="text" type="text" value="https://www.kfchy.com" style="width:50%" /><br/>
+    <button onclick="">转换</button><br/>
+    <!--其实并不是靠点击按钮来转换,只要在页面空白处随意点击就能转换.-->
+    <div id="qrcode" style="padding:0px 40px;width:300px; height:300px; margin-top:50px;"></div>
+    <script>
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            width: 360,
+            height: 360
+        });
 
-<script>
-var qrcode = new QRCode(document.getElementById("qrcode"), {
-	width : 245,
-	height : 245
-});
+        function makeCode() {
+            var elText = document.getElementById("text");
 
-function makeCode () {		
-	var elText = document.getElementById("text");
+            if (!elText.value) {
+                alert("Input a text");
+                elText.focus();
+                return;
+            }
+            qrcode.makeCode(elText.value);
+        }
+        makeCode();
 
-	if (!elText.value) {
-		alert("Input a text");
-		elText.focus();
-		return;
-	}
+        $("#text").
+        on("blur", function() {
+            makeCode();
+        }).
+        on("keydown", function(e) {
+            if (e.keyCode == 13) {
+                makeCode();
+            }
+        });
+    </script>
+</body>
 
-	qrcode.makeCode(elText.value);
-}
-
-makeCode();
-
-$("#text").
-	on("blur", function () {
-		makeCode();
-	}).
-	on("keydown", function (e) {
-		if (e.keyCode == 13) {
-			makeCode();
-		}
-	});
-</script>
-
+</html>
