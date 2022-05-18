@@ -1,6 +1,0 @@
-export GTK_IM_MODULE="scim"
-export QT_IM_MODULE="scim"
-export XMODIFIERS="@im=SCIM"
-/usr/local/bin/scim -d
-
-exec openbox-session

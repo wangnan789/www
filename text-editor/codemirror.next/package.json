@@ -1,0 +1,17 @@
+{
+  "name": "codemirror6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "rollup -c"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@codemirror/basic-setup": "^0.18.2",
+    "@codemirror/lang-javascript": "^0.18.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "rollup": "^2.50.6"
+  }
+}
