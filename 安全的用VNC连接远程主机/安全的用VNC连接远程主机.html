@@ -3,71 +3,62 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>安全的用连接远程主机</title>
-    <script src="/js/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/my.css" />
 </head>
 
-<body><pre>
-<div id="tou" ></div>
-VNC是一个连接系统,让您在本地操作远程服务器上的图形桌面,对于不熟悉命
-令行的用户,它使在远程服务器上管理文件和设置更加容易.以下操作将会在本
-地devuan系统和远程服务器上设置VNC服务器,并通过SSH隧道安全地连接服务器
+<body><div id="no1" >
 
-<ol>
-<li>在远程服务器上安装vnc服务软件</li>
-<div class="div-code">
+<br>
+<iframe id="tou" src="/gonggong/tou.html" ></iframe>
+<br>
+<br>
+
+<p class="neirong" >VNC是一个连接系统,让您在本地操作远程服务器上的图形桌面,对于不熟悉命令行的用户,它使在远程服务器上管理文件和设置更加容易.以下操作将会在本地devuan系统和远程服务器上设置VNC服务器,并通过SSH隧道安全地连接服务器 </p>
+<br>
+
+<pre id="yiban" >
+在远程服务器上安装vnc服务软件
 apt install tightvncserver
 
-</div>
-<li>开启vnc服务</li>
-<div class="div-code">
+开启vnc服务
 vncserver
 
-</div>
-<li>设置密码</li>
-<div class="div-code">
+设置密码
 Password:
 Verify:
 
-</div>
-<li>无说明</li>
-<div class="div-code">
+无说明
 Would you like to enter a view-only password (y/n)? n
 
-</div>
-<li>以下操作在本地主机进行.安装vnc软件</li>
-<div class="div-code">
+以下操作在本地主机进行.安装vnc软件
 apt install gvncviewer
 
-</div>
-<li>使用SSH安全转发到VNC的连接</li>
-<div class="div-code">
+使用SSH安全转发到VNC的连接
 ssh -L 5901:127.0.0.1:5901 -C -N -l user-name your_server_ip
 
-</div>
-<li>开始连接,弹出一个窗口，输入第3步的密码</li>
-<div class="div-code">
+开始连接,弹出一个窗口，输入第3步的密码
 gvncviewer your_server_ip:1
 
-</div></ol>
-
 另外可以试试 <a target="_blank" href="http://www.karlrunge.com/x11vnc/ssvnc.html" target="_blank">ssvnc</a> ,它为VNC连接增加了加密安全性,而且它还有GUI
+</pre>
 
+<br>
+<iframe id="zhici" src="/gonggong/zhici.html" ></iframe>
+<br>
 
-<div id="zhici" ></div>
+<pre id="wei" >
 创建时间 : 2020-06-04
-修改时间 : 2022-05-18
+修改时间 : <script>document.write(document.lastModified);</script>
 说明 : No
-参考网址 :
-<ol><li><a target="_blank" href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-18-04">www.digitalocean.com</a></li>
-</ol>
-<div id="guanggao" ></div></pre>
-    <script>
-        $("#tou").load("/gonggong/tou.html")
-        $("#zhici").load("/gonggong/zhici.html")
-        $("#guanggao").load("/gonggong/guanggao.html")
-    </script>
-</body>
+参考网址 :   
+ <a target="_blank" href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-18-04">www.digitalocean.com</a>
+</pre>
+<br>
 
-</html>
+<iframe id="guangao" src="/gonggong/guangao.html" ></iframe>
+<br>
+<br>
+
+</div></body></html>

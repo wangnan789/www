@@ -3,6 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>在线拼音输入法</title>
     <link rel="stylesheet" type="text/css" href="/css/my.css" />
     <script src="/js/jquery.min.js"></script>
@@ -11,56 +12,62 @@
     <script language=javascript src="pinyin-core.js" charset="utf-8"></script>
 </head>
 
-<body onload="on_load()"><pre>
-<div id="tou" ></div></pre>
-    <form style="FONT-SIZE: 100%" name="form1" action="return false" method="post">
+<body onload="on_load()"><div id="no1" >
 
-        <textarea onkeypress="return key_press(event);" id="edit_area" onkeydown="return key_down(event);" onkeyup="return key_up(event);" style="WIDTH: 762px; HEIGHT: 65%" name="edit_area" rows="11" cols="60"></textarea>
+<br>
+<iframe id="tou" src="/gonggong/tou.html" style="height:37px" ></iframe>
+<br>
+<br>
+<div>
+
+<form name="form1" action="return false" method="post">
+<textarea onkeypress="return key_press(event);" id="edit_area" onkeydown="return key_down(event);" onkeyup="return key_up(event);" style="WIDTH:99%; HEIGHT: 65%" name="edit_area" rows="11" cols="60"></textarea>
 
 
-        <table cellspacing="0" cellpadding="0" width="770" border="1">
-            <tr>
+<table cellspacing="0" cellpadding="0" width="100%" border="1">
+<tr>
+<td style="BACKGROUND-COLOR: #f0eff1" onclick="document.form1.edit_area.focus()" width="70%">
+<div id="code_field" ></div>
+</td>
 
-                <td style="BACKGROUND-COLOR: #f0eff1" onclick="document.form1.edit_area.focus()" width="33%">
-                    <div id="code_field" style="PADDING-LEFT: 2px; FONT-SIZE: 14px"></div>
-                </td>
+<td align="left"><label onclick="document.form1.edit_area.focus()"><input type="radio" checked name="ch_en_switch">汉字</label>
+<label onclick="document.form1.edit_area.focus()"><input onclick="clear_all();" type="radio" name="ch_en_switch">英文</label>
+<label onclick="document.form1.edit_area.focus()">(<input id="full_shape2" type="checkbox" name="full_shape" value="ON">全角)</label>
 
-                <td align="left"><label onclick="document.form1.edit_area.focus()"><input type="radio" checked name="ch_en_switch">汉字</label>
-                    <label onclick="document.form1.edit_area.focus()"><input onclick="clear_all();" type="radio" name="ch_en_switch">英文</label>
-                    <label onclick="document.form1.edit_area.focus()">(<input id="full_shape2" type="checkbox" name="full_shape" value="ON">全角)</label>
-
-                    <select id="select1" style="FONT-SIZE: 11pt" onchange="disp_fuhao(this)" name="select1">
+<select id="select1" style="FONT-SIZE: 11pt" onchange="disp_fuhao(this)" name="select1">
 <option selected>各类符号</option> <option value="biaodian">标点符号</option> <option value="shuxue">数学符号</option> <option value="shuzi">数字序号</option> <option value="teshu">特殊符号</option> <option value="zhibiao">制表符号</option> <option value="xila">希腊字母</option> <option value="ewen">俄文字母</option> <option value="pinyin">拼音字母</option> <option value="zhuyin">注音符号</option> <option value="hiragana">平假名表</option> <option value="katakana">片假名表</option>
 </select>
-                </td>
+</td>
 
-                <td onclick="document.form1.edit_area.focus()" align="middle"><input id="copyAll" onclick="highlight_copy();" type="button" value="复制全文" name="select"></td>
+<td onclick="document.form1.edit_area.focus()" align="middle"><input id="copyAll" onclick="highlight_copy();" type="button" value="复制全文" name="select"></td>
+</tr>
 
-            </tr>
+<tr>
+    <td colspan="3">
+        <div id="list_area" style=" BACKGROUND-COLOR: #f0eff1" onclick="document.form1.edit_area.focus()">
+        </div>
+    </td>
+</tr>
 
-            <tr>
-                <td colspan="3">
-                    <div id="list_area" style="PADDING-RIGHT: 4px; PADDING-LEFT: 2px; FONT-SIZE: 16px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px; BACKGROUND-COLOR: #f0eff1" onclick="document.form1.edit_area.focus()">
-                    </div>
-                </td>
-            </tr>
+</table>
+        <div id="button_field" ></div>
+</form></div>
 
-        </table>
-        <div id="button_field" style="width:770px;"></div>
-    </form>
-    <pre>
-<div id="zhici" ></div>
+<br>
+<iframe id="zhici" src="/gonggong/zhici.html" ></iframe>
+<br>
+<br>
+
+<pre id="wei" >
 创建时间 : 2020.05.03
-修改时间 : 2022-05-18
+修改时间 : <script>document.write(document.lastModified);</script>
 参考网址 :
-<ol><li><a target="_blank" href="https://qq.ip138.com/ime/pinyin_jianti/">https://qq.ip138.com/ime/pinyin_jianti/</a></li>
-</ol>
-<div id="guanggao" ></div></pre>
-    <script>
-        $("#tou").load("/gonggong/tou.html")
-        $("#zhici").load("/gonggong/zhici.html")
-        $("#guanggao").load("/gonggong/guanggao.html")
-    </script>
-</body>
+ <a target="_blank" href="https://qq.ip138.com/ime/pinyin_jianti/">https://qq.ip138.com/ime/pinyin_jianti/</a>
+</pre>
+<br>
 
-</html>
+<iframe id="guangao" src="/gonggong/guangao.html" ></iframe>
+<br>
+<br>
+
+</div></body></html>

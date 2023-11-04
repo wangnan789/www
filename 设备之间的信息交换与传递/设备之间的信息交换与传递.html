@@ -3,13 +3,19 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>设备之间的信息交换与传递</title>
-    <script src="/js/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/my.css" />
 </head>
 
-<body><pre>
-<div id="tou" ></div>
+<body><div id="no1" >
+
+<br>
+<iframe id="tou" src="/gonggong/tou.html" style="height:37px" ></iframe>
+<br>
+<br>
+
+<pre id="yiban" >
 <a target="_blank" href="https://privatebin.net/">https://privatebin.net</a>
 
 <a target="_blank" href="https://bpa.st/">https://bpa.st</a>
@@ -19,19 +25,24 @@
 <a target="_blank" href="http://vpaste.net/">http://vpaste.net</a>
 
 <a target="_blank" href="https://paste.debian.net/">https://paste.debian.net</a>
+</pre>
 
-<div id="zhici" ></div>
+<br>
+<iframe id="zhici" src="/gonggong/zhici.html" ></iframe>
+<br>
+<br>
+
+<pre id="wei" >
 创建时间 : 2015-xx-xx
-修改时间 : 2022-05-18
+修改时间 : <script>document.write(document.lastModified);</script>
 说明 : No
 参考网址 :
 
-<div id="guanggao" ></div></pre>
-    <script>
-        $("#tou").load("/gonggong/tou.html")
-        $("#zhici").load("/gonggong/zhici.html")
-        $("#guanggao").load("/gonggong/guanggao.html")
-    </script>
-</body>
+</pre>
+<br>
 
-</html>
+<iframe id="guangao" src="/gonggong/guangao.html" ></iframe>
+<br>
+<br>
+
+</div></body></html>

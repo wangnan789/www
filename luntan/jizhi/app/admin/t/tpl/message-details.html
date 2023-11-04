@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+       <meta charset="UTF-8">
+        {include="style"}
+		{include="edit"}
+		
+    </head>
+    
+    <body>
+	 <div class="x-nav">
+            <span class="layui-breadcrumb">
+              <a><cite>{fun JZLANG('首页')}</cite></a>
+              <a><cite>{fun JZLANG('留言管理')}</cite></a>
+             
+			  <a><cite>{fun JZLANG('查看留言')}</cite></a>
+            </span>
+            <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"  href="javascript:location.replace(location.href);" title="{fun JZLANG('刷新')}"><i class="iconfont" style="line-height:30px">&#xe6aa;</i></a>
+        </div>
+        <div class="x-body">
+            <form class="layui-form  layui-form-pane" >
+			<input type="hidden" name="go" value="1" />
+			<input type="hidden" name="id" value="{$data['id']}" />
+			
+			<div class="layui-tab">
+			  <ul class="layui-tab-title">
+				<li class="layui-this">{fun JZLANG('基本')}</li>
+				<li>{fun JZLANG('扩展')}</li>
+				
+			  </ul>
+			  <div class="layui-tab-content">
+				<div class="layui-tab-item layui-show">
+					{if($molds['isclasstype']==1)}
+					<div class="layui-form-item">
+						<label for="tid" class="layui-form-label">
+							<span class="x-red">*</span>{fun JZLANG('栏目')}
+						</label>
+						<div class="layui-input-inline">
+							<select name="tid" lay-search="" lay-filter="tid" {if($molds['ismust']==1)}lay-verify="required"{/if} id="tid" >
+							{if($molds['ismust']==1)}
+							<option value="">{fun JZLANG('选择栏目')}</option>
+							{else}
+							<option value="0">{fun JZLANG('不限栏目')}</option>
+							{/if}
+							{foreach $classtypes as $v}
+							{if($v['molds']=='message')}
+							{if($admin['classcontrol']==0 || $admin['isadmin']==1 || strpos($tids,','.$v['id'].',')!==false || $molds['iscontrol']==0)}
+							<option {if($data['tid']==$v['id'])} selected="selected" {/if}  value="{$v['id']}">{fun str_repeat('--', $v['level'])}{$v['classname']}</option>
+							{/if}
+							{/if}
+							{/foreach}
+
+							</select>
+						</div>
+						<div class="layui-input-inline">
+							<span class="x-red">{fun JZLANG('填写内容时，请先选择栏目，否则切换栏目后，数据会丢失！')}</span>
+						</div>
+
+					</div>
+					{else}
+					<input type="hidden" name="tid" value="{$data['tid']}" />
+					{/if}
+				<span id="content_fields"></span>
+				
+				</div>
+				<div class="layui-tab-item">
+					<span id="ext_fields"></span>
+				</div>
+			  </div>
+			</div>
+               
+                <div class="layui-form-item" style="text-align:center;">
+                   
+                     <button  class="layui-btn" lay-filter="save" lay-submit="">
+                        {fun JZLANG('修改保存')}
+                    </button>
+                </div>
+            </form>
+        </div>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+      
+        <script>
+		{include="fields"}
+            layui.use(['laydate','form','layer','upload'], function(){
+                $ = layui.jquery;
+              var form = layui.form,layer = layui.layer,laydate = layui.laydate;
+			  var upload = layui.upload;
+			 laydate.render({
+				elem: '#addtime', //指定元素
+				type:'datetime'
+			  });
+			
+              //图片上传接口
+              upload.render({
+			    elem: '#LAY_demo_upload',
+                url: '{fun U('Common/uploads')}' //上传接口
+                ,done: function(res){ //上传成功后的回调
+                   // console.log(res);
+					
+					if(res.code==0){
+						 $('#fileimg').attr('src',res.url);
+						 $('#litpic').val(res.url);
+					}else{
+						 layer.alert(res.error, {icon: 5});
+					}
+                 
+                }
+              });
+			  
+			    //监听提交
+              form.on('submit(save)', function(data){
+                //console.log(data);
+                //发异步，把数据提交给php
+				$.post("{fun U('editmessage')}",data.field,function(r){
+					var r = JSON.parse(r);
+					if(r.code==0){
+						 layer.msg(r.msg, {icon: 6,time: 2000},function () {
+							// 获得frame索引
+							{if($webconf['admintpl']=='tpl')}
+							 window.location.href="{fun U('messagelist')}";
+							{else}
+							parent.location.reload();
+							{/if}
+							
+						});
+					}else{
+						layer.alert(r.msg, {icon: 5});
+					}
+				});
+				
+               
+                return false;
+              });
+            get_fields({$data['tid']},{$data['id']});
+            get_fields_ext({$data['tid']},{$data['id']});
+				form.on('select(tid)', function(data){
+				 
+				  get_fields(data.value,{$data['id']}); 
+				  get_fields_ext(data.value,{$data['id']});
+				  
+				  
+				});
+			
+			
+           
+              
+              
+            });
+        </script>
+      
+    </body>
+
+</html>

@@ -1,34 +1,72 @@
-html,body {
-background-color:#98cef0;
-width: 100%;
-height: 100%;
+
+body {
+  background-color:#c0c0c0;
+  background-image: url("/bj.png");
+ /*{ 图片来源
+https://www.meijian.com/brandproduct/32277
+版权：已授权 可用于 个人/企业等商业用途。
+商用无忧 https://qhstaticssl.kujiale.com/image/png/1689583066969/4DCE971EABF03C608EF384E475B1C956.png   
+}*/
       }
+
+#no1 {
+background-color:#97a8b2;
+width: 1166px;
+height:100%;
+overflow-wrap: break-word;
+text-indent: 0px;
+padding: 0px;
+margin: 5px 29px;
+font-size: 16px;
+    }
+
+p {
+  padding: auto;
+  margin: auto;
+
+  text-indent: 25px;
+}
+
+pre {
+  margin: auto;
+
+}
+
+div {
+  overflow-wrap: break-word;
+  padding: 0px;
+  margin: auto;
+
+    }
+
+.div-code {
+  background-color:#bcc6cc;
+}    
+iframe {
+  margin: auto;
+  overflow-wrap: break-word;
+  width: 100%;
+
+  font-size: 16px;
+  }
+
+#tou {
+  border: none;
+  height:37px;
+  }
+#zhici {
+  border: none;
+  height:300px;
+}
+#guangao {
+  border: none;
+  height:650px;
+}
 /*{
-margin: 0;
-padding: 0;
+    border: 2px dashed rgba(5, 0, 7, 0.751);
+  border: 1px dashed red;
+  border: 2px solid rgba(144, 142, 192, 0.896);
+    border: 2px solid rgb(237, 237, 6);
+  border: 2px solid rgb(252, 252, 252);
+      border: 1px solid red;
   }*/
-pre{margin:0;border:0;padding:0;}
-div{margin:0;border:0;padding:0;}
-.div-code
-{
-word-wrap: break-word;
-  background-color:#EFE7D6;
-  width: 600px;
-  border: 1px solid red;
-}
-
-ol {
-display:block;
-margin:0em;
-list-style-position:inside;
-padding:0;
-
-}
-
-li {
-height:0;
-}
-
-table,table tr th, table tr td {border:0.1em solid ; }
-table{ border-collapse: collapse; }
-td{ width: 9em;  text-align:center; }

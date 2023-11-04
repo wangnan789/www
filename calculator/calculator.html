@@ -4,13 +4,19 @@
 <head>
     <title>计算器</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="/js/jquery.min.js"></script>
     <script src="cal.js"></script>
     <link rel="stylesheet" type="text/css" href="cal.css" />
+    <link rel="stylesheet" type="text/css" href="/css/my.css" />
 </head>
 
-<body><pre>
-<div id="tou" ></div></pre>
+<body><div id="no1" >
+
+    <br>
+    <iframe id="tou" src="/gonggong/tou.html" style="height:37px" ></iframe>
+    <br>
+    <br>
     <!--标准型-->
     <div class="standard-main" id="std-main">
         <div class="title">
@@ -205,20 +211,22 @@
             <li class="active">程序员</li>
         </ul>
     </div>
-    <pre>
-<div id="zhici" ></div>
+
+<br>
+<iframe id="zhici" src="/gonggong/zhici.html" ></iframe>
+<br>
+<br>
+<pre id="wei" >
 创建时间 : 2021-09-20
-修改时间 : 2022-04-10
+修改时间 : <script>document.write(document.lastModified);</script>
 说明 :
 参考网址 :
-<ol><li><a href="https://github.com/seaswalker/js_calculator" target="_blank">https://github.com/seaswalker/js_calculator</a></li>
-</ol>
-<div id="guanggao" ></div></pre>
-    <script>
-        $("#tou").load("/gonggong/tou.html")
-        $("#zhici").load("/gonggong/zhici.html")
-        $("#guanggao").load("/gonggong/guanggao.html")
-    </script>
-</body>
+ ><a href="https://github.com/seaswalker/js_calculator" target="_blank">https://github.com/seaswalker/js_calculator</a>
+</pre>
+<br>
 
-</html>
+<iframe id="guangao" src="/gonggong/guangao.html" ></iframe>
+<br>
+<br>
+
+</div></body></html>
