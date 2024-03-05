@@ -1,4 +1,17 @@
 
+
+
+
+
+
+
+
+
+
+
+
+
+/*背景图色*/
 body {
   background-color:#c0c0c0;
   background-image: url("/bj.png");
@@ -7,7 +20,7 @@ https://www.meijian.com/brandproduct/32277
 版权：已授权 可用于 个人/企业等商业用途。
 商用无忧 https://qhstaticssl.kujiale.com/image/png/1689583066969/4DCE971EABF03C608EF384E475B1C956.png   
 }*/
-      }
+    }
 
 #no1 {
 background-color:#97a8b2;
@@ -50,23 +63,27 @@ iframe {
   font-size: 16px;
   }
 
+/*顶部*/
 #tou {
   border: none;
   height:37px;
   }
+
 #zhici {
   border: none;
   height:300px;
 }
-#guangao {
+
+/*广告区*/
+#guanggao {
   border: none;
   height:650px;
 }
-/*{
-    border: 2px dashed rgba(5, 0, 7, 0.751);
+/*把这些放在块里，可以产生边界线
+  border: 2px dashed rgba(5, 0, 7, 0.751);
   border: 1px dashed red;
   border: 2px solid rgba(144, 142, 192, 0.896);
-    border: 2px solid rgb(237, 237, 6);
+  border: 2px solid rgb(237, 237, 6);
   border: 2px solid rgb(252, 252, 252);
-      border: 1px solid red;
-  }*/
+  border: 1px solid red;
+  */
