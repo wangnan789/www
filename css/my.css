@@ -1,55 +1,33 @@
 
 
-
-
-
-
-
-
-
-
-
-
-
-/*背景图色*/
 body {
-  background-color:#c0c0c0;
-  background-image: url("/bj.png");
+  /*居中显示*/
+  margin: auto;
+    /*自动换行     overflow-wrap: break-word; */
+
+  /*最大宽度*/
+  max-width: 1028px;
+  /*背景色*/
+  background-color:#cbd7de;
+  /*字体大小*/
+  font-size: 1.3em;
+
  /*{ 图片来源
+    background-image: url("/bj.png");
 https://www.meijian.com/brandproduct/32277
 版权：已授权 可用于 个人/企业等商业用途。
-商用无忧 https://qhstaticssl.kujiale.com/image/png/1689583066969/4DCE971EABF03C608EF384E475B1C956.png   
+商用无忧 https://qhstaticssl.kujiale.com/image/png/1689583066969/4DCE971EABF03C608EF384E475B1C956.png 
 }*/
     }
-
-#no1 {
-background-color:#97a8b2;
-width: 1166px;
-height:100%;
-overflow-wrap: break-word;
-text-indent: 0px;
-padding: 0px;
-margin: 5px 29px;
-font-size: 16px;
-    }
-
-p {
-  padding: auto;
+h1 {
+  text-align: center;
   margin: auto;
-
-  text-indent: 25px;
 }
 
-pre {
-  margin: auto;
-
-}
-
-div {
-  overflow-wrap: break-word;
-  padding: 0px;
-  margin: auto;
-
+video,img { max-width: 880px;max-height:543px;}
+div,h1,h2,img,video,iframe {
+  border: 3px dashed rgba(223, 36, 102, 0.947);
+  white-space: break-spaces;
     }
 
 .div-code {
@@ -57,10 +35,7 @@ div {
 }    
 iframe {
   margin: auto;
-  overflow-wrap: break-word;
   width: 100%;
-
-  font-size: 16px;
   }
 
 /*顶部*/
