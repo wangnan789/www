@@ -3,62 +3,77 @@
 body {
   /*居中显示*/
   margin: auto;
-    /*自动换行     overflow-wrap: break-word; */
-
+    /*自动换行     overflow-wrap: break-word; style="overflow-wrap: anywhere;" */
+    overflow-wrap: anywhere;
+    border: 2px dashed red;
   /*最大宽度*/
-  max-width: 1028px;
+  max-width: 66rem;
   /*背景色*/
   background-color:#cbd7de;
   /*字体大小*/
-  font-size: 1.3em;
+  font-size: 1.1rem;
 
  /*{ 图片来源
     background-image: url("/bj.png");
 https://www.meijian.com/brandproduct/32277
 版权：已授权 可用于 个人/企业等商业用途。
-商用无忧 https://qhstaticssl.kujiale.com/image/png/1689583066969/4DCE971EABF03C608EF384E475B1C956.png 
+商用无忧 https://qhstaticssl.kujiale.com/image/png/1689583066969/4DCE971EABF03C608EF384E475B1C956.png
 }*/
     }
-h1 {
+h3 {
+    max-width:79%;
+    /*文字居中*/
   text-align: center;
   margin: auto;
+  /*下划线*/
+  border-bottom: 2px solid rgb(246, 6, 6);
 }
 
-video,img { max-width: 880px;max-height:543px;}
-div,h1,h2,img,video,iframe {
-  border: 3px dashed rgba(223, 36, 102, 0.947);
-  white-space: break-spaces;
+h4 {
+    max-width:63%;
+    text-align: center;
+    margin: auto;
+    /*下划线*/
+    border-bottom: 2px dashed #000;
+  }
+
+video,img {
+    /*外边距,上下0.3,左右1*/
+    margin: 0.3rem 1rem;
+    max-width:96%;
+}
+div {
+/*空格,空行按原样显示,自动换行*/
+white-space: break-spaces;
+/*内边距,上下0,左右0.6*/
+  padding: 0 0.6rem;
     }
 
-.div-code {
-  background-color:#bcc6cc;
-}    
+.code {
+  background-color:rgb(207, 185, 200);
+}
+
 iframe {
-  margin: auto;
-  width: 100%;
+    margin: auto;
+    width: 96%;
+     /*无边框线*/
+    border: none;
   }
 
 /*顶部*/
 #tou {
-  border: none;
-  height:37px;
+  height:2.3rem;
   }
 
 #zhici {
-  border: none;
-  height:300px;
+  height:19rem;
 }
 
 /*广告区*/
 #guanggao {
-  border: none;
-  height:650px;
+    height: 103rem;
 }
 /*把这些放在块里，可以产生边界线
-  border: 2px dashed rgba(5, 0, 7, 0.751);
+  border: 2px solid rgba(223, 36, 102, 0.947);
   border: 1px dashed red;
-  border: 2px solid rgba(144, 142, 192, 0.896);
-  border: 2px solid rgb(237, 237, 6);
-  border: 2px solid rgb(252, 252, 252);
-  border: 1px solid red;
   */

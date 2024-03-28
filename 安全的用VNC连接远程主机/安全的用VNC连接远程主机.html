@@ -6,61 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>安全的用连接远程主机</title>
     <link rel="stylesheet" type="text/css" href="/css/my.css" />
+
 </head>
 
 <body><br><iframe id="tou" src="/gonggong/tou.html" style="height:37px" ></iframe>
 <div>
+<h3>安全的用连接远程主机</h3>
 
-<br>
-<iframe id="tou" src="/gonggong/tou.html" ></iframe>
-<br>
-<br>
+VNC是一个连接系统,让您在本地操作远程服务器上的图形桌面,对于不熟悉命令行的用户,它使在远程服务器上管理文件和设置更加容易.以下操作将会在本地devuan系统和远程服务器上设置VNC服务器,并通过SSH隧道安全地连接服务器
 
-<p class="neirong" >VNC是一个连接系统,让您在本地操作远程服务器上的图形桌面,对于不熟悉命令行的用户,它使在远程服务器上管理文件和设置更加容易.以下操作将会在本地devuan系统和远程服务器上设置VNC服务器,并通过SSH隧道安全地连接服务器 </p>
-<br>
-
-<pre id="yiban" >
 在远程服务器上安装vnc服务软件
+<div class="code">
 apt install tightvncserver
 
+</div>
 开启vnc服务
+<div class="code">
 vncserver
 
+</div>
 设置密码
+<div class="code">
 Password:
 Verify:
 
+</div>
 无说明
+<div class="code">
 Would you like to enter a view-only password (y/n)? n
 
+</div>
 以下操作在本地主机进行.安装vnc软件
+<div class="code">
 apt install gvncviewer
 
+</div>
 使用SSH安全转发到VNC的连接
+<div class="code">
 ssh -L 5901:127.0.0.1:5901 -C -N -l user-name your_server_ip
 
-开始连接,弹出一个窗口，输入第3步的密码
+</div>
+开始连接,弹出一个窗口,输入第3步的密码
+<div class="code">
 gvncviewer your_server_ip:1
 
+</div>
 另外可以试试 <a target="_blank" href="http://www.karlrunge.com/x11vnc/ssvnc.html" target="_blank">ssvnc</a> ,它为VNC连接增加了加密安全性,而且它还有GUI
-</pre>
 
-<br>
 <iframe id="zhici" src="/gonggong/zhici-l.html" ></iframe>
-<br>
-<br>
 
-<pre id="wei" >
 创建时间 : 2020-06-04
 修改时间 : <script>document.write(document.lastModified);</script>
 说明 : No
-参考网址 :   
+参考网址 :
  <a target="_blank" href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-18-04">www.digitalocean.com</a>
-</pre>
-<br>
 
 <iframe id="guanggao" src="/gonggong/guanggao-l.html" ></iframe>
-<br>
-<br>
+
 
 </div></body></html>

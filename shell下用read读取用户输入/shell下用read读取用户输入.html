@@ -6,16 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Linux—shell相关信息-转载</title>
     <link rel="stylesheet" type="text/css" href="/css/my.css" />
+
 </head>
 
-<body><div>
+<body><br><iframe id="tou" src="/gonggong/tou.html" style="height:37px" ></iframe>
+<div>
+<h3>Linux—shell相关信息-转载</h3>
 
-    <br>
-    <iframe id="tou" src="/gonggong/tou.html" style="height:37px" ></iframe>
-    <br>
-    <br>
-<pre id="yiban" >
-<b style="font-size:1.5em;" >read 读取控制台输入</b>
+<h4>read 读取控制台输入</h4>
 基本语法
 read(选项)(参数)
 选项：
@@ -23,7 +21,7 @@ read(选项)(参数)
 -t：读取值时等待的秒数，如果没有在指定的时间内输入，就不再等待了
 参数
 变量：指定读取值的变量名
-<div class="div-code">
+<div class="code">
 #!/bin/bash
 #例 1：读取控制台输入的一个 num 值
 read -p "请您输入一个数字" NUM1
@@ -34,9 +32,9 @@ echo "您输入的数字是$NUM2"
 
 </div>
 
-<b style="font-size:1.5em;" >等待时间</b>
+<h4>等待时间</h4>
 read -t 等待时间。如果计时器过期，会返回一个非0退出码
-<div class="div-code">
+<div class="code">
 #!/bin/bash
 if read -t 5 -p "Please enter your name: " name
 then
@@ -47,9 +45,9 @@ fi
 
 </div>
 
-<b style="font-size:1.5em;" >输入字符个数</b>
+<h4>输入字符个数</h4>
 read -n 当字符达到预设的字符数时，就自动退出，将输入的数据赋给变量
-<div class="div-code">
+<div class="code">
 #!/bin/bash
 read -n1 -p "Do you want to continue [Y/N]?" answer
 case $answer in
@@ -63,31 +61,23 @@ echo "End"
 
 </div>
 
-<b style="font-size:1.5em;" >输入密码,不显示</b>
+<h4>输入密码,不显示</h4>
 read -s输入密码（实际是显示的,只是read将文本颜色设成跟背景色一样）
-<div class="div-code">
+<div class="code">
 #!/bin/bash
 read -s -p "Enter your password: " pas
 echo "password:$pas"
 
 </div>
-</pre>
 
-<br>
 <iframe id="zhici" src="/gonggong/zhici-l.html" ></iframe>
-<br>
-<br>
 
-<pre id="wei" >
+
 创建时间 : 2020.3.21
 修改时间 : <script>document.write(document.lastModified);</script>
 说明 : 未完全测试
 参考网址 : 网络
-</pre>
-<br>
 
 <iframe id="guanggao" src="/gonggong/guanggao-l.html" ></iframe>
-<br>
-<br>
 
 </div></body></html>
