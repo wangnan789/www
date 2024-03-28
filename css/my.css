@@ -39,7 +39,7 @@ h4 {
 
 video,img {
     /*外边距,上下0.3,左右1*/
-    margin: 0.3rem 1rem;
+    margin: 0.3rem 0.3rem;
     max-width:96%;
 }
 div {
@@ -66,7 +66,7 @@ iframe {
   }
 
 #zhici {
-  height:19rem;
+  height:0rem;
 }
 
 /*广告区*/
