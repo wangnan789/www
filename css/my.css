@@ -57,21 +57,21 @@ iframe {
     margin: auto;
     width: 96%;
      /*无边框线*/
-    border: none;
+     border: none;
   }
 
-/*顶部*/
+/*顶部 */
 #tou {
   height:2.3rem;
   }
 
 #zhici {
-  height:0rem;
+  height:1rem;
 }
 
 /*广告区*/
 #guanggao {
-    height: 103rem;
+    height: 92rem;
 }
 /*把这些放在块里，可以产生边界线
   border: 2px solid rgba(223, 36, 102, 0.947);

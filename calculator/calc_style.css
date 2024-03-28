@@ -1,7 +1,6 @@
 body {
-    font-size: 2.5vh;
-    top: 15%;
-    left: 40%;
+    font-size: 2vh;
+
     margin: 0 auto;
 
     font-family: 'Roboto', sans-serif;
@@ -9,15 +8,15 @@ body {
 
 
 #calculator {
-    width: 90%;
-    height: auto;
-    padding: 1.5vh;
-    border: 5px solid #666666;
+    width: 86%;
+    height: 26rem;
+    padding: 1vh;
+
     border-radius: 15px;
-    margin: 0;
+
     position: absolute;
-    top: 40%;
-    left: 53%;
+    top: 38%;
+    left: 52%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
@@ -43,10 +42,10 @@ body {
 }
 
 button {
-    width:5vh;
-    height: 5vh;
+    width:9vh;
+    height: 9vh;
     font-weight:bold;
-    font-size: 2vh;
+    font-size: 4vh;
     color: rgb(6, 1, 1);
     background-color: #666666;
     border-radius: 20%;
