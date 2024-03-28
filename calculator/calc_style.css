@@ -17,7 +17,7 @@ body {
     margin: 0;
     position: absolute;
     top: 40%;
-    left: 50%;
+    left: 53%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
@@ -43,14 +43,14 @@ body {
 }
 
 button {
-    width:9vh;
-    height: 9vh;
+    width:5vh;
+    height: 5vh;
     font-weight:bold;
-    font-size: 4vh;
+    font-size: 2vh;
     color: rgb(6, 1, 1);
     background-color: #666666;
     border-radius: 20%;
-    border: 5px solid #333333;
+    border: 2px solid #333333;
 }
 
 #backspace_btn {
