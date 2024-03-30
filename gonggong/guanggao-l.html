@@ -1,31 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
 
-<style type="text/css">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> </title>
+        <style type="text/css">
+            .img {
+                width: 100%;
+                height: 100%;
+            }
 
-#box4 {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1 0 50%;
+            .container {
+                display: flex;
+                justify-content: space-between;
+                /* 使两个div在容器中均匀分布 */
+            }
 
-}
-.box1 {
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1 0 50%;
-}
+            .div-side-by-side {
+                margin: auto;
+                padding: 0.3rem 0.3rem;
+                flex: 1;
+                /* 确保两个div平分容器宽度 */
+                width: 50%;
+                /* 直接设置每个div的宽度为50% */
+                box-sizing: border-box;
+                /* 让边框和内填充不影响元素总宽度 */
+            }
+        </style>
+    </head>
 
-img {
-    margin: auto;
-    width : 22rem;
-    height: 19rem;
-}
- </style>
+    <body>
+        <div class="container">
+            <div class="div-side-by-side"><a target="_blank" href="https://www.kfchy.com"><br>虚位以待1<br><img class="img" src="gg.png" alt=""></a></div>
+            <div class="div-side-by-side"><a target="_blank" href="https://www.kfchy.com"><br>虚位以待2<br><img class="img" src="gg.png" alt=""></a></div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="div-side-by-side"><a target="_blank" href="https://www.kfchy.com"><br>虚位以待3<br><img class="img" src="gg.png" alt=""></a></div>
+            <div class="div-side-by-side"><a target="_blank" href="https://www.kfchy.com"><br>虚位以待4<br><img class="img" src="gg.png" alt=""></a></div>
+        </div>
+    </body>
 
-<div id="box4" >
-
-<div class="box1" ><a target="_blank" href="https://www.kfchy.com" ><br>虚位以待1<br><img src="gg.png" alt="" ></a></div>
-<div class="box1" ><a target="_blank" href="https://www.kfchy.com" ><br>虚位以待2<br><img src="gg.png" alt="" ></a></div>
-<div class="box1" ><a target="_blank" href="https://www.kfchy.com" ><br>虚位以待3<br><img src="gg.png" alt="" ></a></div>
-<div class="box1" ><a target="_blank" href="https://www.kfchy.com" ><br>虚位以待4<br><img src="gg.png" alt="" ></a></div>
-
-</div>
+</html>
