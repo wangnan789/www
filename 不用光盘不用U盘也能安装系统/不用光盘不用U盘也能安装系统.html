@@ -2,21 +2,21 @@
 <html lang="zh-Hans">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>不用光盘不用U盘也能安装系统</title>
-    <link rel="stylesheet" type="text/css" href="/css/my.css" />
+    <link rel="stylesheet" type="text/css" href="../css/my.css" />
 
 </head>
 
-<body><br><iframe id="tou" src="/gonggong/tou.html" style="height:37px" ></iframe>
+<body><br><iframe title="" id="tou" src="../gonggong/tou.html" style="height:37px;" ></iframe>
 <div>
 <h3>不用光盘不用U盘也能安装系统</h3>
 
 以前安装系统一般是把iso文件刻录到光盘,再从光驱启动进行安装.或刻录到U盘启动安装.可是当你没有光驱也没有U盘怎么办呢?下面分3种情况来说说
 
 <h4>(1)你的系统是2000/XP/2003</h4>
-下载<a href="/pz/grub-dos.zip">grub</a>把里面的文件解压到C盘根目录
+下载<a href="../pz/grub-dos.zip">grub</a>把里面的文件解压到C盘根目录
 编辑C:\boot.ini,把timeout的值改为大于0的数,在末尾添加一行代码
 <div class="code">
   C:\grldr.mbr="GRUB MENU"
@@ -26,7 +26,7 @@
 多了一项启动菜单,点进去就出现了openbsd--net-install。选择它,开始安装有可能是世界上最安全的操作系统
 
 <h4>(2)你的系统是win7/8/10</h4>
-下载<a href="/pz/grub-dos.zip">grub</a>
+下载<a href="../pz/grub-dos.zip">grub</a>
 把里面的文件解压到C盘根目录，启动BOOTICE_x86_16.06.17_1.3.4.exe
 <img src="1.jpg" alt="" />
 
@@ -63,12 +63,12 @@ menuentry "openbsd--net-install"
 <img src="6.jpg" alt="" />
 
 重启电脑.启动菜单多了一项openbsd--net-install,选择它,安装有可能是世界上最安全的操作系统
-<iframe id="zhici" src="/gonggong/zhici-l.html" ></iframe>
+<iframe title="" id="zhici" src="../gonggong/zhici-l.html" ></iframe>
 创建时间 : 2016-xx-xx
 修改时间 : <script>document.write(document.lastModified);</script>
 说明 : No
 参考网址 : 很多,已忘记
 
-<iframe id="guanggao" src="/gonggong/guanggao-l.html" ></iframe>
+<iframe title="" id="guanggao" src="../gonggong/guanggao-l.html" ></iframe>
 
 </div></body></html>
